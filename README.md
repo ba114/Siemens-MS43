@@ -1,4 +1,4 @@
-Rom Raider logger and ECU definitions for ms43
+RomRaider logger and ECU definitions for ms43
 
 These definitions have been created for RomRaider based on the excellent work by the ms4x dev team (ms4x.net) who created definitions for TunerPro. I have started porting these across to RomRaider.
 
