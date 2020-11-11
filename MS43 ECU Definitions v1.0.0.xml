@@ -2276,14 +2276,14 @@ v0
 	#BA114
 	<table type="3D" name="Pedal input to enable Muffler Flap - MT" category="Muffler Flap" storagetype="uint8" endian="little" sizex="5" sizey="5" userlevel="1">
 		<scaling name="TPS" units="%" expression="x*0.46875" to_byte="x/0.46875" format="0.0" fineincrement="1" coarseincrement="10"/>
-			<table type="Static X Axis" name="Gear" sizex="5">
+			<table type="Static Y Axis" name="Gear" sizex="5">
 				<data>1</data>
 				<data>2</data>
 				<data>3</data>
 				<data>4</data>
 				<data>5</data>
 			</table>
-			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x*32" to_byte="x/32" format="#" fineincrement="50" coarseincrement="100"/>
 			</table>
 		<description>Minimum pedal input required per gear to enable muffler flap</description>
@@ -2884,7 +2884,7 @@ v0
 	
 	<!--Muffler Flap-->
 	<table name="Pedal input to enable Muffler Flap - MT" storageaddress="0x8014">
-		<table type="Y Axis" storageaddress="0x479F"/>
+		<table type="X Axis" storageaddress="0x479F"/>
 	</table>
 	
 	
