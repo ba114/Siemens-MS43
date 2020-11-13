@@ -37035,7 +37035,6 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                     </ecu>
                     <conversions>
                         <conversion units="hPa" storagetype="uint16" expr="x*0.082921489" format="0.00" gauge_min="0" gauge_max="2000" gauge_step="100" />
-						<conversion units="kPa" storagetype="uint16" expr="x*0.0082921489" format="0.00" gauge_min="0" gauge_max="2000" gauge_step="100" />
                     </conversions>
                 </ecuparam>
                 <ecuparam id="E218" name="* Gear" desc="E28-ov_gear" group="0x0B" subgroup="0x01" target="1">
@@ -37229,16 +37228,119 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                 </ecuparam>
                 <ecuparam id="P24" name="* Atmospheric Pressure" desc="P24-Atmospheric pressure" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
-                        <address>0x000404EE</address>
+                        <address>0x000404C8</address>
                     </ecu>
                     <conversions>
                         <conversion units="psi" storagetype="uint16" expr="x*0.001202599" format="0.00" gauge_min="0" gauge_max="20" gauge_step="2" />
                         <conversion units="kPa" storagetype="uint16" expr="x*0.008291626" format="0" gauge_min="0" gauge_max="255" gauge_step="20" />
                         <conversion units="hPa" storagetype="uint16" expr="x*0.08291626" format="0" gauge_min="0" gauge_max="1500" gauge_step="100" />
-                        <conversion units="inHg" storagetype="uint16" expr="0.002455432" format="0.00" gauge_min="-40" gauge_max="60" gauge_step="10" />
+                        <conversion units="inHg" storagetype="uint16" expr="x*0.002455432" format="0.00" gauge_min="-40" gauge_max="60" gauge_step="10" />
                     </conversions>
                 </ecuparam>
-
+                <ecuparam id="E440" name="* ov_teg" desc="E440-ov_teg" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x0000E546</address>
+                    </ecu>
+                    <conversions>
+                        <conversion units="VDC" storagetype="uint16" expr="x" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
+                    </conversions>
+                </ecuparam>
+                <ecuparam id="E441" name="* EGT Sensor Input - Bank 1 Volts" desc="E441-ov_v_teg_up_mes_1_input" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x0000E546</address>
+                    </ecu>
+                    <conversions>
+                        <conversion units="VDC" storagetype="uint16" expr="x*(5/1024)" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
+                    </conversions>
+                </ecuparam>
+                <ecuparam id="E442" name="* EGT Sensor Input - Bank 2 Volts" desc="E442-ov_v_teg_up_mes_2_input" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x0000E548</address>
+                    </ecu>
+                    <conversions>
+                        <conversion units="VDC" storagetype="uint16" expr="x*(5/1024)" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
+                    </conversions>
+                </ecuparam>
+                <ecuparam id="E443" name="* EGT Sensor Input - Bank 2 Rear Volts" desc="E443-ov_v_teg_down_mes_2_input" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x0000E54C</address>
+                    </ecu>
+                    <conversions>
+                        <conversion units="VDC" storagetype="uint16" expr="x*(5/1024)" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
+                    </conversions>
+                </ecuparam>
+                <ecuparam id="E444" name="* ov_v_teg_down_mes_2_shr_2" desc="E444-ov_v_teg_down_mes_2_shr_2" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x0004009A</address>
+                    </ecu>
+                    <conversions>
+                        <conversion units="VDC" storagetype="uint8" expr="x" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
+                    </conversions>
+                </ecuparam>
+                <ecuparam id="E445" name="* ov_v_teg_up_mes_1_shr_2" desc="E445-ov_v_teg_up_mes_1_shr_2" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x0004009B</address>
+                    </ecu>
+                    <conversions>
+                        <conversion units="VDC" storagetype="uint8" expr="x" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
+                    </conversions>
+                </ecuparam>
+                <ecuparam id="E446" name="* ov_v_teg_up_mes_2_shr_2" desc="E445-ov_v_teg_up_mes_2_shr_2" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x0004009C</address>
+                    </ecu>
+                    <conversions>
+                        <conversion units="VDC" storagetype="uint8" expr="x" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
+                    </conversions>
+                </ecuparam>
+				<ecuparam id="E447" name="* ov_teg_down_mes_2" desc="E447-ov_teg_down_mes_2" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x000405A8</address>
+                    </ecu>
+                    <conversions>
+                        <conversion units="VDC" storagetype="uint16" expr="x*(5/1024)" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
+                    </conversions>
+                </ecuparam>
+				<ecuparam id="E448" name="* ov_teg_up_mes_1" desc="E448-ov_teg_up_mes_1" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x000405AA</address>
+                    </ecu>
+                    <conversions>
+                        <conversion units="VDC" storagetype="uint16" expr="x*(5/1024)" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
+                    </conversions>
+                </ecuparam>
+				<ecuparam id="E449" name="* ov_teg_up_mes_2" desc="E449-ov_teg_up_mes_2" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x000405AC</address>
+                    </ecu>
+                    <conversions>
+                        <conversion units="VDC" storagetype="uint16" expr="x*(5/1024)" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
+                    </conversions>
+                </ecuparam>
+				<ecuparam id="E450" name="* ov_v_teg_up_mes_1" desc="E450-ov_v_teg_up_mes_1" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x000405CA</address>
+                    </ecu>
+                    <conversions>
+                        <conversion units="VDC" storagetype="uint16" expr="x*(5/1024)" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
+                    </conversions>
+                </ecuparam>
+				<ecuparam id="E451" name="* ov_v_teg_up_mes_2" desc="E451-ov_v_teg_up_mes_2" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x000405CC</address>
+                    </ecu>
+                    <conversions>
+                        <conversion units="VDC" storagetype="uint16" expr="x*(5/1024)" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
+                    </conversions>
+                </ecuparam>
+				<ecuparam id="E452" name="* ov_v_teg_down_mes_2" desc="E452-ov_v_teg_down_mes_2" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x000405CE</address>
+                    </ecu>
+                    <conversions>
+                        <conversion units="VDC" storagetype="uint16" expr="x*(5/1024)" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
+                    </conversions>
+                </ecuparam>
 <!-- Switches -->
                 <ecuparam id="S0" name="SW - Byte 0 Bit 7" desc="S0" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
