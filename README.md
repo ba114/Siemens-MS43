@@ -12,3 +12,7 @@ b) full flash locations
 Please feel free to submit your additions for merging into the master branch
 
 The logger definition has been created based on my work in uncovering the custom telegram method which allows faster polling rates and selecting multiple parameters not previously available under standard logging protocols.
+
+If my work proves helpful to you, donations are accepted:
+
+https://www.paypal.com/donate?hosted_button_id=TFWBHH4WEEHAU
