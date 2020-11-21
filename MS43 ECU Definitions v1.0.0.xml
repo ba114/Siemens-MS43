@@ -2273,40 +2273,6 @@ v0
     </table>
 
 <!--Muffler Flap-->	
-	#BA114
-	<table type="3D" name="Pedal input to open Muffler Flap - MT" category="Muffler Flap" storagetype="uint8" endian="little" sizex="5" sizey="5" userlevel="1">
-		<scaling name="PVS" units="%" expression="x*0.46875" to_byte="x/0.46875" format="0.0" fineincrement="1" coarseincrement="10"/>
-			<table type="Static Y Axis" name="Gear" sizex="5">
-				<data>1</data>
-				<data>2</data>
-				<data>3</data>
-				<data>4</data>
-				<data>5</data>
-			</table>
-			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
-				<scaling units="RPM" expression="x*32" to_byte="x/32" format="#" fineincrement="50" coarseincrement="100"/>
-			</table>
-		<description>Minimum pedal input required per gear to open muffler flap. Below this PVS, the DME x60004 pin 18 grounds to activate/close the muffler flap. When PVS exceeds the defined values, the valve de-energises and the muffler flap opens</description>
-    </table>
-   	
-	#BA114
-	<table type="2D" name="Exhaust Flap Mimimum Speed - M/T" category="Muffler Flap" storagetype="uint8" endian="little" sizex="1" userlevel="1">
-		<scaling units="Speed" expression="x" to_byte="x" format="0.0" fineincrement=".1" coarseincrement="1"/>
-			<table type="Static Y Axis" name="Speed" sizex="1">
-				<data></data>
-			</table>
-		<description>Minimum vehicle speed to enable muffler flap functionality</description>
-    </table>
-   
-  	#BA114
-	<table type="2D" name="Exhaust Flap Mimimum Speed - A/T" category="Muffler Flap" storagetype="uint8" endian="little" sizex="1" userlevel="1">
-		<scaling units="Speed" expression="x" to_byte="x" format="0.0" fineincrement=".1" coarseincrement="1"/>
-			<table type="Static Y Axis" name="Speed" sizex="1">
-				<data></data>
-			</table>
-		<description>Minimum vehicle speed to enable muffler flap functionality</description>
-   </table>
-   
  	#BA114
  	<table type="Switch" name="Muffler Flap State during Catalyst Heating" category="Muffler Flap" sizey="1" userlevel="1">
 		<state name="Open" data="00"/>
@@ -2314,16 +2280,7 @@ v0
 		<description>The exhaust flap will be remain in this state until catalyst heating is complete. When closed, pin 18 on x60004 is grounded to close the muffler flap.</description>
 	</table>
 	
-  	#BA114
-	<table type="2D" name="Time Delay to Enable Muffler Flap After Starting" category="Muffler Flap" storagetype="uint8" endian="little" sizex="1" userlevel="1">
-		<scaling units="s" expression="x*0.1" to_byte="x/0.1" format="0.0" fineincrement=".1" coarseincrement="1"/>
-			<table type="Static Y Axis" name="Time" sizex="1">
-				<data></data>
-			</table>
-		<description>Time after engine start before muffler flap can open</description>
-   </table>
-   
- 	#BA114
+	#BA114
  	<table type="Switch" name="Exhaust Flap State Before Speed Threshold Exceeded - M/T" category="Muffler Flap" sizey="1" userlevel="1">
 		<state name="Open" data="00"/>
 		<state name="Closed" data="01"/>	
@@ -2338,6 +2295,33 @@ v0
 	</table>
 	
   	#BA114
+	<table type="2D" name="Time Delay to Enable Muffler Flap After Starting" category="Muffler Flap" storagetype="uint8" endian="little" sizex="1" userlevel="1">
+		<scaling units="Seconds" expression="x*0.1" to_byte="x/0.1" format="0.0" fineincrement=".1" coarseincrement="1"/>
+			<table type="Static Y Axis" name="Time" sizex="1">
+				<data></data>
+			</table>
+		<description>Time after engine start before muffler flap can open</description>
+    </table>
+    	
+	#BA114
+	<table type="2D" name="Exhaust Flap Mimimum Speed - M/T" category="Muffler Flap" storagetype="uint8" endian="little" sizex="1" userlevel="1">
+		<scaling units="Minimum Speed" expression="x" to_byte="x" format="0.0" fineincrement=".1" coarseincrement="1"/>
+			<table type="Static Y Axis" name="Speed" sizex="1">
+				<data></data>
+			</table>
+		<description>Minimum vehicle speed to enable muffler flap functionality</description>
+    </table>
+   
+  	#BA114
+	<table type="2D" name="Exhaust Flap Mimimum Speed - A/T" category="Muffler Flap" storagetype="uint8" endian="little" sizex="1" userlevel="1">
+		<scaling units="Minimum Speed" expression="x" to_byte="x" format="0.0" fineincrement=".1" coarseincrement="1"/>
+			<table type="Static Y Axis" name="Speed" sizex="1">
+				<data></data>
+			</table>
+		<description>Minimum vehicle speed to enable muffler flap functionality</description>
+   </table>
+	
+  	#BA114
 	<table type="2D" name="PVS Hysteresis for Exhaust Flap Activation" category="Muffler Flap" storagetype="uint8" endian="little" sizex="1" userlevel="1">
 		<scaling units="%" expression="x*0.46862745" to_byte="x/0.46862745" format="0.0" fineincrement=".1" coarseincrement="1"/>
 			<table type="Static Y Axis" name="PVS" sizex="1">
@@ -2345,6 +2329,22 @@ v0
 			</table>
 		<description>Adjust this value to prevent the exhaust flap from switching continuously during constant driving at the PV threshold.</description>
    </table>
+   
+	#BA114
+	<table type="3D" name="Pedal input to open Muffler Flap - M/T" category="Muffler Flap" storagetype="uint8" endian="little" sizex="5" sizey="5" userlevel="1">
+		<scaling name="PVS" units="%" expression="x*0.46875" to_byte="x/0.46875" format="0.0" fineincrement="1" coarseincrement="10"/>
+			<table type="Static Y Axis" name="Gear" sizex="5">
+				<data>1</data>
+				<data>2</data>
+				<data>3</data>
+				<data>4</data>
+				<data>5</data>
+			</table>
+			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="x*32" to_byte="x/32" format="#" fineincrement="50" coarseincrement="100"/>
+			</table>
+		<description>Minimum pedal input required per gear to open muffler flap. Below this PVS, the DME x60004 pin 18 grounds to activate/close the muffler flap. When PVS exceeds the defined values, the valve de-energises and the muffler flap opens</description>
+    </table>
 	
    </rom>
    
@@ -2940,34 +2940,33 @@ v0
 	</table>
 	
 	<!--Muffler Flap-->
-	#BA114
-	<table name="Pedal input to open Muffler Flap - MT" storageaddress="0x8014">
-		<table type="X Axis" storageaddress="0x479F"/>
-	</table>
-	
-	#BA114
-	<table name="Exhaust Flap Mimimum Speed - M/T" storageaddress="0xDE4">
-
-    </table>
-   
-  	#BA114
-	<table name="Exhaust Flap Mimimum Speed - A/T" storageaddress="0xDE3">
-   </table>
-   
- 	#BA114
- 	<table name="Muffler Flap State during Catalyst Heating" storageaddress="0xC4E">
-	</table>
-	
-  	#BA114
-	<table name="Time Delay to Enable Muffler Flap After Starting" storageaddress="0xC93">
-	</table>
-   
  	#BA114
  	<table name="Exhaust Flap State Before Speed Threshold Exceeded - M/T" storageaddress="0xC55">
 	</table>
 	
  	#BA114
  	<table name="Exhaust Flap State Before Speed Threshold Exceeded - A/T" storageaddress="0xC54">
+	</table>
+	
+ 	#BA114
+ 	<table name="Muffler Flap State during Catalyst Heating" storageaddress="0xC4E">
+	</table>
+	
+	#BA114
+	<table name="Pedal input to open Muffler Flap - M/T" storageaddress="0x8014">
+		<table type="X Axis" storageaddress="0x479F"/>
+	</table>
+	
+	#BA114
+	<table name="Exhaust Flap Mimimum Speed - M/T" storageaddress="0xDE4">
+    </table>
+   
+  	#BA114
+	<table name="Exhaust Flap Mimimum Speed - A/T" storageaddress="0xDE3">
+	</table>
+	
+  	#BA114
+	<table name="Time Delay to Enable Muffler Flap After Starting" storageaddress="0xC93">
 	</table>
 	
   	#BA114
