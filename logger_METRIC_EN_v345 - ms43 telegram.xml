@@ -36870,7 +36870,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <address>0x0000E14C</address>
                     </ecu>
                     <conversions>
-                        <conversion units="°TPS" storagetype="uint16" expr="0.0018310547*x" format="0.0" gauge_min="0" gauge_max="120" gauge_step="10" />
+                        <conversion units="°TPS" storagetype="uint16" expr="0.0073*x" format="0.0" gauge_min="0" gauge_max="120" gauge_step="10" />
                     </conversions>
                 </ecuparam>
                 <ecuparam id="P12" name="* Mass Airflow" desc="P12-Mass Airflow" group="0x0B" subgroup="0x01" target="1">
