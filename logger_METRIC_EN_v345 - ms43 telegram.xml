@@ -36840,7 +36840,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                     </conversions>
                 </ecuparam>
 <!-- MS43 Parameters -->
-                <ecuparam id="P8" name="* Engine Speed" desc="P8-(STATUS_MOTORDREHZAHL)" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="P8" name="Engine Speed" desc="P8-(STATUS_MOTORDREHZAHL)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0000E0E4</address>
                     </ecu>
@@ -36848,7 +36848,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="RPM" storagetype="uint16" expr="x" format="0" gauge_min="0" gauge_max="10000" gauge_step="1000" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="P9" name="* Vehicle Speed" desc="P9-(STATUS_GESCHWINDIGKEIT)" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="P9" name="Vehicle Speed" desc="P9-(STATUS_GESCHWINDIGKEIT)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0004047F</address>
                     </ecu>
@@ -36857,7 +36857,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="mph" expr="x*0.621371192" format="0.0" gauge_min="0" gauge_max="250" gauge_step="25" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="P96" name="* Accelerator Position" desc="P96" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="P96" name="Accelerator Position" desc="P96" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0000E34A</address>
                     </ecu>
@@ -36865,7 +36865,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="°TPS" storagetype="uint16" expr="0.0018310547*x" format="0.0" gauge_min="0" gauge_max="120" gauge_step="10" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="P13" name="* Throttle Position" desc="P13" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="P13" name="Throttle Position" desc="P13" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0000E14C</address>
                     </ecu>
@@ -36882,15 +36882,15 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="g/sec" storagetype="uint16" expr="x*0.06944445" format="0.00" gauge_min="0" gauge_max="65" gauge_step="6" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="P18" name="* Mass Airflow Volts" desc="P18-Mass Airflow Volts" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="P18" name="Mass Airflow Volts" desc="P18-Mass Airflow Volts" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
-                        <address>0x00000006</address>
+                        <address>0x0000E51E</address>
                     </ecu>
                     <conversions>
                         <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="P11" name="* Intake Air Temperature" desc="P11-(STATUS_AN_LUFTTEMPERATUR)" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="P11" name="Intake Air Temperature" desc="P11-(STATUS_AN_LUFTTEMPERATUR)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x00040432</address>
                     </ecu>
@@ -36899,7 +36899,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="°F" expr="x*1.35-54.4" format="0.0" gauge_min="-60" gauge_max="300" gauge_step="20" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="P2" name="* Coolant Temperature" desc="P2-(STATUS_MOTORTEMPERATUR)" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="P2" name="Coolant Temperature" desc="P2-(STATUS_MOTORTEMPERATUR)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x00040433</address>
                     </ecu>
@@ -36908,7 +36908,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="°F" expr="32+9*(x*0.75-48)/5" format="0.0" gauge_min="0" gauge_max="140" gauge_step="20" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E11" name="* Oil Temperature" desc="E11-Oil Temperature" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E11" name="Oil Temperature" desc="E11-Oil Temperature" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0004042F</address>
                     </ecu>
@@ -36917,7 +36917,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="°F" expr="32+9*(x*0.79607843-48)/5" format="0.0" gauge_min="0" gauge_max="140" gauge_step="20" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="P10" name="* Ignition Angle - Cyl 1" desc="P10-(STATUS_ZUENDWINKEL)" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="P10" name="Ignition Angle - Cyl 1" desc="P10-(STATUS_ZUENDWINKEL)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0000FBAB</address>
                     </ecu>
@@ -36925,7 +36925,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="° CRK" expr="-0.375*x+72" format="0.0" gauge_min="-20" gauge_max="50" gauge_step="5" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="P112" name="* Ignition Angle - Cyl 2" desc="P112-(STATUS_ZUENDWINKEL)" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="P112" name="Ignition Angle - Cyl 2" desc="P112-(STATUS_ZUENDWINKEL)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0000FBAF</address>
                     </ecu>
@@ -36933,7 +36933,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="° CRK" expr="-0.375*x+72" format="0.0" gauge_min="-20" gauge_max="50" gauge_step="5" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="P113" name="* Ignition Angle - Cyl 3" desc="P113-(STATUS_ZUENDWINKEL)" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="P113" name="Ignition Angle - Cyl 3" desc="P113-(STATUS_ZUENDWINKEL)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0000FBAD</address>
                     </ecu>
@@ -36941,7 +36941,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="° CRK" expr="-0.375*x+72" format="0.0" gauge_min="-20" gauge_max="50" gauge_step="5" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="P114" name="* Ignition Angle - Cyl 4" desc="P114-(STATUS_ZUENDWINKEL)" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="P114" name="Ignition Angle - Cyl 4" desc="P114-(STATUS_ZUENDWINKEL)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0000FBB0</address>
                     </ecu>
@@ -36949,7 +36949,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="° CRK" expr="-0.375*x+72" format="0.0" gauge_min="-20" gauge_max="50" gauge_step="5" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="P115" name="* Ignition Angle - Cyl 5" desc="P115-(STATUS_ZUENDWINKEL)" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="P115" name="Ignition Angle - Cyl 5" desc="P115-(STATUS_ZUENDWINKEL)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0000FBAC</address>
                     </ecu>
@@ -36957,7 +36957,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="° CRK" expr="-0.375*x+72" format="0.0" gauge_min="-20" gauge_max="50" gauge_step="5" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="P116" name="* Ignition Angle - Cyl 6" desc="P116-(STATUS_ZUENDWINKEL)" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="P116" name="Ignition Angle - Cyl 6" desc="P116-(STATUS_ZUENDWINKEL)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0000FBAE</address>
                     </ecu>
@@ -36965,7 +36965,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="° CRK" expr="-0.375*x+72" format="0.0" gauge_min="-20" gauge_max="50" gauge_step="5" />
                     </conversions>
                 </ecuparam>
-				<ecuparam id="P99" name="* Fuel Injector Pulse Width" desc="P99 - ov_ti_bank_1" group="0x0B" subgroup="0x01" target="1">
+				<ecuparam id="P99" name="Fuel Injector Pulse Width" desc="P99 - ov_ti_bank_1" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x00040DAA</address>
                     </ecu>
@@ -36973,7 +36973,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="ms" storagetype="uint16" expr="0.0053333333*x" format="0.000" gauge_min="0" gauge_max="40" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E11" name="* VANOS Intake" desc="E11-(STATUS_NW_POSITION) Variable Valve angle" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E11" name="VANOS Intake" desc="E11-(STATUS_NW_POSITION) Variable Valve angle" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x00040212</address>
                     </ecu>
@@ -36981,7 +36981,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="° CRK" expr="x*0.3745+60" format="0.00" gauge_min="60" gauge_max="130" gauge_step="10" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E13" name="* VANOS Exhaust" desc="E11-(STATUS_NW_POSITION) Variable Valve angle" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E13" name="VANOS Exhaust" desc="E11-(STATUS_NW_POSITION) Variable Valve angle" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x00040AE0</address>
                     </ecu>
@@ -36989,15 +36989,15 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="° CRK" expr="x*-0.3745-60" format="0.00" gauge_min="60" gauge_max="130" gauge_step="10" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="P17" name="* Battery Voltage" desc="P17-Battery Voltage" group="0x0B" subgroup="0x01" target="1">
-                    <ecu id="7511570,7519308,7545150,7551615">
-                        <address>0x00000007</address>
+                <ecuparam id="P17" name="Battery Voltage" desc="P17-Battery Voltage" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x0000E528</address>
                     </ecu>
                     <conversions>
                         <conversion units="VDC" storagetype="uint16" expr="x*0.025" format="0.0" gauge_min="0" gauge_max="25" gauge_step="2" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E13" name="* Lambda Integrator - Bank 1" desc="E13-(TI_LAM_1)" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E13" name="Lambda Integrator - Bank 1" desc="E13-(TI_LAM_1)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x00040C72</address>
                     </ecu>
@@ -37005,7 +37005,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="%" storagetype="uint16" expr="(0.0015258789*x)-50" format="0.00" gauge_min="-50" gauge_max="50" gauge_step="12" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E14" name="* Lambda Integrator - Bank 2" desc="E14-(TI_LAM_2)" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E14" name="Lambda Integrator - Bank 2" desc="E14-(TI_LAM_2)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x00040DE0</address>
                     </ecu>
@@ -37013,7 +37013,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="%" storagetype="uint16" expr="(0.0015258789*x)-50" format="0.00" gauge_min="-50" gauge_max="50" gauge_step="12" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E2" name="* Engine Load" desc="E2-(STATUS_LAST)" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E2" name="Engine Load" desc="E2-(STATUS_LAST)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0000E330</address>
                     </ecu>
@@ -37021,7 +37021,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="mg/stroke" storagetype="uint16" expr="x*0.0212" format="0.00" gauge_min="0" gauge_max="1389" gauge_step="100" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E233" name="* Filtered Load" desc="E233-OV_MAF_TI" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E233" name="Filtered Load" desc="E233-OV_MAF_TI" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0000E33A</address>
                     </ecu>
@@ -37029,7 +37029,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="mg/stroke" storagetype="uint16" expr="x*0.0212" format="0.00" gauge_min="0" gauge_max="1389" gauge_step="100" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E234" name="* Calculated MAP" desc="E234-OV_MAP" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E234" name="Calculated MAP" desc="E234-OV_MAP" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x00040FD6</address>
                     </ecu>
@@ -37037,7 +37037,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="hPa" storagetype="uint16" expr="x*0.082921489" format="0.00" gauge_min="0" gauge_max="2000" gauge_step="100" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E218" name="* Gear" desc="E28-ov_gear" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E218" name="Gear" desc="E28-ov_gear" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x000401AC</address>
                     </ecu>
@@ -37045,7 +37045,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="#" expr="x" format="0" gauge_min="0" gauge_max="6" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E27" name="* Knock" desc="E27-(Knock1_6)" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E27" name="Knock" desc="E27-(Knock1_6)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0000FB6E</address>
                     </ecu>
@@ -37053,7 +37053,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="° Cor" expr="(x-128)*0.375" format="0.00" gauge_min="0" gauge_max="1000" gauge_step="100" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E127" name="* Knock Sensor 1 Volts" desc="E127" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E127" name="Knock Sensor 1 Volts" desc="E127" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address>0x00000017</address>
                     </ecu>
@@ -37061,7 +37061,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E128" name="* Knock Sensor 2 Volts" desc="E128" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E128" name="Knock Sensor 2 Volts" desc="E128" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address>0x00000018</address>
                     </ecu>
@@ -37069,7 +37069,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E21" name="* Lambda Multiplicative Adaptation - Bank 1" desc="E21-(TI_AD_FAC_1 or LTFT 1)" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E21" name="Lambda Multiplicative Adaptation - Bank 1" desc="E21-(TI_AD_FAC_1 or LTFT 1)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x00040C82</address>
                     </ecu>
@@ -37077,7 +37077,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="%" storagetype="uint16" expr="(x-32768)*100/65536" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E22" name="* Lambda Multiplicative Adaptation - Bank 2" desc="E22-(TI_AD_FAC_2 or LTFT 2)" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E22" name="Lambda Multiplicative Adaptation - Bank 2" desc="E22-(TI_AD_FAC_2 or LTFT 2)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x00040DF0</address>
                     </ecu>
@@ -37085,18 +37085,18 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="%" storagetype="uint16" expr="(x-32768)*100/65536" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E129" name="* Rear O2 - Bank 1 Volts" desc="E129-STATUS_VLS_DOWN_1_BAS" group="0x0B" subgroup="0x01" target="1">
-                    <ecu id="7511570,7519308,7545150,7551615">
-                        <address>0x00000019</address>
+                <ecuparam id="E129" name="Rear O2 - Bank 1 Volts" desc="E129-ov_v_ls_down_1_input" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x0000E52E</address>
                     </ecu>
                     <conversions>
                         <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
 						<conversion units="AFR" storagetype="uint16" expr="((x*0.00472)*3.008)+7.35" format="0.00" gauge_min="0" gauge_max="22.5" gauge_step="0.1" />
 					</conversions>
                 </ecuparam>
-                <ecuparam id="E130" name="* Rear O2 - Bank 2 Volts" desc="E130-STATUS_VLS_DOWN_2_BAS" group="0x0B" subgroup="0x01" target="1">
-                    <ecu id="7511570,7519308,7545150,7551615">
-                        <address>0x0000001A</address>
+                <ecuparam id="E130" name="Rear O2 - Bank 2 Volts" desc="E130-ov_v_ls_down_2_input" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x0000E52C</address>
                     </ecu>
                     <conversions>
                         <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
@@ -37104,7 +37104,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
 						<conversion units="AFR" storagetype="uint16" expr="((x*0.00472)*3.008)+7.35" format="0.00" gauge_min="0" gauge_max="22.5" gauge_step="0.1" />
 					</conversions>
                 </ecuparam>
-                <ecuparam id="E131" name="* DMTL Voltage" desc="E131-ov_v_dmtl_input" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E131" name="DMTL Voltage" desc="E131-ov_v_dmtl_input" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0000E556</address>
                     </ecu>
@@ -37113,7 +37113,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
 						<conversion units="AFR" storagetype="uint16" expr="((x*0.00488)*3.008)+7.35" format="0.00" gauge_min="0" gauge_max="22.5" gauge_step="0.1" />
 					</conversions>
                 </ecuparam>			
-                <ecuparam id="E24" name="* RON Fuel Quality" desc="E24-FAC_RON_AD correction applied moving from RON 98 to RON 91" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E24" name="RON Fuel Quality" desc="E24-FAC_RON_AD correction applied moving from RON 98 to RON 91" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0000E304</address>
                     </ecu>
@@ -37121,18 +37121,18 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="%" storagetype="uint16" expr="x*100/65536" format="0.00" gauge_min="0" gauge_max="100" gauge_step="10" />
                     </conversions>
 				</ecuparam>
-                <ecuparam id="E19" name="* Lambda Additive Adaptation - Bank 1" desc="E19-(TI_AD_ADD_1)" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E19" name="Lambda Additive Adaptation - Bank 1" desc="E19-(TI_AD_ADD_1)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
-                        <address>0x0000040C7C</address>
+                        <address>0x00040C7C</address>
                     </ecu>
                     <conversions>
                         <conversion units="ms" storagetype="uint16" expr="(x-32768)*.004" format="0.00" gauge_min="-5" gauge_max="5" gauge_step="1" />
                         <conversion units="µs" storagetype="uint16" expr="(x-32768)*4" format="0" gauge_min="-5000" gauge_max="5000" gauge_step="1000" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E20" name="* Lambda Additive Adaptation - Bank 2" desc="E20-(TI_AD_ADD_2)" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E20" name="Lambda Additive Adaptation - Bank 2" desc="E20-(TI_AD_ADD_2)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
-                        <address>0000040DEA</address>
+                        <address>0x00040DEA</address>
                     </ecu>
                     <conversions>
                         <conversion units="ms" storagetype="uint16" expr="(x-32768)*.004" format="0.00" gauge_min="-5" gauge_max="5" gauge_step="1" />
@@ -37141,95 +37141,87 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                 </ecuparam>		
                 <ecuparam id="E99" name="Knock Adaptation Table 1 Index**" desc="E99-Knock Adaptation Table 1 Index Direct RAM Read used by Adaptation display tool" group="0x06" subgroup="0x00" target="1">
                     <ecu id="7551615">
-                        <address>0x040221</address>
+                        <address>0x00040221</address>
                     </ecu>
                     <conversions>
                         <conversion units="° Cor" storagetype="uint8" endian="little" expr="(x-128)*0.375" format="0.000" gauge_min="-48" gauge_max="0" gauge_step="5" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E100" name="* VDC Air Intake Temperature Sensor" desc="E100-Air Intake Temperature Sensor" group="0x0B" subgroup="0x01" target="1">
-                    <ecu id="7511570,7519308,7545150,7551615">
-                        <address>0x00000000</address>
+                <ecuparam id="E100" name="zVDC Air Intake Temperature Sensor" desc="E100-Air Intake Temperature Sensor" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x0000E540</address>
                     </ecu>
                     <conversions>
                         <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E101" name="* VDC STATUS_LS_VKAT_SIGNAL_1" desc="E101-STATUS_LS_VKAT_SIGNAL_1" group="0x0B" subgroup="0x01" target="1">
-                    <ecu id="7511570,7519308,7545150,7551615">
-                        <address>0x00000001</address>
+                <ecuparam id="E101" name="zVDC STATUS_LS_VKAT_SIGNAL_1" desc="E101-ov_v_ls_up_1_input1" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x0000E522</address>
                     </ecu>
                     <conversions>
                         <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E102" name="* VDC STATUS_LS_VKAT_SIGNAL_2" desc="E102-STATUS_LS_VKAT_SIGNAL_2" group="0x0B" subgroup="0x01" target="1">
-                    <ecu id="7511570,7519308,7545150,7551615">
-                        <address>0x00000002</address>
+                <ecuparam id="E102" name="zVDC STATUS_LS_VKAT_SIGNAL_2" desc="E102-ov_v_ls_up_2_input" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x0000E524</address>
                     </ecu>
                     <conversions>
                         <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E103" name="* VDC Engine Coolant Temperature Sensor" desc="E103-Engine Coolant Temperature Sensor" group="0x0B" subgroup="0x01" target="1">
-                    <ecu id="7511570,7519308,7545150,7551615">
-                        <address>0x00000003</address>
+                <ecuparam id="E103" name="zVDC Engine Coolant Temperature Sensor" desc="E103-Engine Coolant Temperature Sensor" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x0000E544</address>
                     </ecu>
                     <conversions>
                         <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E104" name="* VDC Input 0x04*" desc="E104" group="0x0B" subgroup="0x01" target="1">
-                    <ecu id="7511570,7519308,7545150,7551615">
-                        <address>0x00000004</address>
+                <ecuparam id="E104" name="zVDC Fuel Cap Voltage " desc="E104-ov_v_fuc_input" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x0000E558</address>
                     </ecu>
                     <conversions>
                         <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E105" name="* VDC Oil Temperature Sensor Volts" desc="E105-Oil Temperature Sensor Volts" group="0x0B" subgroup="0x01" target="1">
-                    <ecu id="7511570,7519308,7545150,7551615">
-                        <address>0x00000005</address>
+                <ecuparam id="E105" name="zVDC Oil Temperature Sensor Volts" desc="E105-Oil Temperature Sensor Volts" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x0000E542</address>
                     </ecu>
                     <conversions>
                         <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E108" name="* VDC Accelerator Pedal Request Volts" desc="E108-Battery Voltage Sensor" group="0x0B" subgroup="0x01" target="1">
-                    <ecu id="7511570,7519308,7545150,7551615">
-                        <address>0x00000008</address>
+                <ecuparam id="E108" name="zVDC Accelerator Pedal Request Volts" desc="E108-ov_v_pvs_1_input" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x0000E532</address>
                     </ecu>
                     <conversions>
                         <conversion units="VDC" storagetype="uint16" expr="x*0.025" format="0.0" gauge_min="0" gauge_max="20" gauge_step="2" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E109" name="* VDC Accelerator Pedal Plausibility Volts" desc="E109" group="0x0B" subgroup="0x01" target="1">
-                    <ecu id="7511570,7519308,7545150,7551615">
-                        <address>0x00000009</address>
+                <ecuparam id="E109" name="* VDC Accelerator Pedal Plausibility Volts" desc="E109-ov_v_pvs_2_input" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x0000E52A</address>
                     </ecu>
                     <conversions>
                         <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="P19" name="* VDC Throttle Position Volts" desc="P19-Throttle 1 Position Volts" group="0x0B" subgroup="0x01" target="1">
-                    <ecu id="7511570,7519308,7545150,7551615">
-                        <address>0x0000000A</address>
+                <ecuparam id="P19" name="zVDC Throttle Position Volts" desc="P19-ov_v_tps_1_input" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x0000E536</address>
                     </ecu>
                     <conversions>
                         <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="P110" name="* VDC Throttle Plausibility Volts" desc="P110-Throttle 2 Position Volts" group="0x0B" subgroup="0x01" target="1">
-                    <ecu id="7511570,7519308,7545150,7551615">
-                        <address>0x0000000B</address>
-                    </ecu>
-                    <conversions>
-                        <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
-                    </conversions>
-                </ecuparam>
-                <ecuparam id="E120" name="* VDC ADC Input 0x10" desc="E120" group="0x0B" subgroup="0x01" target="1">
-                    <ecu id="7511570,7519308,7545150,7551615">
-                        <address>0x00000010</address>
+                <ecuparam id="P110" name="zVDC Throttle Plausibility Volts" desc="P110-ov_v_tps_2_input" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x0000E534</address>
                     </ecu>
                     <conversions>
                         <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
@@ -37248,13 +37240,13 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                 </ecuparam>
                 <ecuparam id="E440" name="* ov_teg" desc="E440-ov_teg" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
-                        <address>0x0000E546</address>
+                        <address>0x0000E148</address>
                     </ecu>
                     <conversions>
                         <conversion units="VDC" storagetype="uint16" expr="x" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E441" name="* EGT Sensor Input - Bank 1 Volts" desc="E441-ov_v_teg_up_mes_1_input" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E441" name="zVDC EGT Sensor Input - Bank 1" desc="E441-ov_v_teg_up_mes_1_input" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0000E546</address>
                     </ecu>
@@ -37262,7 +37254,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="VDC" storagetype="uint16" expr="x*(5/1024)" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E442" name="* EGT Sensor Input - Bank 2 Volts" desc="E442-ov_v_teg_up_mes_2_input" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E442" name="zVDC EGT Sensor Input - Bank 2" desc="E442-ov_v_teg_up_mes_2_input" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0000E548</address>
                     </ecu>
@@ -37270,36 +37262,12 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="VDC" storagetype="uint16" expr="x*(5/1024)" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E443" name="* EGT Sensor Input - Bank 2 Rear Volts" desc="E443-ov_v_teg_down_mes_2_input" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E443" name="zVDC EGT Sensor Input - Bank 2 Rear" desc="E443-ov_v_teg_down_mes_2_input" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0000E54C</address>
                     </ecu>
                     <conversions>
                         <conversion units="VDC" storagetype="uint16" expr="x*(5/1024)" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
-                    </conversions>
-                </ecuparam>
-                <ecuparam id="E444" name="* ov_v_teg_down_mes_2_shr_2" desc="E444-ov_v_teg_down_mes_2_shr_2" group="0x0B" subgroup="0x01" target="1">
-                    <ecu id="7551615">
-                        <address>0x0004009A</address>
-                    </ecu>
-                    <conversions>
-                        <conversion units="VDC" storagetype="uint8" expr="x" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
-                    </conversions>
-                </ecuparam>
-                <ecuparam id="E445" name="* ov_v_teg_up_mes_1_shr_2" desc="E445-ov_v_teg_up_mes_1_shr_2" group="0x0B" subgroup="0x01" target="1">
-                    <ecu id="7551615">
-                        <address>0x0004009B</address>
-                    </ecu>
-                    <conversions>
-                        <conversion units="VDC" storagetype="uint8" expr="x" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
-                    </conversions>
-                </ecuparam>
-                <ecuparam id="E446" name="* ov_v_teg_up_mes_2_shr_2" desc="E445-ov_v_teg_up_mes_2_shr_2" group="0x0B" subgroup="0x01" target="1">
-                    <ecu id="7551615">
-                        <address>0x0004009C</address>
-                    </ecu>
-                    <conversions>
-                        <conversion units="VDC" storagetype="uint8" expr="x" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
                     </conversions>
                 </ecuparam>
 				<ecuparam id="E447" name="* ov_teg_down_mes_2" desc="E447-ov_teg_down_mes_2" group="0x0B" subgroup="0x01" target="1">
