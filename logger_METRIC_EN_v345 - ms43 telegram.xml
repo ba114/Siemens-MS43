@@ -37111,7 +37111,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                     <conversions>
                         <conversion units="%" storagetype="uint16" expr="x*100/65536" format="0.00" gauge_min="0" gauge_max="100" gauge_step="10" />
                     </conversions>
-				</ecurparam>
+				</ecuparam>
                 <ecuparam id="E19" name="* Lambda Additive Adaptation - Bank 1" desc="E19-(TI_AD_ADD_1)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0000040C7C</address>
