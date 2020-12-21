@@ -37342,7 +37342,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                     </conversions>
                 </ecuparam>
 <!-- Switches -->
-                <ecuparam id="S0" name="SW - Byte 0 Bit 7" desc="S0" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S0" name="SW - Air Conditioner Compressor" desc="S0" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="7">0x00</address>
                     </ecu>
@@ -37350,7 +37350,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S1" name="SW - Byte 0 Bit 6" desc="S1" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S1" name="SW - Air Conditioner" desc="S1" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="6">0x00</address>
                     </ecu>
@@ -37358,7 +37358,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S2" name="SW - Byte 0 Bit 5" desc="S2" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S2" name="SW - Air Conditioner" desc="S2" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="5">0x00</address>
                     </ecu>
@@ -37366,7 +37366,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S3" name="SW - Byte 0 Bit 4" desc="S3" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S3" name="SW - Clutch" desc="S3" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="4">0x00</address>
                     </ecu>
@@ -37374,7 +37374,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S4" name="SW - Byte 0 Bit 3" desc="S4" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S4" name="SW - Clutch" desc="S4" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="3">0x00</address>
                     </ecu>
@@ -37382,7 +37382,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S5" name="SW - Byte 0 Bit 2" desc="S5" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S5" name="SW - Clutch" desc="S5" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="2">0x00</address>
                     </ecu>
@@ -37406,7 +37406,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="BitWise(2,x,1)/2" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S8" name="SW - Closed Throttle" desc="S8-S_LL" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S8" name="SW - Idle" desc="S8-S_LL" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address>0x00</address>
                     </ecu>
@@ -37414,7 +37414,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="BitWise(1,x,1)" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S9" name="SW - Byte 1 Bit 7" desc="S9" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S9" name="SW - Lambda Control Bank 2" desc="S9" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="7">0x01</address>
                     </ecu>
@@ -37422,7 +37422,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S10" name="SW - Byte 1 Bit 6" desc="S10" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S10" name="SW - Lambda Control Bank 1" desc="S10" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="6">0x01</address>
                     </ecu>
@@ -37430,7 +37430,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S11" name="SW - Byte 1 Bit 5" desc="S11" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S11" name="SW - Overrun Fuel Cut" desc="S11" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="5">0x01</address>
                     </ecu>
@@ -37438,7 +37438,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S12" name="SW - Byte 1 Bit 4" desc="S12" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S12" name="SW - Trailing Throttle" desc="S12" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="4">0x01</address>
                     </ecu>
@@ -37446,7 +37446,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S13" name="SW - Byte 1 Bit 3" desc="S13" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S13" name="SW - Trailing Throttle" desc="S13" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="3">0x01</address>
                     </ecu>
@@ -37470,7 +37470,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S16" name="SW - Byte 1 Bit 0" desc="S16" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S16" name="SW - CAN Communication" desc="S16" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="0">0x01</address>
                     </ecu>
@@ -37478,7 +37478,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S17" name="SW - Byte 2 Bit 7" desc="S17" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S17" name="SW - Secondary Air Valve" desc="S17" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="7">0x02</address>
                     </ecu>
@@ -37486,7 +37486,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S18" name="SW - Byte 2 Bit 6" desc="S18" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S18" name="SW - Secondary Air Pump" desc="S18" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="6">0x02</address>
                     </ecu>
@@ -37511,7 +37511,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S22" name="SW - Byte 2 Bit 3" desc="S22" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S22" name="SW - Exhaust Flap" desc="S22" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="3">0x02</address>
                     </ecu>
@@ -37519,7 +37519,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S23" name="SW - Byte 2 Bit 2" desc="S23" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S23" name="SW - DMTL Pump" desc="S23" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="2">0x02</address>
                     </ecu>
@@ -37527,7 +37527,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S24" name="SW - Byte 2 Bit 1" desc="S24" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S24" name="SW - Air Conditioner State" desc="S24" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="1">0x02</address>
                     </ecu>
@@ -37535,7 +37535,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S25" name="SW - Byte 2 Bit 0" desc="S25" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S25" name="SW - Fuel Pump Relay" desc="S25" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="0">0x02</address>
                     </ecu>
@@ -37543,7 +37543,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S26" name="SW - Byte 3 Bit 7" desc="S26" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S26" name="SW - Catalyst Heating" desc="S26" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="7">0x03</address>
                     </ecu>
@@ -37551,7 +37551,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S27" name="SW - Byte 3 Bit 6" desc="S27" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S27" name="SW - DMTL Solenoid Valve" desc="S27" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="6">0x03</address>
                     </ecu>
@@ -37559,7 +37559,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S28" name="SW - Byte 3 Bit 5" desc="S28" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S28" name="SW - EML Light" desc="S28" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="5">0x03</address>
                     </ecu>
@@ -37567,7 +37567,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S29" name="SW - Byte 3 Bit 4" desc="S29" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S29" name="SW - Check Engine Light" desc="S29" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="4">0x03</address>
                     </ecu>
@@ -37575,7 +37575,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S30" name="SW - Byte 3 Bit 3" desc="S30" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S30" name="SW - Evap Solenoid" desc="S30" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="3">0x03</address>
                     </ecu>
@@ -37583,7 +37583,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S31" name="SW - Byte 3 Bit 2" desc="S31" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S31" name="SW - DISA" desc="S31" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="2">0x03</address>
                     </ecu>
@@ -37591,7 +37591,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S32" name="SW - Byte 3 Bit 1" desc="S32" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S32" name="SW - ASC/DSC Torque Intervention" desc="S32" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="1">0x03</address>
                     </ecu>
@@ -37599,7 +37599,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S33" name="SW - Byte 3 Bit 0" desc="S33" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S33" name="SW - Overheating Light" desc="S33" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="0">0x03</address>
                     </ecu>
@@ -37671,7 +37671,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S42" name="SW - Byte 5 Bit 7" desc="S42" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S42" name="SW - Vanos Active" desc="S42" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="7">0x05</address>
                     </ecu>
@@ -37679,7 +37679,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S43" name="SW - Byte 5 Bit 6" desc="S43" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S43" name="SW - Vanos Ready" desc="S43" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="6">0x05</address>
                     </ecu>
@@ -37687,7 +37687,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S44" name="SW - Byte 5 Bit 5" desc="S44" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S44" name="SW - Vanos Passive" desc="S44" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="5">0x05</address>
                     </ecu>
@@ -37695,7 +37695,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S45" name="SW - Byte 5 Bit 4" desc="S45" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S45" name="SW - Irregular Running Adaptation" desc="S45" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="4">0x05</address>
                     </ecu>
@@ -37703,7 +37703,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S46" name="SW - Byte 5 Bit 3" desc="S46" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S46" name="SW - Downstream Lambda Sensor Heater - Bank 2" desc="S46" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="3">0x05</address>
                     </ecu>
@@ -37711,7 +37711,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S47" name="SW - Byte 5 Bit 2" desc="S47" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S47" name="SW - Downstream Lambda Sensor Heater - Bank 1" desc="S47" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="2">0x05</address>
                     </ecu>
@@ -37719,7 +37719,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S48" name="SW - Byte 5 Bit 1" desc="S48" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S48" name="SW - Upstream Lambda Sensor Heater - Bank 2" desc="S48" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="1">0x05</address>
                     </ecu>
@@ -37727,7 +37727,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S49" name="SW - Byte 5 Bit 0" desc="S49" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S49" name="SW - Upstream Lambda Sensor Heater - Bank 1" desc="S49" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="0">0x05</address>
                     </ecu>
