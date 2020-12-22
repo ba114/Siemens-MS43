@@ -27,6 +27,18 @@ These definitions are created for FREE without any sort of guarantee. The develo
 any damage or injury incurred as a result of these definitions. USE AT YOUR OWN RISK! -->
 <logger version="1.0.0">
     <protocols>
+	    <protocol id="SSM" baud="4800" databits="8" stopbits="1" parity="0" connect_timeout="2000" send_timeout="55">
+            <transports>
+                <transport id="iso9141" name="K-Line" desc="Low speed serial protocol supported up to ~MY2014.">
+                    <module id="ecu" address="0x10" desc="Engine Control Unit" tester="0xF0" fastpoll="true"/>
+                    <module id="tcu" address="0x18" desc="Transmission Control Unit" tester="0xF0"  fastpoll="false"/>
+                </transport>
+                <transport id="iso15765" name="CAN bus" desc="CAN bus logging ~MY2007+.">
+                    <module id="ecu" address="0x000007E8" desc="Engine Control Unit" tester="0x000007E0" />
+                    <module id="tcu" address="0x000007E9" desc="Transmission Control Unit" tester="0x000007E1" />
+                </transport>
+            </transports>
+		</protocol>
         <protocol id="DS2" baud="9600" databits="8" stopbits="1" parity="2" connect_timeout="2000" send_timeout="55">
             <transports>
                 <transport id="iso9141" name="K-Line" desc="Low speed Diagnosis Bus (D-bus).">
