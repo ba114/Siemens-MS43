@@ -37449,7 +37449,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S15" name="xSW - AT Torque Request"" desc="S15" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S15" name="xSW - AT Torque Request" desc="S15" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="1">0x01</address>
                     </ecu>
