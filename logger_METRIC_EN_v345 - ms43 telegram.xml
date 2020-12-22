@@ -37035,6 +37035,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                     </ecu>
                     <conversions>
                         <conversion units="hPa" storagetype="uint16" expr="x*0.082921489" format="0.00" gauge_min="0" gauge_max="2000" gauge_step="100" />
+						<conversion units="psi" storagetype="uint16" expr="x*0.001202599" format="0.00" gauge_min="0" gauge_max="20" gauge_step="2" />
                     </conversions>
                 </ecuparam>
                 <ecuparam id="E218" name="Gear" desc="E28-ov_gear" group="0x0B" subgroup="0x01" target="1">
@@ -37432,7 +37433,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S13" name="xSW - Trailing Throttle" desc="S13" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S13" name="xSW - Engine Start State" desc="S13" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="3">0x01</address>
                     </ecu>
@@ -37440,7 +37441,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S14" name="xSW - Byte 1 Bit 2" desc="S14" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S14" name="xSW - AT at Drive or Reverse" desc="S14" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="2">0x01</address>
                     </ecu>
@@ -37448,7 +37449,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="On/Off" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="S15" name="xSW - Byte 1 Bit 1" desc="S15" group="0x0B" subgroup="0x04" groupsize="6" target="1">
+                <ecuparam id="S15" name="xSW - AT Torque Request"" desc="S15" group="0x0B" subgroup="0x04" groupsize="6" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address bit="1">0x01</address>
                     </ecu>
