@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE logger SYSTEM "logger.dtd">
 <!--ROMRAIDER METRIC UNITS LOGGER DEFINITION FILE (VERSION 1.0.0) 20201222 [en]
-v1.0.0 MS43 430069 7551615 software added with telegram logging functionality and LTV values now working
+v1.0.0 MS43 430069 7551615 software added with telegram logging functionality and LTV values now working. Added support for v56 software aswell.
 
 The telegram feature was discovered and implemented by Murray (BA114) with a special thanks to Rob from the ms4x dev team for assisting with finding some variable addresses.
 This is a fork of the official RomRaider Logger definition and as such may not have support from the RomRaider developer.
