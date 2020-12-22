@@ -37113,6 +37113,15 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
 						<conversion units="AFR" storagetype="uint16" expr="((x*0.00488)*3.008)+7.35" format="0.00" gauge_min="0" gauge_max="22.5" gauge_step="0.1" />
 					</conversions>
                 </ecuparam>	
+                <ecuparam id="E133" name="SAF Volts" desc="E133-ov_v_SAF" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x0000E556</address>
+                    </ecu>
+                    <conversions>
+                        <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
+						<conversion units="AFR" storagetype="uint16" expr="((x*0.00488)*3.008)+7.35" format="0.00" gauge_min="0" gauge_max="22.5" gauge_step="0.1" />
+					</conversions>
+                </ecuparam>	
                 <ecuparam id="E132" name="Fuel Cap Volts" desc="E132-ov_v_fuc_input" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0000E558</address>
@@ -37153,6 +37162,17 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                     </ecu>
                     <conversions>
                         <conversion units="° Cor" storagetype="uint8" endian="little" expr="(x-128)*0.375" format="0.000" gauge_min="-48" gauge_max="0" gauge_step="5" />
+                    </conversions>
+                </ecuparam>
+                <ecuparam id="P24" name="Atmospheric Pressure" desc="P24-Atmospheric pressure" group="0x0B" subgroup="0x01" target="1">
+                    <ecu id="7551615">
+                        <address>0x000404C8</address>
+                    </ecu>
+                    <conversions>
+                        <conversion units="inHg" storagetype="uint16" expr="x*0.002455432" format="0.00" gauge_min="-40" gauge_max="60" gauge_step="10" />
+						<conversion units="psi" storagetype="uint16" expr="x*0.001202599" format="0.00" gauge_min="0" gauge_max="20" gauge_step="2" />
+                        <conversion units="kPa" storagetype="uint16" expr="x*0.008291626" format="0" gauge_min="0" gauge_max="255" gauge_step="20" />
+                        <conversion units="hPa" storagetype="uint16" expr="x*0.08291626" format="0" gauge_min="0" gauge_max="1500" gauge_step="100" />
                     </conversions>
                 </ecuparam>
                 <ecuparam id="E100" name="zVDC Air Intake Temperature Sensor" desc="E100-Air Intake Temperature Sensor" group="0x0B" subgroup="0x01" target="1">
@@ -37227,17 +37247,6 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="P24" name="Atmospheric Pressure" desc="P24-Atmospheric pressure" group="0x0B" subgroup="0x01" target="1">
-                    <ecu id="7551615">
-                        <address>0x000404C8</address>
-                    </ecu>
-                    <conversions>
-                        <conversion units="psi" storagetype="uint16" expr="x*0.001202599" format="0.00" gauge_min="0" gauge_max="20" gauge_step="2" />
-                        <conversion units="kPa" storagetype="uint16" expr="x*0.008291626" format="0" gauge_min="0" gauge_max="255" gauge_step="20" />
-                        <conversion units="hPa" storagetype="uint16" expr="x*0.08291626" format="0" gauge_min="0" gauge_max="1500" gauge_step="100" />
-                        <conversion units="inHg" storagetype="uint16" expr="x*0.002455432" format="0.00" gauge_min="-40" gauge_max="60" gauge_step="10" />
-                    </conversions>
-                </ecuparam>
                 <ecuparam id="E440" name="zz ov_teg" desc="E440-ov_teg" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0000E148</address>
@@ -37294,7 +37303,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="VDC" storagetype="uint16" expr="x*(5/1024)" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
                     </conversions>
                 </ecuparam>
-				<ecuparam id="E450" name="ozz v_v_teg_up_mes_1" desc="E450-ov_v_teg_up_mes_1" group="0x0B" subgroup="0x01" target="1">
+				<ecuparam id="E450" name="zz ov_v_teg_up_mes_1" desc="E450-ov_v_teg_up_mes_1" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x000405CA</address>
                     </ecu>
