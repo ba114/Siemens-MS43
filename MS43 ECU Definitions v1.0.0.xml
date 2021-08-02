@@ -117,7 +117,7 @@ v0
 		<description>Brake Light Test Switch - Disable to enable brake boosting without throwing a DTC</description>
 	</table>
 	
-    <table type="Switch" name="ISA Diagnostic" category="Configurations" sizey="1" userlevel="1">
+    <table type="Switch" name="ISA Diagnostics (DTC 211)" category="Configurations" sizey="1" userlevel="1">
 		<state name="Enable" data="32"/>
 		<state name="Disable" data="FF"/>	
 		<description>This switch will disable the test for DTC 211 from running. Useful when boosted and having rescaled Load variables</description>
