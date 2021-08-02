@@ -86,7 +86,7 @@ v0
 		<state name="1" data="01"/>
 		<state name="2" data="02"/>
 		<state name="3" data="03"/>			
-		<description>Malfunction Indicator Light.  For forced OBD readiness, set to 2.</description>
+		<description>Malfunction Indicator Light. For forced OBD readiness, set to 2.</description>
 	</table>
     <table type="Switch" name="MIL FUS" category="Configurations" sizey="1" userlevel="1">
 		<state name="0" data="00"/>
