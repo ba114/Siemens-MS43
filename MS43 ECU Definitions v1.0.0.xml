@@ -467,7 +467,9 @@ v0
 			<table type="Y Axis" name="Throttle Position" storagetype="uint8" endian="little">
 				<scaling units="°TPS" expression="x*0.46862745" to_byte="x/0.46862745" format="0.0" fineincrement=".01" coarseincrement=".1"/>
 			</table>
-		<description>Fuel film applied during tip in</description>
+		<description>Fuel film applied during tip in. The ecu takes the new ti_pvs value and subtracts the previous ti_pvs value.
+If staying at a constant throttle the resulting enrichment will be zero. If making a change from 16° pvs to 78° pvs at 1216 rpm the enrichment will be value at 78° PVS - previous value at 16° pvs
+Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.</description>
     </table>
 
 <!--Fuel Learning-->	
@@ -2463,7 +2465,7 @@ v0
 		<table type="Y Axis" storageaddress="0x4B6E"/>
 	</table>
 	
-    <table name="Tip in Enrichment" storageaddress="0x8CC6">
+    <table name="Tip In Enrichment" storageaddress="0x8CC6">
         <table type="X Axis" storageaddress="0x4901"/>
         <table type="Y Axis" storageaddress="0x495F"/>
     </table>
