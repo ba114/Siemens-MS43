@@ -212,7 +212,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="° CRK" expr="x*0.3745+60" format="0.00" gauge_min="60" gauge_max="130" gauge_step="10" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E13" name="VANOS Exhaust" desc="E11-(STATUS_NW_POSITION) Variable Valve angle" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E12" name="VANOS Exhaust" desc="E12-(STATUS_NW_POSITION) Variable Valve angle" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x00040AE0</address>
                     </ecu>
