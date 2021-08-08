@@ -2916,18 +2916,6 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 		<table type="Y Axis" storageaddress="0x4B34"/>
 	</table>
 
-   
-   <!--Fuel/Ignition Axis-->
-   	  <table name="Basic Ignition Load Axis" storageaddress="0x5002"/>
-      <table name="Basic Ignition RPM Axis" storageaddress="0x4FE0"/>
-	  
-      <table name="Main Ignition Load Axis" storageaddress="0x5046"/>
-      <table name="Main Ignition RPM Axis" storageaddress="0x501C"/>
-	  
-      <table name="Main Fuel Load Axis" storageaddress="0x57C8"/>
-      <table name="Main Fuel RPM Axis" storageaddress="0x4B6E"/>
-
-
 	<!--Anti-lag-->
 	<table name="Maximum IAT gradient" storageaddress="0xD41"/>
 	
@@ -2974,6 +2962,16 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
   	#BA114
 	<table name="PVS Hysteresis for Exhaust Flap Activation" storageaddress="0xC49">
 	</table>
+	
+	<!--Fuel/Ignition Axis-->
+   	<table name="Basic Ignition Load Axis" storageaddress="0x5002"/>
+    <table name="Basic Ignition RPM Axis" storageaddress="0x4FE0"/>
+	  
+    <table name="Main Ignition Load Axis" storageaddress="0x5046"/>
+      <table name="Main Ignition RPM Axis" storageaddress="0x501C"/>
+	  
+    <table name="Main Fuel Load Axis" storageaddress="0x57C8"/>
+    <table name="Main Fuel RPM Axis" storageaddress="0x4B6E"/>
 	
    </rom>
    
