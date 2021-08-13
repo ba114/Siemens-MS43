@@ -130,7 +130,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="°F" expr="32+9*(x*0.75-48)/5" format="0.0" gauge_min="0" gauge_max="140" gauge_step="20" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E11" name="Oil Temperature" desc="E11-Oil Temperature" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="P4" name="Oil Temperature" desc="P4-Oil Temperature" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0004042F</address>
                     </ecu>
