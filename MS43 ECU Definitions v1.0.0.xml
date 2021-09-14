@@ -1382,7 +1382,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 (This table only appears in the 256KB version because it makes changes to the program code)</description>
     </table>
 	<table type="2D" name="Maximum Load Value" category="Sensors Scaling" storagetype="uint8" endian="little" userlevel="1" sizey="1">
-      	<scaling units="mg/stk" expression="x*5.4470588" to_byte="x/5.4470588" format="0" fineincrement="1" coarseincrement="10"/>
+      	<scaling units="mg/stroke" expression="x*5.4470588" to_byte="x/5.4470588" format="0" fineincrement="1" coarseincrement="10"/>
 			<table type="Static Y Axis" name="Max Load Value" sizey="1">
 				<data>Maximum Load Value</data>
 				<description>Maximum load value</description>
@@ -1521,72 +1521,548 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 			</table>
 		<description>This axis is used in all of the Knock Adaptation tables. Changes to this will require immediate reloading of the tuned file.</description>
     </table>
-    
-	<table type="3D" name="Knock Detection Threshold - Multiplicative Factor - Cylinder 1" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="3">
-		<scaling units="Multiplicative Factor" expression="x*.0313" to_byte="x/.0313" format="0.0" fineincrement=".3" coarseincrement="3"/>
-			<table type="X Axis" name="Load" storagetype="uint8" endian="little">
-				<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="5" coarseincrement="50"/>
-			</table>
-			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little">
-				<scaling units="RPM" expression="x*32" to_byte="x/32" format="#" fineincrement="50" coarseincrement="500"/>
-			</table>
-		<description>Multiplicative factor for knock detection threshold calculation for each cylinder. </description>
-	</table>
 	
-    <table type="3D" name="Knock Detection Threshold - Multiplicative Factor - Cylinder 2" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="3">
-		<scaling units="Multiplicative Factor" expression="x*.0313" to_byte="x/.0313" format="0.0" fineincrement=".3" coarseincrement="3"/>
-			<table type="X Axis" name="Load" storagetype="uint8" endian="little">
-				<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="5" coarseincrement="50"/>
+		<table type="2D" name="Number of combustion cycles for RON adjustment - Ign Advance" category="Knock" storagetype="uint16" endian="little" sizey="1" userlevel="1">
+			<scaling units="wcyc" expression="1.0*x" to_byte="1.0*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name="meh" sizey="1">
+				<data>0 to 65535</data>
 			</table>
-			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little">
-				<scaling units="RPM" expression="x*32" to_byte="x/32" format="#" fineincrement="50" coarseincrement="500"/>
+			<description>c_cycnr_ad_adc_knk: C_CYCNR_AD_ADC_KNK</description>
+		</table>
+		
+		<table type="2D" name="Number of combustion cycles for RON adjustment - Ignition retard" category="Knock" storagetype="uint16" endian="little" sizey="1" userlevel="1">
+			<scaling units="wcyc" expression="1.0*x" to_byte="1.0*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name="wcyc" sizey="1">
+				<data>0 to 65535</data>
 			</table>
-		<description>Multiplicative factor for knock detection threshold calculation for each cylinder. </description>
-	</table>
-      
-	<table type="3D" name="Knock Detection Threshold - Multiplicative Factor - Cylinder 3" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="3">
-		<scaling units="Multiplicative Factor" expression="x*.0313" to_byte="x/.0313" format="0.0" fineincrement=".3" coarseincrement="3"/>
-			<table type="X Axis" name="Load" storagetype="uint8" endian="little">
-				<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="5" coarseincrement="50"/>
+			<description>c_cycnr_ad_rtd_knk: C_CYCNR_AD_RTD_KNK</description>
+		</table>
+		
+		<table type="2D" name="Adjustment value for RON incrementation" category="Knock" storagetype="uint8" endian="little" sizey="1" userlevel="1">
+			<scaling units="-" expression="1.0*x" to_byte="1.0*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name=" " sizey="1">
+				<data>1 to 255</data>
 			</table>
-			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little">
-				<scaling units="RPM" expression="x*32" to_byte="x/32" format="#" fineincrement="50" coarseincrement="500"/>
+			<description>c_cycnr_fac_ron: C_CYCNR_FAC_RON</description>
+		</table>
+		
+		<table type="2D" name="Cycle counter before activating the low RON state" category="Knock" storagetype="uint16" endian="little" sizey="1" userlevel="1">
+			<scaling units="-" expression="1.0*x" to_byte="1.0*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name=" " sizey="1">
+				<data>0 to 65535</data>
 			</table>
-		<description>Multiplicative factor for knock detection threshold calculation for each cylinder. </description>
-	</table>
-	
-    <table type="3D" name="Knock Detection Threshold - Multiplicative Factor - Cylinder 4" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="3">
-		<scaling units="Multiplicative Factor" expression="x*.0313" to_byte="x/.0313" format="0.0" fineincrement=".3" coarseincrement="3"/>
-			<table type="X Axis" name="Load" storagetype="uint8" endian="little">
-				<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="5" coarseincrement="50"/>
+			<description>c_cycnr_fac_ron_low_min: C_CYCNR_FAC_RON_LOW_MIN</description>
+		</table>
+		
+		<table type="2D" name="Minimum RON adaptation before detecting a low RON state" category="Knock" storagetype="uint16" endian="little" sizey="1" userlevel="1">
+			<scaling units="-" expression="1.5258789e-005*x" to_byte="65536.0*x" format="0.00000" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name=" " sizey="1">
+				<data>0 to 0.99998474</data>
 			</table>
-			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little">
-				<scaling units="RPM" expression="x*32" to_byte="x/32" format="#" fineincrement="50" coarseincrement="500"/>
+			<description>c_fac_ron_ad_min: C_fac_ron_ad_MIN</description>
+		</table>
+				
+		<table type="2D" name="Engine speed hysteresis for knock control" category="Knock" storagetype="uint8" endian="little" sizey="1" userlevel="1">
+			<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name="RPM" sizey="1">
+				<data>0 to 8160</data>
 			</table>
-		<description>Multiplicative factor for knock detection threshold calculation for each cylinder. </description>
-	</table>
+			<description>c_n_iga_hys_knk: C_N_IGA_HYS_KNK</description>
+		</table>
+		
+		<table type="2D" name="Knock - noise filtering factor in steady state" category="Knock" storagetype="uint16" endian="little" sizey="1" userlevel="1">
+			<scaling units="-" expression="1.5258789e-005*x+2.109592e-010" to_byte="65536.0*x-1.3825422e-005" format="0.000000" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name=" " sizey="1">
+				<data>0 to 0.99998474</data>
+			</table>
+			<description>c_nl_crlc: C_NL_CRLC</description>
+		</table>
+		
+		<table type="2D" name="Knock - noise filtering factor with engine speed and / or engine load dynamics active" category="Knock" storagetype="uint16" endian="little" sizey="1" userlevel="1">
+			<scaling units="-" expression="1.5258789e-005*x+2.109592e-010" to_byte="65536.0*x-1.3825422e-005" format="0.000000" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name=" " sizey="1">
+				<data>0 to 0.99998474</data>
+			</table>
+			<description>c_nl_crlc_tra: C_NL_CRLC_TRA</description>
+		</table>
+		
+		<table type="2D" name="Maximum value for the correction factor of the voltage controller amplifier gain" category="Knock" storagetype="uint8" endian="little" sizey="1" userlevel="1">
+			<scaling units="-" expression="0.0078125*x" to_byte="128.0*x" format="0.000" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name=" " sizey="1">
+				<data>0 to 1.9921875</data>
+			</table>
+			<description>c_nl_fac_mmv_max: C_NL_FAC_MMV_MAX</description>
+		</table>
+		
+		<table type="2D" name="Minimum value for the correction factor of the voltage controller amplifier gain" category="Knock" storagetype="uint8" endian="little" sizey="1" userlevel="1">
+			<scaling units="-" expression="0.0078125*x" to_byte="128.0*x" format="0.000" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name=" " sizey="1">
+				<data>0 to 1.9921875</data>
+			</table>
+			<description>c_nl_fac_mmv_min: C_NL_FAC_MMV_MIN</description>
+		</table>
+		
+		<table type="2D" name="Maximum knock - noise level limitation" category="Knock" storagetype="uint16" endian="little" sizey="1" userlevel="1">
+			<scaling units="V" expression="7.7821012e-005*x" to_byte="12850.0*x" format="0.00000" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name="Volts" sizey="1">
+				<data>0 to 5.1</data>
+			</table>
+			<description>c_nl_max: C_NL_MAX</description>
+		</table>
+		
+		<table type="2D" name="Minimum knock - noise level limitation" category="Knock" storagetype="uint16" endian="little" sizey="1" userlevel="1">
+			<scaling units="V" expression="7.7821012e-005*x" to_byte="12850.0*x" format="0.00000" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name="Volts" sizey="1">
+				<data>0 to 5.1</data>
+			</table>
+			<description>c_nl_min: C_NL_MIN</description>
+		</table>
+
+		<table type="2D" name="Minimum engine coolant temperature for activation of RON knock adaptation" category="Knock" storagetype="uint8" endian="little" sizey="1" userlevel="1">
+			<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="0.0" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name="Coolant Temp" sizey="1">
+				<data>-48 to 142.5</data>
+			</table>
+			<description>c_tco_ad_min_knk: C_tco_AD_MIN_KNK</description>
+		</table>
+
+		<table type="2D" name="Engine coolant temperature threshold used with c_fac_ron_ad_hot" category="Knock" storagetype="uint8" endian="little" sizey="1" userlevel="1">
+			<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="0.0" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name="Coolant Temp" sizey="1">
+				<data>-48 to 142.5</data>
+			</table>
+			<description>c_tco_fac_ron_max: C_tco_FAC_RON_MAX</description>
+		</table>
+		
+		<table type="2D" name="Engine coolant temperature threshold used with c_fac_ron_ad_cold" category="Knock" storagetype="uint8" endian="little" sizey="1" userlevel="1">
+			<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="0.0" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name="Coolant Temp" sizey="1">
+				<data>-48 to 142.5</data>
+			</table>
+			<description>c_tco_fac_ron_min: C_tco_FAC_RON_MIN</description>
+		</table>
+		
+		<table type="2D" name="Maximum allowed knock correction" category="Knock" storagetype="uint8" endian="little" sizey="1" userlevel="1">
+			<scaling units="CRK" expression="0.375*x-48.0" to_byte="2.6666667*x+128.0" format="0.0" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name="CRK" sizey="1">
+				<data>-48 to 0</data>
+			</table>
+			<description>c_iga_knk_ad_max: C_IGA_KNK_AD_MAX</description>
+		</table>
+		
+		<table type="2D" name="Maximum allowed knock correction during a low RON state" category="Knock" storagetype="uint8" endian="little" sizey="1" userlevel="1">
+			<scaling units="CRK" expression="0.375*x-48.0" to_byte="2.6666667*x+128.0" format="0.0" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name="CRK" sizey="1">
+				<data>-48 to 0</data>
+			</table>
+			<description>c_iga_knk_ad_max_ron: C_IGA_KNK_AD_MAX_RON</description>
+		</table>
+		
+		<table type="2D" name="c_nl_fac_crlc" category="Knock" storagetype="uint8" endian="little" sizey="1" userlevel="1">
+			<scaling units="-" expression="0.00048823529*x" to_byte="2048.1928*x" format="0.0000" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name=" " sizey="1">
+				<data>0 to 0.1245</data>
+			</table>
+			<description>Filtering factor for calculation of the correction factor used to calculate the voltage controller amplifier gain c_nl_fac_crlc: C_NL_FAC_CRLC</description>
+		</table>
+		
+		<table type="2D" name="c_fac_tra_knk" category="Knock" storagetype="uint8" endian="little" sizey="1" userlevel="1">
+			<scaling units="-" expression="0.031246637*x+0.00010763193" to_byte="32.003445*x-0.0034445925" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name=" " sizey="1">
+				<data>1 to 7.9679999</data>
+			</table>
+			<description>Correction factor for knock detection threshold calculation with engine speed and / or engine load dynamics active</description>
+		</table>
+
+		<table type="2D" name="c_iga_knk_dif_max_min" category="Knock" storagetype="uint8" endian="little" sizey="1" userlevel="1">
+			<scaling units="CRK" expression="0.375*x" to_byte="2.6666667*x" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name="CRK" sizey="1">
+				<data>0 to 48</data>
+			</table>
+			<description>c_iga_knk_dif_max_min: C_IGA_KNK_DIF_MAX_MIN</description>
+		</table>
+
+		<table type="2D" name="c_n_min_knk_ad_at" category="Knock" storagetype="uint8" endian="little" sizey="1" userlevel="1">
+			<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name="RPM" sizey="1">
+				<data>0 to 8160</data>
+			</table>
+			<description>c_n_min_knk_ad_at: C_N_MIN_KNK_AD_AT</description>
+		</table>
+		
+		<table type="2D" name="c_n_min_knk_diag" category="Knock" storagetype="uint8" endian="little" sizey="1" userlevel="1">
+			<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name="RPM" sizey="1">
+				<data>1024 to 8160</data>
+			</table>
+			<description>c_n_min_knk_diag: C_N_MIN_KNK_DIAG</description>
+		</table>
+		
+		<table type="2D" name="c_fac_ron_ad_cold" category="Knock" storagetype="uint8" endian="little" sizey="1" userlevel="1">
+			<scaling units="-" expression="0.0078125*x" to_byte="128.0*x" format="0.000" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name=" " sizey="1">
+				<data>0 to 1.9921875</data>
+			</table>
+			<description>Update factor for RON adaptation after ecu initialisation if engine coolant temperature is lower than c_tco_fac_ron_minD</description>
+		</table>
+		
+		<table type="2D" name="c_fac_ron_ad_hot" category="Knock" storagetype="uint8" endian="little" sizey="1" userlevel="1">
+			<scaling units="-" expression="0.0078125*x" to_byte="128.0*x" format="0.000" fineincrement="0.1" coarseincrement="1" />
+			<table type="Y Axis" name=" " sizey="1">
+				<data>0 to 1.9921875</data>
+			</table>
+			<description>Update factor for RON adaptation after ecu initialisation if engine coolant temperature is greater than c_tco_fac_ron_max</description>
+		</table>
+		
+		<table type="2D" name="Additive factor for knock detection threshold calculation" category="Knock" storagetype="int8" endian="little" sizex="16" userlevel="1">
+			<scaling units="-" expression="0.02*x+9.8039217e-009" to_byte="50.000001*x-4.9019609e-007" format="0.000" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>id_add_knk__n: ID_ADD_KNK</description>
+		</table>
+
+		<table type="2D" name="Cycle counter during which the dynamic engine load function stays active after triggering" category="Knock" storagetype="uint8" endian="little" sizex="16" userlevel="1">
+			<scaling units="seg" expression="1.0*x" to_byte="1.0*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>id_cycnr_n_grd_tra_knk__n: ID_CYCNR_n_grd_TRA_KNK</description>
+		</table>
+
+		<table type="2D" name="Knock control correction factor during dynamic engine load state" category="Knock" storagetype="uint8" endian="little" sizex="4" userlevel="1">
+			<scaling units="-" expression="1.0*x" to_byte="1.0*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>id_fac_tra_n_cycnr_knk: ID_FAC_TRA_CYCNR_KNK</description>
+		</table>
+		
+		<table type="2D" name="Calculated manifold air pressure gradient threshold to detect dynamic engine load state" category="Knock" storagetype="int16" endian="little" sizex="4" userlevel="1">
+			<scaling units="hPa/4*seg" expression="0.16584171*x+0.041460356" to_byte="6.0298461*x-0.24999957" format="0.0" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>id_map_grd_tra_knk__n: ID_MAP_GRD_TRA_KNK</description>
+		</table>
+
+		<table type="2D" name="Engine speed gradient threshold to detect dynamic engine speed state" category="Knock" storagetype="uint8" endian="little" sizex="16" userlevel="1">
+			<scaling units="RPM/s" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>id_n_grd_max_knk__n: ID_n_grd_MAX_KNK</description>
+		</table>
+		
+		<table type="2D" name="Knock signal gain" category="Knock" storagetype="uint8" endian="little" sizex="8" userlevel="1">
+			<scaling units="-" expression="0.00390625*x+0.00390625" to_byte="256.0*x-1.0" format="0.000" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>ip_gain_knk__n: IP_GAIN_KNK</description>
+		</table>
+		
+		<table type="2D" name="Noise level threshold for knock signal amplification" category="Knock" storagetype="uint8" endian="little" sizex="8" userlevel="1">
+			<scaling units="V" expression="0.02*x" to_byte="50.000001*x" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>ip_nl_sp__n: IP_NL_SP</description>
+		</table>
+
+		<table type="2D" name="Knock Retard - Step Size (knock intensity 1)" category="Knock" storagetype="int8" endian="little" sizex="6" userlevel="1">
+			<scaling units="CRK" expression="-0.375*x" to_byte="-2.6666667*x" format="0.0" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>id_iga_dec_knk_1__n: ID_IGA_DEC_KNK_1</description>
+		</table>
+		
+		<table type="2D" name="Knock Retard - Step Size (knock intensity 2)" category="Knock" storagetype="int8" endian="little" sizex="6" userlevel="1">
+			<scaling units="CRK" expression="-0.375*x" to_byte="-2.6666667*x" format="0.0" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>id_iga_dec_knk_2__n: ID_IGA_DEC_KNK_2</description>
+		</table>
+		
+		<table type="2D" name="RON decrement factor" category="Knock" storagetype="uint16" endian="little" sizex="4" userlevel="1">
+			<scaling units="-" expression="1.5258789e-005*x" to_byte="65536.0*x" format="0.00000" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>ip_fac_ron_dec__n: IP_FAC_RON_DEC</description>
+		</table>
+		
+		<table type="2D" name="RON Increment factor" category="Knock" storagetype="uint16" endian="little" sizex="4" userlevel="1">
+			<scaling units="-" expression="1.5258789e-005*x" to_byte="65536.0*x" format="0.00000" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>ip_fac_ron_inc__n: IP_FAC_RON_INC</description>
+		</table>
+		
+		<table type="2D" name="id_fac_knks_thd__tia" category="Knock" storagetype="uint8" endian="little" sizex="6" userlevel="1">
+			<scaling units="-" expression="0.0078125*x" to_byte="128.0*x" format="0.000" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Intake Air Temp" storagetype="uint8" endian="little" logparam="P11">
+				<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="0.0" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>id_fac_knks_thd__tia: ID_FAC_KNKS_THD</description>
+		</table>
     
-	<table type="3D" name="Knock Detection Threshold - Multiplicative Factor - Cylinder 5" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="3">
-		<scaling units="Multiplicative Factor" expression="x*.0313" to_byte="x/.0313" format="0.0" fineincrement=".3" coarseincrement="3"/>
-			<table type="X Axis" name="Load" storagetype="uint8" endian="little">
-				<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="5" coarseincrement="50"/>
-			</table>
-			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
-				<scaling units="RPM" expression="x*32" to_byte="x/32" format="#" fineincrement="50" coarseincrement="500"/>
-			</table>
-		<description>Multiplicative factor for knock detection threshold calculation for each cylinder. </description>
-	</table>
-      
-	<table type="3D" name="Knock Detection Threshold - Multiplicative Factor - Cylinder 6" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="3">
-		<scaling units="Multiplicative Factor" expression="x*.0313" to_byte="x/.0313" format="0.0" fineincrement=".3" coarseincrement="3"/>
+		<table type="3D" name="Knock Detection Threshold - Multiplicative Factor - Cylinder 1" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="3">
+			<scaling units="Multiplicative Factor" expression="x*.0313" to_byte="x/.0313" format="0.0" fineincrement=".3" coarseincrement="3"/>
+				<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
+					<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="5" coarseincrement="50"/>
+				</table>
+				<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little">
+					<scaling units="RPM" expression="x*32" to_byte="x/32" format="#" fineincrement="50" coarseincrement="500"/>
+				</table>
+			<description>Multiplicative factor for knock detection threshold calculation for each cylinder. </description>
+		</table>
+		
+		<table type="3D" name="Knock Detection Threshold - Multiplicative Factor - Cylinder 2" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="3">
+			<scaling units="Multiplicative Factor" expression="x*.0313" to_byte="x/.0313" format="0.0" fineincrement=".3" coarseincrement="3"/>
+				<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
+					<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="5" coarseincrement="50"/>
+				</table>
+				<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little">
+					<scaling units="RPM" expression="x*32" to_byte="x/32" format="#" fineincrement="50" coarseincrement="500"/>
+				</table>
+			<description>Multiplicative factor for knock detection threshold calculation for each cylinder. </description>
+		</table>
+		  
+		<table type="3D" name="Knock Detection Threshold - Multiplicative Factor - Cylinder 3" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="3">
+			<scaling units="Multiplicative Factor" expression="x*.0313" to_byte="x/.0313" format="0.0" fineincrement=".3" coarseincrement="3"/>
+				<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
+					<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="5" coarseincrement="50"/>
+				</table>
+				<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little">
+					<scaling units="RPM" expression="x*32" to_byte="x/32" format="#" fineincrement="50" coarseincrement="500"/>
+				</table>
+			<description>Multiplicative factor for knock detection threshold calculation for each cylinder. </description>
+		</table>
+		
+		<table type="3D" name="Knock Detection Threshold - Multiplicative Factor - Cylinder 4" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="3">
+			<scaling units="Multiplicative Factor" expression="x*.0313" to_byte="x/.0313" format="0.0" fineincrement=".3" coarseincrement="3"/>
+				<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
+					<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="5" coarseincrement="50"/>
+				</table>
+				<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little">
+					<scaling units="RPM" expression="x*32" to_byte="x/32" format="#" fineincrement="50" coarseincrement="500"/>
+				</table>
+			<description>Multiplicative factor for knock detection threshold calculation for each cylinder. </description>
+		</table>
+		
+		<table type="3D" name="Knock Detection Threshold - Multiplicative Factor - Cylinder 5" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="3">
+			<scaling units="Multiplicative Factor" expression="x*.0313" to_byte="x/.0313" format="0.0" fineincrement=".3" coarseincrement="3"/>
+				<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
+					<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="5" coarseincrement="50"/>
+				</table>
+				<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+					<scaling units="RPM" expression="x*32" to_byte="x/32" format="#" fineincrement="50" coarseincrement="500"/>
+				</table>
+			<description>Multiplicative factor for knock detection threshold calculation for each cylinder. </description>
+		</table>
+		  
+		<table type="3D" name="Knock Detection Threshold - Multiplicative Factor - Cylinder 6" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="3">
+			<scaling units="Multiplicative Factor" expression="x*.0313" to_byte="x/.0313" format="0.0" fineincrement=".3" coarseincrement="3"/>
+				<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
+					<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="5" coarseincrement="50"/>
+				</table>
+				<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+					<scaling units="RPM" expression="x*32" to_byte="x/32" format="#" fineincrement="50" coarseincrement="500"/>
+				</table>
+			<description>Multiplicative factor for knock detection threshold calculation for each cylinder. </description>
+		</table>
+
+		<table type="3D" name="Knock Detection Window - Start - Cylinder 1" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="1">
+			<scaling units="CRK/seg" expression="0.375*x" to_byte="2.6666667*x" format="0.00" fineincrement="0.1" coarseincrement="1" />
 			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
-				<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="5" coarseincrement="50"/>
+				<scaling units="mg/stroke" expression="5.4470588*x" to_byte="0.18358531*x" format="#" fineincrement="0.1" coarseincrement="1" />
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
-				<scaling units="RPM" expression="x*32" to_byte="x/32" format="#" fineincrement="50" coarseincrement="500"/>
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
 			</table>
-		<description>Multiplicative factor for knock detection threshold calculation for each cylinder. </description>
-	</table>
+			<description>id_knkwb_0__n__maf: Zylinder 1</description>
+		</table>
+		
+		<table type="3D" name="Knock Detection Window - Start - Cylinder 5" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="1">
+			<scaling units="CRK/seg" expression="0.375*x" to_byte="2.6666667*x" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
+				<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>id_knkwb_1__n__maf: ID_KNKWB_1 (Cyl5)</description>
+		</table>
+		
+		<table type="3D" name="Knock Detection Window - Start - Cylinder 3" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="1">
+			<scaling units="CRK/seg" expression="0.375*x" to_byte="2.6666667*x" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
+				<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>id_knkwb_2__n__maf: ID_KNKWB_2 (Cyl3)</description>
+		</table>
+		
+		<table type="3D" name="Knock Detection Window - Start - Cylinder 6" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="1">
+			<scaling units="CRK/seg" expression="0.375*x" to_byte="2.6666667*x" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
+				<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>id_knkwb_3__n__maf: ID_KNKWB_3 (Cyl6)</description>
+		</table>
+		
+		<table type="3D" name="Knock Detection Window - Start - Cylinder 2" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="1">
+			<scaling units="CRK/seg" expression="0.375*x" to_byte="2.6666667*x" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
+				<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>id_knkwb_4__n__maf: ID_KNKWB_4 (Cyl2)</description>
+		</table>
+		
+		<table type="3D" name="Knock Detection Window - Start - Cylinder 4" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="1">
+			<scaling units="CRK/seg" expression="0.375*x" to_byte="2.6666667*x" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
+				<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>id_knkwb_5__n__maf: ID_KNKWB_5 (Cyl4)</description>
+		</table>
+		
+		<table type="3D" name="Knock Detection Window - End - Cylinder 1" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="1">
+			<scaling units="CRK" expression="0.375*x+12.0" to_byte="2.6666667*x-32.0" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
+				<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>id_knkwe_0__n__maf: ID_KNKWE_0 (Cyl1)</description>
+		</table>
+		
+		<table type="3D" name="Knock Detection Window - End - Cylinder 5" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="1">
+			<scaling units="CRK" expression="0.375*x+12.0" to_byte="2.6666667*x-32.0" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
+				<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>id_knkwe_1__n__maf: ID_KNKWE_1 (Cyl5)</description>
+		</table>
+		
+		<table type="3D" name="Knock Detection Window - End - Cylinder 3" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="1">
+			<scaling units="CRK" expression="0.375*x+12.0" to_byte="2.6666667*x-32.0" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
+				<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>id_knkwe_2__n__maf: ID_KNKWE_2 (Cyl3)</description>
+		</table>
+		
+		<table type="3D" name="Knock Detection Window - End - Cylinder 6" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="1">
+			<scaling units="CRK" expression="0.375*x+12.0" to_byte="2.6666667*x-32.0" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
+				<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>id_knkwe_3__n__maf: ID_KNKWE_3 (Cyl6)</description>
+		</table>
+		
+		<table type="3D" name="Knock Detection Window - End - Cylinder 2" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="1">
+			<scaling units="CRK" expression="0.375*x+12.0" to_byte="2.6666667*x-32.0" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
+				<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>id_knkwe_4__n__maf: ID_KNKWE_4 (Cyl2)</description>
+		</table>
+		
+		<table type="3D" name="Knock Detection Window - End - Cylinder 4" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="16" userlevel="1">
+			<scaling units="CRK" expression="0.375*x+12.0" to_byte="2.6666667*x-32.0" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
+				<scaling units="mg/stroke" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>id_knkwe_5__n__maf: ID_KNKWE_5 (Cyl4)</description>
+		</table>
+		
+		<table type="3D" name="Engine load threshold for activation of knock control" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="8" userlevel="1">
+			<scaling units="mg/stk" expression="5.4470588*x" to_byte="0.18358531*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
+				<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="rpm" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>ip_maf_min_knk__n__tco: IP_MAF_MIN_KNK</description>
+		</table>
+		
+		<table type="3D" name="Engine load threshold for activation of knock control during a low RON state" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="8" userlevel="1">
+			<scaling units="mg/stk" expression="5.4470588*x" to_byte="0.18358531*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
+				<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="rpm" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>ip_maf_min_knk_ron__n__tco: IP_MAF_MIN_KNK_RON</description>
+		</table>
+		
+		<table type="3D" name="ip_fac_knk_diag__tia__tco" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="4" userlevel="1">
+			<scaling units="-" expression="0.00390625*x+0.00390625" to_byte="256.0*x-1.0" format="0.000" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
+				<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Intake Air Temp" storagetype="uint8" endian="little" logparam="P11">
+				<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>ip_fac_knk_diag__tia__tco: IP_FAC_KNK_DIAG</description>
+		</table>
+		
+		<table type="3D" name="ip_fac_toil_facron__toil__facron" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="4" userlevel="1">
+			<scaling units="-" expression="0.00390625*x" to_byte="256.0*x" format="0.000" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="fac_ron_ad" storagetype="uint16" endian="little" logparam="">
+				<scaling units="-" expression="1.5258789e-005*x" to_byte="65536.0*x" format="0.000" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Oil Temp" storagetype="uint8" endian="little" logparam="P4">
+				<scaling units="C" expression="0.79607843*x-48.0" to_byte="1.2561576*x+60.295567" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>ip_fac_toil_facron__toil__facron: IP_FAC_toil_FACRON</description>
+		</table>
+		
+		<table type="3D" name="ip_iga_tra_knk__n__maf" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="4" userlevel="1">
+			<scaling units="CRK" expression="0.375*x-48.0" to_byte="2.6666667*x+128.0" format="0.0" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
+				<scaling units="mg/stk" expression="5.4470588*x" to_byte="0.18358531*x" format="0.0" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="rpm" expression="32.0*x" to_byte="0.03125*x" format="0.0" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>ip_iga_tra_knk__n__maf: IP_IGA_TRA_KNK</description>
+		</table>
+				
  
 <!--DTCs--> 
 	<table type="Switch" name="DISA Valve" category="Diagnostic Trouble Codes" sizey="1">
@@ -2213,7 +2689,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     <table type="3D" name="Intake Manfold Volume at Increasing Load - Above Idle" category="Airflow Modelling" storagetype="uint16" endian="little" sizex="6" sizey="8" userlevel="1">
 		<scaling name="Volume" units="dm^3" expression="x*0.0093476789+0.9906523" to_byte="(x-0.9906523)/0.0093476789" format="0.000" fineincrement="2" coarseincrement="10"/>
 			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
-				<scaling units="mg/stk" expression="x*5.4470588" to_byte="x/5.4470588" format="#" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*5.4470588" to_byte="x/5.4470588" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x*32" to_byte="x/32" format="#" fineincrement="50" coarseincrement="100"/>
@@ -2225,7 +2701,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     <table type="3D" name="Intake Manfold Volume at Decreasing Load - Above Idle" category="Airflow Modelling" storagetype="uint16" endian="little" sizex="6" sizey="8" userlevel="1">
 		<scaling name="Volume" units="dm^3" expression="x*0.0093476789+0.9906523" to_byte="(x-0.9906523)/0.0093476789" format="0.000" fineincrement="2" coarseincrement="10"/>
 			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
-				<scaling units="mg/stk" expression="x*5.4470588" to_byte="x/5.4470588" format="#" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*5.4470588" to_byte="x/5.4470588" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x*32" to_byte="x/32" format="#" fineincrement="50" coarseincrement="100"/>
@@ -2794,30 +3270,213 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     <table name="Knock Tables X Axis (Load)" storageaddress="0x4095"/>
     <table name="Knock Tables Y Axis (Engine Speed)" storageaddress="0x400C"/>
 	  
-      <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 1" storageaddress="0x68DB">
+    <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 1" storageaddress="0x68DB">
 		<table type="X Axis" storageaddress="0x4095"/>
 		<table type="Y Axis" storageaddress="0x400C"/>
 	</table>
-      <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 2" storageaddress="0x69DB">
+	
+    <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 2" storageaddress="0x69DB">
 		<table type="X Axis" storageaddress="0x4095"/>
 		<table type="Y Axis" storageaddress="0x400C"/>
 	</table>
-      <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 3" storageaddress="0x695B">
+	
+    <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 3" storageaddress="0x695B">
 		<table type="X Axis" storageaddress="0x4095"/>
 		<table type="Y Axis" storageaddress="0x400C"/>
 	</table>
-      <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 4" storageaddress="0x6A1B">
+	
+    <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 4" storageaddress="0x6A1B">
 		<table type="X Axis" storageaddress="0x4095"/>
 		<table type="Y Axis" storageaddress="0x400C"/>
 	</table>
-      <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 5" storageaddress="0x691B">
+	
+    <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 5" storageaddress="0x691B">
 		<table type="X Axis" storageaddress="0x4095"/>
 		<table type="Y Axis" storageaddress="0x400C"/>
 	</table>
-      <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 6" storageaddress="0x699B">
+	
+    <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 6" storageaddress="0x699B">
 		<table type="X Axis" storageaddress="0x4095"/>
 		<table type="Y Axis" storageaddress="0x400C"/>
 	</table>
+
+    <table storageaddress="0x91E9" name="Additive factor for knock detection threshold calculation">
+		<table type="X Axis" storageaddress="0x400C" />
+    </table>
+	
+	<table storageaddress="0x58DA" name="Cycle counter during which the dynamic engine load function stays active after triggering">
+		<table type="X Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x5946" name="id_fac_knks_thd__tia">
+		<table type="X Axis" storageaddress="0x405A" />
+    </table>
+	
+    <table storageaddress="0x596C" name="Knock control correction factor during dynamic engine load state">
+		<table type="X Axis" storageaddress="0x4072" />
+    </table>
+	
+    <table storageaddress="0x599C" name="Knock Detection Window - Start - Cylinder 1">
+		<table type="X Axis" storageaddress="0x4095" />
+      <table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x59DC" name="Knock Detection Window - Start - Cylinder 5">
+		<table type="X Axis" storageaddress="0x4095" />
+		<table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x5A1C" name="Knock Detection Window - Start - Cylinder 3">
+		<table type="X Axis" storageaddress="0x4095" />
+		<table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x5A5C" name="Knock Detection Window - Start - Cylinder 6">
+		<table type="X Axis" storageaddress="0x4095" />
+		<table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x5A9C" name="Knock Detection Window - Start - Cylinder 2">
+		<table type="X Axis" storageaddress="0x4095" />
+		<table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x5ADC" name="Knock Detection Window - Start - Cylinder 4">
+		<table type="X Axis" storageaddress="0x4095" />
+		<table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x5B1C" name="Knock Detection Window - End - Cylinder 1">
+      <table type="X Axis" storageaddress="0x4095" />
+      <table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x5B5C" name="Knock Detection Window - End - Cylinder 5">
+      <table type="X Axis" storageaddress="0x4095" />
+      <table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x5B9C" name="Knock Detection Window - End - Cylinder 3">
+      <table type="X Axis" storageaddress="0x4095" />
+      <table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x5BDC" name="Knock Detection Window - End - Cylinder 6">
+      <table type="X Axis" storageaddress="0x4095" />
+      <table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x5C1C" name="Knock Detection Window - End - Cylinder 2">
+      <table type="X Axis" storageaddress="0x4095" />
+      <table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x5C5C" name="Knock Detection Window - End - Cylinder 4">
+      <table type="X Axis" storageaddress="0x4095" />
+      <table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0xEB8C" name="Calculated manifold air pressure gradient threshold to detect dynamic engine load state">
+      <table type="X Axis" storageaddress="0x402C" />
+    </table>
+	
+    <table storageaddress="0x6A5B" name="ip_fac_knk_diag__tia__tco">
+      <table type="X Axis" storageaddress="0x43B2" />
+      <table type="Y Axis" storageaddress="0x43AD" />
+    </table>
+	
+    <table storageaddress="0xA268" name="RON decrement factor">
+      <table type="X Axis" storageaddress="0x43EF" />
+    </table>
+	
+    <table storageaddress="0xA270" name="RON Increment factor">
+      <table type="X Axis" storageaddress="0x43EF" />
+    </table>
+	
+    <table storageaddress="0x6C5B" name="ip_fac_toil_facron__toil__facron">
+      <table type="X Axis" storageaddress="0x4F08" />
+      <table type="Y Axis" storageaddress="0x4444" />
+    </table>
+	
+    <table storageaddress="0x6CA5" name="Knock signal gain">
+      <table type="X Axis" storageaddress="0x4478" />
+    </table>
+
+    <table storageaddress="0x7CBB" name="Noise level threshold for knock signal amplification">
+      <table type="X Axis" storageaddress="0x4478" />
+    </table>
+	
+    <table storageaddress="0x11C" name="Number of combustion cycles for RON adjustment - Ign Advance" />
+	
+    <table storageaddress="0x11E" name="Number of combustion cycles for RON adjustment - Ignition retard" />
+	
+    <table storageaddress="0xB41" name="Adjustment value for RON incrementation" />
+	
+    <table storageaddress="0x120" name="Cycle counter before activating the low RON state" />	
+	
+    <table storageaddress="0xB71" name="c_fac_ron_ad_cold" />
+	
+    <table storageaddress="0xB72" name="c_fac_ron_ad_hot" />
+	
+    <table storageaddress="0x68E" name="Minimum RON adaptation before detecting a low RON state" />
+	
+    <table storageaddress="0xB8D" name="c_fac_tra_knk" />
+	
+    <table storageaddress="0xBEB" name="Engine speed hysteresis for knock control" />
+	
+    <table storageaddress="0xC14" name="c_n_min_knk_ad_at" />
+	
+    <table storageaddress="0xC15" name="c_n_min_knk_diag" />
+	
+    <table storageaddress="0x7C8" name="Knock - noise filtering factor in steady state" />
+	
+    <table storageaddress="0x7CA" name="Knock - noise filtering factor with engine speed and / or engine load dynamics active" />
+	
+    <table storageaddress="0xC29" name="c_nl_fac_crlc" />
+	
+    <table storageaddress="0xC2A" name="Maximum value for the correction factor of the voltage controller amplifier gain" />
+	
+    <table storageaddress="0xC2B" name="Minimum value for the correction factor of the voltage controller amplifier gain" />
+	
+    <table storageaddress="0x7CC" name="Maximum knock - noise level limitation" />
+	
+    <table storageaddress="0x7CE" name="Minimum knock - noise level limitation" />
+	
+    <table storageaddress="0xCD7" name="Minimum engine coolant temperature for activation of RON knock adaptation" />
+	
+    <table storageaddress="0xCE8" name="Engine coolant temperature threshold used with c_fac_ron_ad_hot" />
+	
+    <table storageaddress="0xCE9" name="Engine coolant temperature threshold used with c_fac_ron_ad_cold" />
+	
+    <table storageaddress="0xB9C" name="Maximum allowed knock correction" />
+	
+    <table storageaddress="0xB9D" name="Maximum allowed knock correction during a low RON state" />
+	
+    <table storageaddress="0xB9E" name="c_iga_knk_dif_max_min" />
+	
+    <table storageaddress="0x91F9" name="Knock Retard - Step Size (knock intensity 1)">
+		<table type="X Axis" storageaddress="0x4077" />
+    </table>
+	
+    <table storageaddress="0x91FF" name="Knock Retard - Step Size (knock intensity 2)">
+		<table type="X Axis" storageaddress="0x4077" />
+    </table>
+	
+    <table storageaddress="0x7756" name="ip_iga_tra_knk__n__maf">
+		  <table type="X Axis" storageaddress="0x4569" />
+		  <table type="Y Axis" storageaddress="0x402C" />
+    </table>
+	
+    <table storageaddress="0x7AA0" name="Engine load threshold for activation of knock control">
+		  <table type="X Axis" storageaddress="0x46A0" />
+		  <table type="Y Axis" storageaddress="0x4478" />
+    </table>
+	
+    <table storageaddress="0x7AC0" name="Engine load threshold for activation of knock control during a low RON state">
+		  <table type="X Axis" storageaddress="0x46A0" />
+		  <table type="Y Axis" storageaddress="0x4478" />
+    </table>	
+
 	
 	<!--DTCs-->
       <table name="DISA Valve" storageaddress="0xA78"/>
@@ -3269,34 +3928,226 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	<table name="MAF Plausibility Check - Low RPM Threshold" storageaddress="0xBAE" />
 	<table name="MAF Plausibility Check - High RPM Threshold" storageaddress="0xB97" />
 	  
+
+<!--Knock-->
+	   
+    <table name="Knock Tables X Axis (Load)" storageaddress="0x4095"/>
 	  
+    <table name="Knock Tables Y Axis (Engine Speed)" storageaddress="0x400C"/>
+	
+	<table storageaddress="0x11C" name="Number of combustion cycles for RON adjustment - Ign Advance" />
+	
+    <table storageaddress="0x11E" name="Number of combustion cycles for RON adjustment - Ignition retard" />
+	
+    <table storageaddress="0xADE" name="Adjustment value for RON incrementation" />
+	
+    <table storageaddress="0x120" name="Cycle counter before activating the low RON state" />
+	
+    <table storageaddress="0xB0C" name="c_fac_ron_ad_cold" />
+	
+    <table storageaddress="0xB0D" name="c_fac_ron_ad_hot" />
+	
+    <table storageaddress="0x65E" name="Minimum RON adaptation before detecting a low RON state" />
+	
+	<table storageaddress="0xB28" name="c_fac_tra_knk" />
+	
+    <table storageaddress="0xB86" name="Engine speed hysteresis for knock control" />
+	
+    <table storageaddress="0xBAF" name="c_n_min_knk_ad_at" />
+	
+    <table storageaddress="0xBB0" name="c_n_min_knk_diag" />
+	
+    <table storageaddress="0x78A" name="Knock - noise filtering factor in steady state" />
+	
+    <table storageaddress="0x78C" name="Knock - noise filtering factor with engine speed and / or engine load dynamics active" />
+	
+    <table storageaddress="0xBC4" name="c_nl_fac_crlc" />
+	
+    <table storageaddress="0xBC5" name="Maximum value for the correction factor of the voltage controller amplifier gain" />
+	
+    <table storageaddress="0xBC6" name="Minimum value for the correction factor of the voltage controller amplifier gain" />
+	
+    <table storageaddress="0x78E" name="Maximum knock - noise level limitation" />
+	
+    <table storageaddress="0x790" name="Minimum knock - noise level limitation" />
+	
+    <table storageaddress="0xC68" name="Minimum engine coolant temperature for activation of RON knock adaptation" />
+	
+    <table storageaddress="0xC77" name="Engine coolant temperature threshold used with c_fac_ron_ad_hot" />
+	
+    <table storageaddress="0xC78" name="Engine coolant temperature threshold used with c_fac_ron_ad_cold" />
+	
+    <table storageaddress="0xB37" name="Maximum allowed knock correction" />
+	
+    <table storageaddress="0xB38" name="Maximum allowed knock correction during a low RON state" />
+	
+    <table storageaddress="0xB39" name="c_iga_knk_dif_max_min" />
 	  
-      <table name="Knock Tables X Axis (Load)" storageaddress="0x4095"/>
-      <table name="Knock Tables Y Axis (Engine Speed)" storageaddress="0x400C"/>
-      <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 1" storageaddress="0x6757">
+    <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 1" storageaddress="0x6757">
 		<table type="X Axis" storageaddress="0x4095"/>
 		<table type="Y Axis" storageaddress="0x400C"/>
 	</table>
-      <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 2" storageaddress="0x6797">
+	
+    <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 2" storageaddress="0x6797">
 		<table type="X Axis" storageaddress="0x4095"/>
 		<table type="Y Axis" storageaddress="0x400C"/>
 	</table>
-      <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 3" storageaddress="0x67D7">
+	
+    <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 3" storageaddress="0x67D7">
 		<table type="X Axis" storageaddress="0x4095"/>
 		<table type="Y Axis" storageaddress="0x400C"/>
 	</table>
-      <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 4" storageaddress="0x6817">
+	
+    <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 4" storageaddress="0x6817">
 		<table type="X Axis" storageaddress="0x4095"/>
 		<table type="Y Axis" storageaddress="0x400C"/>
 	</table>
-      <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 5" storageaddress="0x6857">
+	
+    <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 5" storageaddress="0x6857">
 		<table type="X Axis" storageaddress="0x4095"/>
 		<table type="Y Axis" storageaddress="0x400C"/>
 	</table>
-      <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 6" storageaddress="0x6897">
+	
+    <table name="Knock Detection Threshold - Multiplicative Factor - Cylinder 6" storageaddress="0x6897">
 		<table type="X Axis" storageaddress="0x4095"/>
 		<table type="Y Axis" storageaddress="0x400C"/>
 	</table>
+	
+    <table storageaddress="0x8ECB" name="Additive factor for knock detection threshold calculation">
+		<table type="X Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x5788" name="Cycle counter during which the dynamic engine load function stays active after triggering">
+		<table type="X Axis" storageaddress="0x400C" />
+    </table>
+	
+	<table storageaddress="0x57F4" name="id_fac_knks_thd__tia">
+		<table type="X Axis" storageaddress="0x43AD" />
+    </table>
+	
+    <table storageaddress="0x581A" name="Knock control correction factor during dynamic engine load state">
+		<table type="X Axis" storageaddress="0x4072" />
+    </table>
+	
+    <table storageaddress="0x584A" name="Knock Detection Window - Start - Cylinder 1">
+		  <table type="X Axis" storageaddress="0x4095" />
+		  <table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x588A" name="Knock Detection Window - Start - Cylinder 5">
+		  <table type="X Axis" storageaddress="0x4095" />
+		  <table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x58CA" name="Knock Detection Window - Start - Cylinder 3">
+		  <table type="X Axis" storageaddress="0x4095" />
+		  <table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x590A" name="Knock Detection Window - Start - Cylinder 6">
+		  <table type="X Axis" storageaddress="0x4095" />
+		  <table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x594A" name="Knock Detection Window - Start - Cylinder 2">
+		  <table type="X Axis" storageaddress="0x4095" />
+		  <table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x598A" name="Knock Detection Window - Start - Cylinder 4">
+		  <table type="X Axis" storageaddress="0x4095" />
+		  <table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x59CA" name="Knock Detection Window - End - Cylinder 1">
+		  <table type="X Axis" storageaddress="0x4095" />
+		  <table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x5A0A" name="Knock Detection Window - End - Cylinder 5">
+		  <table type="X Axis" storageaddress="0x4095" />
+		  <table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x5A4A" name="Knock Detection Window - End - Cylinder 3">
+		  <table type="X Axis" storageaddress="0x4095" />
+		  <table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x5A8A" name="Knock Detection Window - End - Cylinder 6">
+		  <table type="X Axis" storageaddress="0x4095" />
+		  <table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x5ACA" name="Knock Detection Window - End - Cylinder 2">
+		  <table type="X Axis" storageaddress="0x4095" />
+		  <table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x5B0A" name="Knock Detection Window - End - Cylinder 4">
+		  <table type="X Axis" storageaddress="0x4095" />
+		  <table type="Y Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0xE654" name="Calculated manifold air pressure gradient threshold to detect dynamic engine load state">
+		<table type="X Axis" storageaddress="0x402D" />
+    </table>
+	
+    <table storageaddress="0x5B9A" name="Engine speed gradient threshold to detect dynamic engine speed state">
+		<table type="X Axis" storageaddress="0x400C" />
+    </table>
+	
+    <table storageaddress="0x68D7" name="ip_fac_knk_diag__tia__tco">
+		  <table type="X Axis" storageaddress="0x4385" />
+		  <table type="Y Axis" storageaddress="0x4380" />
+    </table>
+	
+    <table storageaddress="0x9EB2" name="RON decrement factor">
+		<table type="X Axis" storageaddress="0x43C2" />
+    </table>
+	
+    <table storageaddress="0x9EBA" name="RON Increment factor">
+		<table type="X Axis" storageaddress="0x43C2" />
+    </table>
+	
+    <table storageaddress="0x6AD7" name="ip_fac_toil_facron__toil__facron">
+		  <table type="X Axis" storageaddress="0x4E90" />
+		  <table type="Y Axis" storageaddress="0x4417" />
+    </table>
+	
+    <table storageaddress="0x6B21" name="Knock signal gain">
+		<table type="X Axis" storageaddress="0x444B" />
+    </table>
+	
+    <table storageaddress="0x7995" name="Noise level threshold for knock signal amplification">
+		<table type="X Axis" storageaddress="0x444B" />
+    </table>
+		
+    <table storageaddress="0x8EDB" name="Knock Retard - Step Size (knock intensity 1)">
+		<table type="X Axis" storageaddress="0x4077" />
+    </table>
+	
+    <table storageaddress="0x8EE1" name="Knock Retard - Step Size (knock intensity 2)">
+		<table type="X Axis" storageaddress="0x4077" />
+    </table>
+	
+    <table storageaddress="0x75C6" name="ip_iga_tra_knk__n__maf">
+      <table type="X Axis" storageaddress="0x453D" />
+      <table type="Y Axis" storageaddress="0x402D" />
+    </table>
+	
+    <table storageaddress="0x78CA" name="Engine load threshold for activation of knock control">
+		  <table type="X Axis" storageaddress="0x466A" />
+		  <table type="Y Axis" storageaddress="0x444B" />
+    </table>
+	
+    <table storageaddress="0x78EA" name="Engine load threshold for activation of knock control during a low RON state">
+		  <table type="X Axis" storageaddress="0x466A" />
+		  <table type="Y Axis" storageaddress="0x444B" />
+    </table>
+
+
+<!--DTCs-->	
       <table name="DISA Valve" storageaddress="0x0A1E"/>
       <table name="Vanos Mechanical Reference" storageaddress="0x09E2"/>
       <table name="Ambient Pressure Sensor" storageaddress="0x09E3"/>
@@ -3802,5 +4653,5 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	<table name="e30 speed sensor" storageaddress="0x607F8"/>
 
    </rom>
-   
+	
 </roms>
