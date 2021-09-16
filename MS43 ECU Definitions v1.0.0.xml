@@ -772,6 +772,20 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 			</table>
 		<description>ip_iga_maf_n__n__maf - This is multiplied to the "Ignition - ECT/IAT Compensation - Multiplicative" table to determine total adjustment to ignition angle based on coolant and air temperature.</description>
 	</table>
+	
+		
+		<table type="3D" name="Ignition Retard during strong acceleration" category="Ignition" storagetype="uint8" endian="little" sizex="4" sizey="4" userlevel="1">
+			<scaling units="CRK" expression="0.375*x-48.0" to_byte="2.6666667*x+128.0" format="0.0" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
+				<scaling units="mg/stk" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>In order to prevent knock during strong acceleration, an ignition angle correction is applied to the nominal ignition angle out of start.
+			ip_iga_tra_knk__n__maf: IP_IGA_TRA_KNK</description>
+		</table>
+		
 
 <!--Vanos-->
    #BA114
@@ -1492,7 +1506,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	
 		<table type="2D" name="Number of combustion cycles for RON adjustment - Ign Advance" category="Knock" storagetype="uint16" endian="little" sizey="1" userlevel="1">
 			<scaling units="wcyc" expression="1.0*x" to_byte="1.0*x" format="#" fineincrement="0.1" coarseincrement="1" />
-			<table type="Y Axis" name="meh" sizey="1">
+			<table type="Y Axis" name="wcyc" sizey="1">
 				<data>0 to 65535</data>
 			</table>
 			<description>c_cycnr_ad_adc_knk: C_CYCNR_AD_ADC_KNK</description>
@@ -1570,7 +1584,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 			<description>c_nl_fac_mmv_min: C_NL_FAC_MMV_MIN</description>
 		</table>
 		
-		<table type="2D" name="Maximum knock - noise level limitation" category="Knock" storagetype="uint16" endian="little" sizey="1" userlevel="1">
+		<table type="2D" name="Knock Voltage - Maximum Noise Level" category="Knock" storagetype="uint16" endian="little" sizey="1" userlevel="1">
 			<scaling units="V" expression="7.7821012e-005*x" to_byte="12850.0*x" format="0.00000" fineincrement="0.1" coarseincrement="1" />
 			<table type="Y Axis" name="Volts" sizey="1">
 				<data>0 to 5.1</data>
@@ -1578,7 +1592,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 			<description>c_nl_max: C_NL_MAX</description>
 		</table>
 		
-		<table type="2D" name="Minimum knock - noise level limitation" category="Knock" storagetype="uint16" endian="little" sizey="1" userlevel="1">
+		<table type="2D" name="Knock Voltage - Minimum Noise Level " category="Knock" storagetype="uint16" endian="little" sizey="1" userlevel="1">
 			<scaling units="V" expression="7.7821012e-005*x" to_byte="12850.0*x" format="0.00000" fineincrement="0.1" coarseincrement="1" />
 			<table type="Y Axis" name="Volts" sizey="1">
 				<data>0 to 5.1</data>
@@ -1610,7 +1624,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 			<description>c_tco_fac_ron_min: C_tco_FAC_RON_MIN</description>
 		</table>
 		
-		<table type="2D" name="Maximum allowed knock correction" category="Knock" storagetype="uint8" endian="little" sizey="1" userlevel="1">
+		<table type="2D" name="Knock Retard - Maximum" category="Knock" storagetype="uint8" endian="little" sizey="1" userlevel="1">
 			<scaling units="CRK" expression="0.375*x-48.0" to_byte="2.6666667*x+128.0" format="0.0" fineincrement="0.1" coarseincrement="1" />
 			<table type="Y Axis" name="CRK" sizey="1">
 				<data>-48 to 0</data>
@@ -1618,7 +1632,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 			<description>c_iga_knk_ad_max: C_IGA_KNK_AD_MAX</description>
 		</table>
 		
-		<table type="2D" name="Maximum allowed knock correction during a low RON state" category="Knock" storagetype="uint8" endian="little" sizey="1" userlevel="1">
+		<table type="2D" name="Knock Retard - Maximum - Low RON state" category="Knock" storagetype="uint8" endian="little" sizey="1" userlevel="1">
 			<scaling units="CRK" expression="0.375*x-48.0" to_byte="2.6666667*x+128.0" format="0.0" fineincrement="0.1" coarseincrement="1" />
 			<table type="Y Axis" name="CRK" sizey="1">
 				<data>-48 to 0</data>
@@ -1682,10 +1696,42 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 			<description>Update factor for RON adaptation after ecu initialisation if engine coolant temperature is greater than c_tco_fac_ron_max</description>
 		</table>
 		
+		<table type="2D" name="Knock Retard - Step Size (knock intensity 1)" category="Knock" storagetype="int8" endian="little" sizex="6" userlevel="1">
+			<scaling units="CRK" expression="-0.375*x" to_byte="-2.6666667*x" format="0.0" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>id_iga_dec_knk_1__n: ID_IGA_DEC_KNK_1</description>
+		</table>
+		
+		<table type="2D" name="Knock Retard - Step Size (knock intensity 2)" category="Knock" storagetype="int8" endian="little" sizex="6" userlevel="1">
+			<scaling units="CRK" expression="-0.375*x" to_byte="-2.6666667*x" format="0.0" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>id_iga_dec_knk_2__n: ID_IGA_DEC_KNK_2</description>
+		</table>
+		
+		<table type="2D" name="RON decrement factor" category="Knock" storagetype="uint16" endian="little" sizex="4" userlevel="1">
+			<scaling units="-" expression="1.5258789e-005*x" to_byte="65536.0*x" format="0.00000" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>ip_fac_ron_dec__n: IP_FAC_RON_DEC</description>
+		</table>
+		
+		<table type="2D" name="RON Increment factor" category="Knock" storagetype="uint16" endian="little" sizex="4" userlevel="1">
+			<scaling units="-" expression="1.5258789e-005*x" to_byte="65536.0*x" format="0.00000" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>ip_fac_ron_inc__n: IP_FAC_RON_INC</description>
+		</table>
+		
 		<table type="2D" name="No Knock Advance - Step Size" category="Knock" storagetype="uint16" endian="little" sizex="16" userlevel="1">
 			<scaling units="CRK/seg" expression="0.0014648439*x+1.5610694e-007" to_byte="682.6666*x-0.00010656899" format="0.000" fineincrement="0.1" coarseincrement="1" />
 			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
-				<scaling units="rpm" expression="32.0*x" to_byte="0.03125*x" format="0.000" fineincrement="0.1" coarseincrement="1" />
+				<scaling units="rpm" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
 			</table>
 			<description>id_iga_inc_knk__n: ID_IGA_INC_KNK</description>
 		</table>
@@ -1707,7 +1753,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 		</table>
 		
 		
-		<table type="2D" name="Additive factor for knock detection threshold calculation" category="Knock" storagetype="int8" endian="little" sizex="16" userlevel="1">
+		<table type="2D" name="Knock Detection Threshold - Additive Factor" category="Knock" storagetype="int8" endian="little" sizex="16" userlevel="1">
 			<scaling units="-" expression="0.02*x+9.8039217e-009" to_byte="50.000001*x-4.9019609e-007" format="0.000" fineincrement="0.1" coarseincrement="1" />
 			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
 				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
@@ -1762,39 +1808,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 			</table>
 			<description>ip_nl_sp__n: IP_NL_SP</description>
 		</table>
-
-		<table type="2D" name="Knock Retard - Step Size (knock intensity 1)" category="Knock" storagetype="int8" endian="little" sizex="6" userlevel="1">
-			<scaling units="CRK" expression="-0.375*x" to_byte="-2.6666667*x" format="0.0" fineincrement="0.1" coarseincrement="1" />
-			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
-				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
-			</table>
-			<description>id_iga_dec_knk_1__n: ID_IGA_DEC_KNK_1</description>
-		</table>
-		
-		<table type="2D" name="Knock Retard - Step Size (knock intensity 2)" category="Knock" storagetype="int8" endian="little" sizex="6" userlevel="1">
-			<scaling units="CRK" expression="-0.375*x" to_byte="-2.6666667*x" format="0.0" fineincrement="0.1" coarseincrement="1" />
-			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
-				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
-			</table>
-			<description>id_iga_dec_knk_2__n: ID_IGA_DEC_KNK_2</description>
-		</table>
-		
-		<table type="2D" name="RON decrement factor" category="Knock" storagetype="uint16" endian="little" sizex="4" userlevel="1">
-			<scaling units="-" expression="1.5258789e-005*x" to_byte="65536.0*x" format="0.00000" fineincrement="0.1" coarseincrement="1" />
-			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
-				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
-			</table>
-			<description>ip_fac_ron_dec__n: IP_FAC_RON_DEC</description>
-		</table>
-		
-		<table type="2D" name="RON Increment factor" category="Knock" storagetype="uint16" endian="little" sizex="4" userlevel="1">
-			<scaling units="-" expression="1.5258789e-005*x" to_byte="65536.0*x" format="0.00000" fineincrement="0.1" coarseincrement="1" />
-			<table type="X Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
-				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
-			</table>
-			<description>ip_fac_ron_inc__n: IP_FAC_RON_INC</description>
-		</table>
-		
+				
 		<table type="2D" name="id_fac_knks_thd__tia" category="Knock" storagetype="uint8" endian="little" sizex="6" userlevel="1">
 			<scaling units="-" expression="0.0078125*x" to_byte="128.0*x" format="0.000" fineincrement="0.1" coarseincrement="1" />
 			<table type="X Axis" name="Intake Air Temp" storagetype="uint8" endian="little" logparam="P11">
@@ -2100,17 +2114,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 			</table>
 			<description>ip_fac_toil_facron__toil__facron: IP_FAC_toil_FACRON</description>
 		</table>
-		
-		<table type="3D" name="ip_iga_tra_knk__n__maf" category="Knock" storagetype="uint8" endian="little" sizex="4" sizey="4" userlevel="1">
-			<scaling units="CRK" expression="0.375*x-48.0" to_byte="2.6666667*x+128.0" format="0.0" fineincrement="0.1" coarseincrement="1" />
-			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
-				<scaling units="mg/stk" expression="x*5.45" to_byte="x/5.45" format="0.0" fineincrement="0.1" coarseincrement="1" />
-			</table>
-			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
-				<scaling units="rpm" expression="32.0*x" to_byte="0.03125*x" format="0.0" fineincrement="0.1" coarseincrement="1" />
-			</table>
-			<description>ip_iga_tra_knk__n__maf: IP_IGA_TRA_KNK</description>
-		</table>
+
 		
 
 				
@@ -3351,7 +3355,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 		<table type="Y Axis" storageaddress="0x400C"/>
 	</table>
 
-    <table storageaddress="0x91E9" name="Additive factor for knock detection threshold calculation">
+    <table storageaddress="0x91E9" name="Knock Detection Threshold - Additive Factor">
 		<table type="X Axis" storageaddress="0x400C" />
     </table>
 	
@@ -3489,9 +3493,9 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	
     <table storageaddress="0xC2B" name="Minimum value for the correction factor of the voltage controller amplifier gain" />
 	
-    <table storageaddress="0x7CC" name="Maximum knock - noise level limitation" />
+    <table storageaddress="0x7CC" name="Knock Voltage - Maximum Noise Level" />
 	
-    <table storageaddress="0x7CE" name="Minimum knock - noise level limitation" />
+    <table storageaddress="0x7CE" name="Knock Voltage - Minimum Noise Level " />
 	
     <table storageaddress="0xCD7" name="Minimum engine coolant temperature for activation of RON knock adaptation" />
 	
@@ -3499,9 +3503,9 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	
     <table storageaddress="0xCE9" name="Engine coolant temperature threshold used with c_fac_ron_ad_cold" />
 	
-    <table storageaddress="0xB9C" name="Maximum allowed knock correction" />
+    <table storageaddress="0xB9C" name="Knock Retard - Maximum" />
 	
-    <table storageaddress="0xB9D" name="Maximum allowed knock correction during a low RON state" />
+    <table storageaddress="0xB9D" name="Knock Retard - Maximum - Low RON state" />
 	
     <table storageaddress="0xB9E" name="c_iga_knk_dif_max_min" />
 	
@@ -3513,7 +3517,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 		<table type="X Axis" storageaddress="0x4077" />
     </table>
 	
-    <table storageaddress="0x7756" name="ip_iga_tra_knk__n__maf">
+    <table storageaddress="0x7756" name="Ignition Retard during strong acceleration">
 		  <table type="X Axis" storageaddress="0x4569" />
 		  <table type="Y Axis" storageaddress="0x402C" />
     </table>
@@ -4041,9 +4045,9 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	
     <table storageaddress="0xBC6" name="Minimum value for the correction factor of the voltage controller amplifier gain" />
 	
-    <table storageaddress="0x78E" name="Maximum knock - noise level limitation" />
+    <table storageaddress="0x78E" name="Knock Voltage - Maximum Noise Level" />
 	
-    <table storageaddress="0x790" name="Minimum knock - noise level limitation" />
+    <table storageaddress="0x790" name="Knock Voltage - Minimum Noise Level " />
 	
     <table storageaddress="0xC68" name="Minimum engine coolant temperature for activation of RON knock adaptation" />
 	
@@ -4051,9 +4055,9 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	
     <table storageaddress="0xC78" name="Engine coolant temperature threshold used with c_fac_ron_ad_cold" />
 	
-    <table storageaddress="0xB37" name="Maximum allowed knock correction" />
+    <table storageaddress="0xB37" name="Knock Retard - Maximum" />
 	
-    <table storageaddress="0xB38" name="Maximum allowed knock correction during a low RON state" />
+    <table storageaddress="0xB38" name="Knock Retard - Maximum - Low RON state" />
 	
     <table storageaddress="0xB39" name="c_iga_knk_dif_max_min" />
 	  
@@ -4087,7 +4091,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 		<table type="Y Axis" storageaddress="0x400C"/>
 	</table>
 	
-    <table storageaddress="0x8ECB" name="Additive factor for knock detection threshold calculation">
+    <table storageaddress="0x8ECB" name="Knock Detection Threshold - Additive Factor">
 		<table type="X Axis" storageaddress="0x400C" />
     </table>
 	
@@ -4205,7 +4209,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 		<table type="X Axis" storageaddress="0x4077" />
     </table>
 	
-    <table storageaddress="0x75C6" name="ip_iga_tra_knk__n__maf">
+    <table storageaddress="0x75C6" name="Ignition Retard during strong acceleration">
       <table type="X Axis" storageaddress="0x453D" />
       <table type="Y Axis" storageaddress="0x402D" />
     </table>
