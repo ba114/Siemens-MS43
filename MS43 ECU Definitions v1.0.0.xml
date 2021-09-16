@@ -417,7 +417,7 @@ v0
 				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
-			<table type="Y Axis" name="Intake Air Temp" storagetype="uint8" endian="little" logparam="P11">
+			<table type="Y Axis" name="Intake Temp" storagetype="uint8" endian="little" logparam="P11">
 				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 		<description>This map is for Afterstart enrichment</description>
@@ -1096,7 +1096,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	
     <table type="2D" name="IAT Sensor Scaling" category="Sensors Scaling" storagetype="uint8" endian="little" sizey="16" userlevel="1">
 		<scaling units="°C" expression="(x*.75)-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-			<table type="Y Axis" name="Intake Air Temp" storagetype="uint8" endian="little">
+			<table type="Y Axis" name="Intake Temp" storagetype="uint8" endian="little">
 				<scaling units="Volts" expression="x*0.0195" to_byte="x/0.0195" format="0.00" fineincrement=".2" coarseincrement="1"/>
 			</table>
 		<description>This is the scaling for the Intake Air Temperature sensor.</description>
@@ -1592,7 +1592,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 			<description>c_nl_max: C_NL_MAX</description>
 		</table>
 		
-		<table type="2D" name="Knock Voltage - Minimum Noise Level " category="Knock" storagetype="uint16" endian="little" sizey="1" userlevel="1">
+		<table type="2D" name="Knock Voltage - Minimum Noise Level" category="Knock" storagetype="uint16" endian="little" sizey="1" userlevel="1">
 			<scaling units="V" expression="7.7821012e-005*x" to_byte="12850.0*x" format="0.00000" fineincrement="0.1" coarseincrement="1" />
 			<table type="Y Axis" name="Volts" sizey="1">
 				<data>0 to 5.1</data>
@@ -1811,7 +1811,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 				
 		<table type="2D" name="id_fac_knks_thd__tia" category="Knock" storagetype="uint8" endian="little" sizex="6" userlevel="1">
 			<scaling units="-" expression="0.0078125*x" to_byte="128.0*x" format="0.000" fineincrement="0.1" coarseincrement="1" />
-			<table type="X Axis" name="Intake Air Temp" storagetype="uint8" endian="little" logparam="P11">
+			<table type="X Axis" name="Intake Temp" storagetype="uint8" endian="little" logparam="P11">
 				<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="0.0" fineincrement="0.1" coarseincrement="1" />
 			</table>
 			<description>id_fac_knks_thd__tia: ID_FAC_KNKS_THD</description>
@@ -2098,7 +2098,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 			<table type="X Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
 				<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="0.00" fineincrement="0.1" coarseincrement="1" />
 			</table>
-			<table type="Y Axis" name="Intake Air Temp" storagetype="uint8" endian="little" logparam="P11">
+			<table type="Y Axis" name="Intake Temp" storagetype="uint8" endian="little" logparam="P11">
 				<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="0.00" fineincrement="0.1" coarseincrement="1" />
 			</table>
 			<description>ip_fac_knk_diag__tia__tco: IP_FAC_KNK_DIAG</description>
@@ -3026,7 +3026,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	<table name="(LTFT) Adaptation Multiplicative - Maximum Limit" storageaddress="0x952" />
 	#BA114
 	<table name="(LTFT) Multiplicative Fuel Learning - Minimum RPM" storageaddress="0x7C2" />
-	
+	#BA114
+	<table name="(LTFT) Multiplicative Fuel Learning - Minimum Load" storageaddress="0xBD8" />
 
 	<!--Ignition-->
     <table name="Ignition basic (VANOS Fault)" storageaddress="0x7766">
@@ -3495,7 +3496,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	
     <table storageaddress="0x7CC" name="Knock Voltage - Maximum Noise Level" />
 	
-    <table storageaddress="0x7CE" name="Knock Voltage - Minimum Noise Level " />
+    <table storageaddress="0x7CE" name="Knock Voltage - Minimum Noise Level" />
 	
     <table storageaddress="0xCD7" name="Minimum engine coolant temperature for activation of RON knock adaptation" />
 	
@@ -4047,7 +4048,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	
     <table storageaddress="0x78E" name="Knock Voltage - Maximum Noise Level" />
 	
-    <table storageaddress="0x790" name="Knock Voltage - Minimum Noise Level " />
+    <table storageaddress="0x790" name="Knock Voltage - Minimum Noise Level" />
 	
     <table storageaddress="0xC68" name="Minimum engine coolant temperature for activation of RON knock adaptation" />
 	
