@@ -258,6 +258,107 @@ v0
 			</table>
 		<description>This axis is used in the main fuel maps. Changes to this will require immediate reloading of the tuned file.</description>
     </table>
+
+<!--Calculated Fuel-->
+
+	<table type="2D" name="Injector Flow" category="Calculated Fuel" storagetype="uint16" endian="little" sizey="1" userlevel="5">
+		<scaling units="cm^3" expression="x" to_byte="x" format="0.00" fineincrement=".1" coarseincrement="1"/>
+			<table type="Y Axis" name="Injector Flow" storagetype="uint16" endian="little">
+				<scaling units="cm^3" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
+					<data> - </data>
+			</table>
+		<description>Injector flow rate in cm³/min at 3.5 bar</description>
+	</table>
+   
+	<table type="2D" name="Fuel Density" category="Calculated Fuel" storagetype="uint16" endian="little" sizey="1" userlevel="5">
+		<scaling units="kg/dm3" expression="x*0.000030517578125" to_byte="x/0.000030517578125" format="0.00" fineincrement=".1" coarseincrement="1"/>
+			<table type="Y Axis" name="Fuel Density" storagetype="uint16" endian="little">
+				<scaling units="kg/dm3" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
+					<data> - </data>
+			</table>
+		<description>Fuel density in kg/dm³
+
+			Common fuel densities:	
+			Gasoline 0,72 - 0,78
+			E85 0,77 - 0,79
+		</description>
+	</table>
+
+	<table type="2D" name="Air/Fuel Ratio - Stoich" category="Calculated Fuel" storagetype="uint8" endian="little" sizey="1" userlevel="5">
+		<scaling units="AFR" expression="x*0.1" to_byte="x/0.1" format="0.00" fineincrement=".01" coarseincrement="1"/>
+			<table type="Y Axis" name="AFR" storagetype="uint16" endian="little">
+				<scaling units="AFR" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
+					<data> - </data>
+			</table>
+		<description>Stoichiometric air fuel ratio</description>
+	</table>  
+   
+	<table type="3D" name="Fuel Scalar - Idle - Cold" category="Calculated Fuel" storagetype="uint16" endian="little" sizex="6" sizey="6" userlevel="5">
+		<scaling units="Fuel Scaling %" expression="(x*0.0030517578125)-100" to_byte="(x+100)/0.0030517578125" format="0.00" fineincrement=".1" coarseincrement="1"/>
+			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
+				<scaling name="Metric" units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
+			</table>
+			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
+				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
+			</table>
+		<description>Injection map for idle fuel - cold engine. Log STFT and increase or decrease the values in this table to match the trims.</description>
+    </table>
+	
+    <table type="3D" name="Fuel Scalar - Idle - Warm" category="Calculated Fuel" storagetype="uint16" endian="little" sizex="6" sizey="6" userlevel="5">
+		<scaling units="Fuel Scaling %" expression="(x*0.0030517578125)-100" to_byte="(x+100)/0.0030517578125" format="0.00" fineincrement=".1" coarseincrement="1"/>
+			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
+				<scaling name="Metric" units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
+			</table>
+			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
+				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
+			</table>
+		<description>Injection map for idle fuel - warm engine. Log STFT and increase or decrease the values in this table to match the trims. </description>
+    </table>
+   
+     <table type="3D" name="Fuel Scalar - Bank 1 Cold" category="Calculated Fuel" storagetype="uint16" endian="little" sizex="12" sizey="16" userlevel="5">
+		<scaling units="Fuel Scaling %" expression="(x*0.0030517578125)-100" to_byte="(x+100)/0.0030517578125" format="0.00" fineincrement=".1" coarseincrement="1"/>
+			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
+				<scaling name="Metric" units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
+			</table>
+			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
+				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
+			</table>
+		<description>Injection map for bank 1 on a cold engine, vanos active. Log STFT and increase or decrease the values in this table to match the trims.</description>
+    </table>
+      
+	<table type="3D" name="Fuel Scalar - Bank 2 Cold" category="Calculated Fuel" storagetype="uint16" endian="little" sizex="12" sizey="16" userlevel="5">
+		<scaling units="Fuel Scaling %" expression="(x*0.0030517578125)-100" to_byte="(x+100)/0.0030517578125" format="0.00" fineincrement=".1" coarseincrement="1"/>
+			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
+				<scaling name="Metric" units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
+			</table>
+			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
+				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
+			</table>
+		<description>Injection map for bank 2 on a cold engine, vanos active. Log STFT and increase or decrease the values in this table to match the trims.</description>
+    </table>
+	
+    <table type="3D" name="Fuel Scalar - Bank 1 Warm" category="Calculated Fuel" storagetype="uint16" endian="little" sizex="12" sizey="16" userlevel="5">
+		<scaling units="Fuel Scaling %" expression="(x*0.0030517578125)-100" to_byte="(x+100)/0.0030517578125" format="0.00" fineincrement=".1" coarseincrement="1"/>
+			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
+				<scaling name="Metric" units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
+			</table>
+			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
+				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
+			</table>
+		<description>Injection map for bank 1 on a warm engine, vanos active. Log STFT and increase or decrease the values in this table to match the trims.</description>
+    </table>
+	
+    <table type="3D" name="Fuel Scalar - Bank 2 Warm" category="Calculated Fuel" storagetype="uint16" endian="little" sizex="12" sizey="16" userlevel="5">
+		<scaling units="Fuel Scaling %" expression="(x*0.0030517578125)-100" to_byte="(x+100)/0.0030517578125" format="0.00" fineincrement=".1" coarseincrement="1"/>
+			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
+				<scaling name="Metric" units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
+			</table>
+			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
+				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
+			</table>
+		<description>Injection map for bank 2 on a warm engine, vanos active. Log STFT and increase or decrease the values in this table to match the trims.</description>
+    </table>  
+
 	
 <!--Fuel-->
 	
@@ -3197,6 +3298,44 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	  <table name="Brake Light Test Switch" storageaddress="0xE05"/>
 	  <table name="ISA Diagnostics (DTC 211)" storageaddress="0xBEC"/>
 	  <table name="O2 Sensor Configuration" storageaddress="0xB19"/>
+
+	  
+	<!--Calculated Fuel-->
+    <table name="Injector Flow" storageaddress="0xE14"/>
+	
+    <table name="Fuel Density" storageaddress="0xE12"/>
+	
+    <table name="Air/Fuel Ratio - Stoich" storageaddress="0xE11"/>
+	
+    <table name="Fuel Scalar - Idle - Cold" storageaddress="0xD654">
+		<table type="X Axis" storageaddress="0x57BA"/>
+		<table type="Y Axis" storageaddress="0x5070"/>
+    </table>
+	
+    <table name="Fuel Scalar - Idle - Warm" storageaddress="0xD99C">
+		<table type="X Axis" storageaddress="0x57BA"/>
+		<table type="Y Axis" storageaddress="0x5070"/>
+    </table>
+	
+	<table name="Fuel Scalar - Bank 1 Cold" storageaddress="0xD69C">
+		<table type="X Axis" storageaddress="0x57C8"/>
+		<table type="Y Axis" storageaddress="0x4B6E"/>
+    </table>
+      
+	<table name="Fuel Scalar - Bank 2 Cold" storageaddress="0xD81C">
+		<table type="X Axis" storageaddress="0x57C8"/>
+		<table type="Y Axis" storageaddress="0x4B6E"/>
+    </table>
+	
+    <table name="Fuel Scalar - Bank 1 Warm" storageaddress="0xD9E4">
+		<table type="X Axis" storageaddress="0x57C8"/>
+		<table type="Y Axis" storageaddress="0x4B6E"/>
+    </table>
+	
+    <table name="Fuel Scalar - Bank 2 Warm" storageaddress="0xDB64">
+		<table type="X Axis" storageaddress="0x57C8"/>
+		<table type="Y Axis" storageaddress="0x4B6E"/>
+    </table>
 	  
 	<!--Fuel-->
 	<table name="Fuel Injection - Base (VANOS Fault)" storageaddress="0xDCE4">
