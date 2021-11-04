@@ -989,7 +989,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
     <table type="3D" name="Exhaust Vanos Idle Speed Cold Engine" category="Vanos" storagetype="uint8" endian="little" sizex="6" sizey="6" userlevel="1">
-		<scaling units="°CRK" expression="(x*.375)+60" to_byte="(x-60)/.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
+		<scaling units="°CRK" expression="(x*-.375)-60" to_byte="(x+60)/-.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="MAF Load" storagetype="uint16" endian="little" logparam="E2">
 				<scaling units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -1000,7 +1000,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
     <table type="3D" name="Exhaust Vanos Idle Speed Warm Engine" category="Vanos" storagetype="uint8" endian="little" sizex="6" sizey="6" userlevel="1">
-		<scaling units="°CRK" expression="(x*.375)+60" to_byte="(x-60)/.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
+		<scaling units="°CRK" expression="(x*-.375)-60" to_byte="(x+60)/-.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="MAF Load" storagetype="uint16" endian="little" logparam="E2">
 				<scaling units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -1011,7 +1011,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
     <table type="3D" name="Exhaust Vanos Part Load Cold Engine" category="Vanos" storagetype="uint8" endian="little" sizex="12" sizey="16" userlevel="1">
-			<scaling units="°CRK" expression="(x*.375)+60" to_byte="(x-60)/.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
+			<scaling units="°CRK" expression="(x*-.375)-60" to_byte="(x+60)/-.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="MAF Load" storagetype="uint16" endian="little" logparam="E2">
 				<scaling units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -1022,7 +1022,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
     <table type="3D" name="Exhaust Vanos Part Load Warm Engine" category="Vanos" storagetype="uint8" endian="little" sizex="12" sizey="16" userlevel="1">
-		<scaling units="°CRK" expression="(x*.375)+60" to_byte="(x-60)/.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
+		<scaling units="°CRK" expression="(x*-.375)-60" to_byte="(x+60)/-.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="MAF Load" storagetype="uint16" endian="little" logparam="E2">
 				<scaling units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -1033,7 +1033,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
     <table type="2D" name="Exhaust Vanos Full Load Cold Engine" category="Vanos" storagetype="uint8" endian="little" sizex="16" userlevel="1">
-		<scaling units="°CRK" expression="(x*.375)+60" to_byte="(x-60)/.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
+		<scaling units="°CRK" expression="(x*-.375)-60" to_byte="(x+60)/-.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
 			</table>
@@ -1041,7 +1041,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
     <table type="2D" name="Exhaust Vanos Full Load Warm Engine" category="Vanos" storagetype="uint8" endian="little" sizex="16" userlevel="1">
-		<scaling units="°CRK" expression="(x*.375)+60" to_byte="(x-60)/.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
+		<scaling units="°CRK" expression="(x*-.375)-60" to_byte="(x+60)/-.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
 			</table>
@@ -5083,7 +5083,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
     <table type="3D" name="Exhaust Vanos Idle Speed Cold Engine" category="Vanos" storagetype="uint8" endian="little" sizex="6" sizey="6" userlevel="1">
-		<scaling units="°CRK" expression="(x*.375)+60" to_byte="(x-60)/.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
+		<scaling units="°CRK" expression="(x*-.375)-60" to_byte="(x+60)/-.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="MAF Load" storagetype="uint16" endian="little" logparam="E2">
 				<scaling units="mg/stroke" expression="x*.0212" to_byte="x/.0212" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -5094,7 +5094,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
     <table type="3D" name="Exhaust Vanos Idle Speed Warm Engine" category="Vanos" storagetype="uint8" endian="little" sizex="6" sizey="6" userlevel="1">
-		<scaling units="°CRK" expression="(x*.375)+60" to_byte="(x-60)/.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
+		<scaling units="°CRK" expression="(x*-.375)-60" to_byte="(x+60)/-.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="MAF Load" storagetype="uint16" endian="little" logparam="E2">
 				<scaling units="mg/stroke" expression="x*.0212" to_byte="x/.0212" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -5105,7 +5105,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
     <table type="3D" name="Exhaust Vanos Part Load Cold Engine" category="Vanos" storagetype="uint8" endian="little" sizex="12" sizey="16" userlevel="1">
-			<scaling units="°CRK" expression="(x*.375)+60" to_byte="(x-60)/.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
+			<scaling units="°CRK" expression="(x*-.375)-60" to_byte="(x+60)/-.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="MAF Load" storagetype="uint16" endian="little" logparam="E2">
 				<scaling units="mg/stroke" expression="x*.0212" to_byte="x/.0212" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -5116,7 +5116,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
     <table type="3D" name="Exhaust Vanos Part Load Warm Engine" category="Vanos" storagetype="uint8" endian="little" sizex="12" sizey="16" userlevel="1">
-		<scaling units="°CRK" expression="(x*.375)+60" to_byte="(x-60)/.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
+		<scaling units="°CRK" expression="(x*-.375)-60" to_byte="(x+60)/-.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="MAF Load" storagetype="uint16" endian="little" logparam="E2">
 				<scaling units="mg/stroke" expression="x*.0212" to_byte="x/.0212" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -5127,7 +5127,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
     <table type="2D" name="Exhaust Vanos Full Load Cold Engine" category="Vanos" storagetype="uint8" endian="little" sizex="16" userlevel="1">
-		<scaling units="°CRK" expression="(x*.375)+60" to_byte="(x-60)/.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
+		<scaling units="°CRK" expression="(x*-.375)-60" to_byte="(x+60)/-.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
 			</table>
@@ -5135,7 +5135,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
     <table type="2D" name="Exhaust Vanos Full Load Warm Engine" category="Vanos" storagetype="uint8" endian="little" sizex="16" userlevel="1">
-		<scaling units="°CRK" expression="(x*.375)+60" to_byte="(x-60)/.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
+		<scaling units="°CRK" expression="(x*-.375)-60" to_byte="(x+60)/-.375" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
 			</table>

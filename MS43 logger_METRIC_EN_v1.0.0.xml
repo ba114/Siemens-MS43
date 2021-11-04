@@ -103,7 +103,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <address>0x00000006</address>
                     </ecu>
                     <conversions>
-                        <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.0000" gauge_min="0" gauge_max="5" gauge_step="0.5" />
+                        <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
                     </conversions>
                 </ecuparam>
                 <ecuparam id="P11" name="Intake Air Temperature" desc="P11-(STATUS_AN_LUFTTEMPERATUR)" group="0x0B" subgroup="0x01" target="1">

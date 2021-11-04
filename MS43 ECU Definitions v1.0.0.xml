@@ -786,6 +786,35 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 			ip_iga_tra_knk__n__maf: IP_IGA_TRA_KNK</description>
 		</table>
 		
+	#BA114
+	<table type="2D" name="Ignition Dwell Time - Old Coils - Single Spark" category="Ignition" storagetype="uint16" endian="little"  userlevel="1" sizey="8">
+		<scaling units="ms" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.000" fineincrement="0.01" coarseincrement="1" />
+			<table type="Y Axis" name="Volts" storagetype="uint8" endian="little">
+				<scaling units="V" expression="x*0.10196078" to_byte="x/0.10196078" format="0.0" fineincrement="0.1" coarseincrement="1" />
+			</table>
+		<description>ip_td_300__vb. Dwell time single spark. Old style coils.</description>
+	</table>
+	
+	#BA114
+	<table type="2D" name="Ignition Dwell Time - Pencil Coils - Single Spark" category="Ignition" storagetype="uint16" endian="little"  userlevel="1" sizey="8">
+		<scaling units="ms" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.000" fineincrement="0.01" coarseincrement="1" />
+			<table type="Y Axis" name="Volts" storagetype="uint8" endian="little">
+				<scaling units="V" expression="x*0.10196078" to_byte="x/0.10196078" format="0.0" fineincrement="0.1" coarseincrement="1" />
+			</table>
+		<description>ip_td_pc__vb. Dwell time single spark. Old style coils.</description>
+	</table>
+		
+	<table type="3D" name="Ignition Current - Setpoint" category="Ignition" storagetype="uint8" endian="little" sizex="6" sizey="6" userlevel="1">
+		<scaling units="mA" expression="x*0.56392157" to_byte="x/0.56392157" format="0.0" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
+				<scaling units="mg/stk" expression="x*5.45" to_byte="x/5.45" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
+				<scaling units="RPM" expression="32.0*x" to_byte="0.03125*x" format="#" fineincrement="0.1" coarseincrement="1" />
+			</table>
+		<description>ip_cur_igc_sp__n__maf. Ignition current setpoint</description>
+	</table>
+
 
 <!--Vanos-->
    #BA114
@@ -2879,6 +2908,100 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 		<description>Minimum pedal input required per gear to open muffler flap. Below this PVS, the DME x60004 pin 18 grounds to activate/close the muffler flap. When PVS exceeds the defined values, the valve de-energises and the muffler flap opens</description>
     </table>
 	
+	
+<!--Misfire-->
+
+    <table type="2D" name="Misfire Detection - Minimum RPM" category="Misfire" storagetype="uint16" sizex="1" endian="little" userlevel="1">
+		<scaling name="RPM" units="" expression="x*1" to_byte="x/1" format="#" fineincrement="1" coarseincrement="10"/>
+			<table type="Static Y Axis" name="Engine Speed" sizex="1">
+				<data>RPM</data>
+			</table>
+		<description>Minimum RPM to enable misfire detection. Misfire detection is disabled below this RPM</description>
+    </table>
+	
+    <table type="2D" name="Misfire Detection - Maximum RPM" category="Misfire" storagetype="uint16" sizex="1" endian="little" userlevel="1">
+		<scaling name="RPM" units="" expression="x*1" to_byte="x/1" format="#" fineincrement="1" coarseincrement="10"/>
+			<table type="Static Y Axis" name="Engine Speed" sizex="1">
+				<data>RPM</data>
+			</table>
+		<description>Maximum RPM to enable misfire detection. Misfire detection is disabled above this RPM</description>
+    </table>
+	
+<!--Few Maps-->
+
+		<table type="3D" name="Coolant Temp Blending - Idle" category="Few Maps" storagetype="uint8" endian="little" sizex="8" sizey="8" userlevel="1">
+			<scaling units="-" expression="(x*0.03125)-4" to_byte="(x+4)/0.03125" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Coolant Temp at Start" storagetype="uint8" endian="little" logparam="P2">
+				<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
+				<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>ip_fac_is_ivvt__tco__tco_st. Engine coolant temperature blending factor for transition from tco_1_is to tco_2_is during idle. Used to blend injection and ignition tables.
+			Set all cells to 1 to only use the Cold idle injection and ignition tables</description>
+		</table>
+
+		<table type="3D" name="Coolant Temp Blending - Part Throttle" category="Few Maps" storagetype="uint8" endian="little" sizex="8" sizey="8" userlevel="1">
+			<scaling units="-" expression="(x*0.03125)-4" to_byte="(x+4)/0.03125" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Coolant Temp at Start" storagetype="uint8" endian="little" logparam="P2">
+				<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
+				<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>ip_fac_pl_ivvt__tco__tco_st. Engine coolant temperature blending factor for transition from tco_1 to tco_2 during part and full load. Used to blend injection and ignition tables.
+			Set all cells to 1 to only use the Cold part load injection and ignition tables</description>
+		</table>
+		
+		<table type="3D" name="Coolant Temp Blending - Intake Vanos - Idle" category="Few Maps" storagetype="uint8" endian="little" sizex="8" sizey="8" userlevel="1">
+			<scaling units="-" expression="(x*0.03125)-4" to_byte="(x+4)/0.03125" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Coolant Temp at Start" storagetype="uint8" endian="little" logparam="P2">
+				<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
+				<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>ip_fac_cam_sp_in_is__tco__tco_st. Engine coolant temperature blending factor for transition from cam_sp_tco1 to cam_sp_tco2 during idle. Intake camshaft.
+			Set all cells to 1 to only use the Cold intake vanos idle tables</description>
+		</table>
+		
+		<table type="3D" name="Coolant Temp Blending - Exhaust Vanos - Idle" category="Few Maps" storagetype="uint8" endian="little" sizex="8" sizey="8" userlevel="1">
+			<scaling units="-" expression="(x*0.03125)-4" to_byte="(x+4)/0.03125" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Coolant Temp at Start" storagetype="uint8" endian="little" logparam="P2">
+				<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
+				<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>ip_fac_cam_sp_in_ex__tco__tco_st. Engine coolant temperature blending factor for transition from cam_sp_tco1 to cam_sp_tco2 during idle. Exhaust camshaft.
+			Set all cells to 1 to only use the Cold exhaust vanos idle tables</description>
+		</table>
+		
+		<table type="3D" name="Coolant Temp Blending - Intake Vanos - Part Throttle" category="Few Maps" storagetype="uint8" endian="little" sizex="8" sizey="8" userlevel="1">
+			<scaling units="-" expression="(x*0.03125)-4" to_byte="(x+4)/0.03125" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Coolant Temp at Start" storagetype="uint8" endian="little" logparam="P2">
+				<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
+				<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>ip_fac_cam_sp_in_pl__tco__tco_st. Engine coolant temperature blending factor for transition from cam_sp_tco1 to cam_sp_tco2 during part and full load. Intake camshaft
+			Set all cells to 1 to only use the Cold intake vanos part throttle tables</description>
+		</table>
+			
+		<table type="3D" name="Coolant Temp Blending - Exhaust Vanos - Part Throttle" category="Few Maps" storagetype="uint8" endian="little" sizex="8" sizey="8" userlevel="1">
+			<scaling units="-" expression="(x*0.03125)-4" to_byte="(x+4)/0.03125" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			<table type="X Axis" name="Coolant Temp at Start" storagetype="uint8" endian="little" logparam="P2">
+				<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<table type="Y Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
+				<scaling units="C" expression="0.75*x-48.0" to_byte="1.3333333*x+64.0" format="0.00" fineincrement="0.1" coarseincrement="1" />
+			</table>
+			<description>ip_fac_cam_sp_ex_pl__tco__tco_st. Engine coolant temperature blending factor for transition from cam_sp_tco1 to cam_sp_tco2 during part and full load. Exhaust camshaft
+			Set all cells to 1 to only use the Cold exhaust vanos part throttle tables</description>
+		</table>
+
+	
    </rom>
    
    #BA114
@@ -3085,6 +3208,18 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 		<table type="Y Axis" storageaddress="0x442C"/>
     </table>
 	
+    <table name="Ignition Dwell Time - Old Coils - Single Spark" storageaddress="0xC8F4">
+		<table type="Y Axis" storageaddress="0x428E"/>
+    </table>
+	
+    <table name="Ignition Dwell Time - Pencil Coils - Single Spark" storageaddress="0xC924">
+		<table type="Y Axis" storageaddress="0x428E"/>
+    </table>
+
+    <table name="Ignition Current - Setpoint" storageaddress="0x6503">
+		<table type="X Axis" storageaddress="0x42CF"/>
+		<table type="Y Axis" storageaddress="0x42C8"/>
+    </table>
 	
 	
 	<!--Vanos-->
@@ -3710,6 +3845,44 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	  
     <table name="Main Fuel Load Axis" storageaddress="0x57C8"/>
     <table name="Main Fuel RPM Axis" storageaddress="0x4B6E"/>
+	
+	
+	<!--Misfire-->
+	<table name="Misfire Detection - Minimum RPM" storageaddress="0x7B4"/>
+    <table name="Misfire Detection - Maximum RPM" storageaddress="0x7AA"/>
+	
+	<!--Few Maps-->
+	
+	<table name="Coolant Temp Blending - Idle" storageaddress="0x6866">
+		<table type="X Axis" storageaddress="0x4347"/>
+		<table type="Y Axis" storageaddress="0x433E"/>
+	</table>
+	
+	<table name="Coolant Temp Blending - Part Throttle" storageaddress="0x6A98">
+		<table type="X Axis" storageaddress="0x4347"/>
+		<table type="Y Axis" storageaddress="0x433E"/>
+	</table>
+	
+	<table name="Coolant Temp Blending - Intake Vanos - Idle" storageaddress="0x66F3">
+		<table type="X Axis" storageaddress="0x4347"/>
+		<table type="Y Axis" storageaddress="0x433E"/>
+	</table>
+
+	<table name="Coolant Temp Blending - Exhaust Vanos - Idle" storageaddress="0x6673">
+		<table type="X Axis" storageaddress="0x4347"/>
+		<table type="Y Axis" storageaddress="0x433E"/>
+	</table>
+
+	<table name="Coolant Temp Blending - Intake Vanos - Part Throttle" storageaddress="0x6733">
+		<table type="X Axis" storageaddress="0x4347"/>
+		<table type="Y Axis" storageaddress="0x433E"/>
+	</table>
+
+	<table name="Coolant Temp Blending - Exhaust Vanos - Part Throttle" storageaddress="0x66B3">
+		<table type="X Axis" storageaddress="0x4347"/>
+		<table type="Y Axis" storageaddress="0x433E"/>
+	</table>	
+	
 	
    </rom>
    
