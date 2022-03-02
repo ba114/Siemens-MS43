@@ -117,13 +117,7 @@ v0
 		<state name="Disable" data="00"/>	
 		<description>Brake Light Test Switch - Disable to enable brake boosting without throwing a DTC</description>
 	</table>
-	
-    <table type="Switch" name="ISA Diagnostics (DTC 211)" category="Configurations" sizey="1" userlevel="1">
-		<state name="Enable" data="32"/>
-		<state name="Disable" data="FF"/>	
-		<description>This switch will disable the test for DTC 211 from running. Useful when boosted and having rescaled Load variables</description>
-	</table>
-	
+		
 	<!--Fuel/Ignition - Axis-->
     <table type="2D" name="Basic Ignition Load Axis" category="Fuel/Ignition Timing - Axis" storagetype="uint16" sizex="12" endian="little" userlevel="1">
 		<scaling units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0.00" fineincrement=".01" coarseincrement=".1"/>
@@ -1536,6 +1530,49 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 		<description>This is the scaling for the MAF sensor when the switch for "MAF Mode = 2048 kg/hr" is enabled for the ROM by editing the 256KB version of the binary.  It is laid out in a 16x16 format, so it is easier to select all cells at once. Generally, MAF Scaling should apply to the entire table in percentages. The stock curve fits a 3rd order polynomial which is the correct shape for a MAF. So it is best to retain that shape by only multiplying all cells by the same values and make any other changes to your main Fuel Map.
   !!! IF STOCK 1024 KG/HR MAF MODE VALUES WILL READ TWICE AS HIGH AS ACTUAL !!!
 		</description>
+	</table>
+
+	<table type="3D" name="MAF Sensor Scaling 16x16 (4096)" category="Sensors Scaling" storagetype="uint16" endian="little" sizex="16" sizey="16" userlevel="1" >
+		<scaling units="kg/hr" expression="x*.015625*4" to_byte="x/.015625/4"  format="0.00" fineincrement=".01" coarseincrement=".1" />
+			<table type="Static X Axis" name="0 to 5 Volts - " sizey="16">
+				<data>0.00</data>
+				<data>0.02</data>
+				<data>0.04</data>
+				<data>0.06</data>
+				<data>0.08</data>
+				<data>0.10</data>
+				<data>0.12</data>
+				<data>0.14</data>
+				<data>0.16</data>
+				<data>0.18</data>
+				<data>0.20</data>
+				<data>0.22</data>
+				<data>0.24</data>
+				<data>0.26</data>
+				<data>0.28</data>
+				<data>0.30</data>
+			</table>
+			<table type="Static Y Axis" name="0 to 5 Volts" sizey="16">
+				<data>0.00</data>
+				<data>0.32</data>
+				<data>0.64</data>
+				<data>0.96</data>
+				<data>1.26</data>
+				<data>1.58</data>
+				<data>1.90</data>
+				<data>2.20</data>
+				<data>2.52</data>
+				<data>2.82</data>
+				<data>3.14</data>
+				<data>3.46</data>
+				<data>3.78</data>
+				<data>4.08</data>
+				<data>4.40</data>
+				<data>4.70</data>
+			</table>
+		<description>This is the scaling for the MAF sensor when the switch for MAF Mode = 4096 kg/hr is enabled for the ROM by editing the 256KB version of the binary.  It is laid out in a 16x16 format, so it is easier to select all cells at once. Generally, MAF Scaling should apply to the entire table in percentages. The stock curve fits a 3rd order polynomial which is the correct shape for a MAF. So it is best to retain that shape by only multiplying all cells by the same values and make any other changes to your main Fuel Map.
+  !!! IF STOCK 1024 KG/HR MAF MODE VALUES WILL READ FOUR TIMES AS HIGH AS ACTUAL !!!
+		</description>
 	</table>	
   
     <table type="Switch" name="MAF Mode - 2048 kg/hr (v56)" category="Sensors Scaling" sizey="38">
@@ -1555,6 +1592,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 3 Flash to ECU
 (This table only appears in the 256KB version because it makes changes to the program code)</description>
     </table>
+	
+	
 	<table type="2D" name="Maximum Load Value" category="Sensors Scaling" storagetype="uint8" endian="little" userlevel="1" sizey="1">
       	<scaling units="mg/stroke" expression="x*10.8941176" to_byte="x/10.8941176" format="0" fineincrement="1" coarseincrement="10"/>
 			<table type="Static Y Axis" name="Max Load Value" sizey="1">
@@ -3671,7 +3710,9 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 		<table type="Y Axis" storageaddress="0x4995"/>
     </table>
 	
-	<table name="MAF sensor scaling" storageaddress="0xEC6"/>
+	<table name="MAF Sensor Scaling 16x16" storageaddress="0xEC6"/>
+	
+	<table name="MAF Sensor Scaling 16x16 (4096)" storageaddress="0xEC6"/>
 	
     <table name="MAF Sensor Scaling 1024kg/hr" storageaddress="0xEC6"/>
 	
@@ -4247,10 +4288,10 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	
    </rom>
    
-   <rom> <!--Stock MS43 BASE load-->
-      <!--
-v0
-	- draft of MS43
+   <rom> 
+   
+   <!--Stock MS43 BASE load-->
+      <!--v0- draft of MS43
 
 	In this BASE section define all the common table data and axis attributes.
     Leave out the ROM specific addresses.
@@ -7726,7 +7767,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 		<table type="Y Axis" storageaddress="0x4995"/>
     </table>
 	
-	<table name="MAF sensor scaling" storageaddress="0xEC6"/>
+	<table name="MAF Sensor Scaling 16x16" storageaddress="0xEC6"/>
 	
     <table name="MAF Sensor Scaling 1024kg/hr" storageaddress="0xEC6"/>
 	
