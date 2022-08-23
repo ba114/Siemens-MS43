@@ -1,6 +1,8 @@
-RomRaider logger and ECU definitions for ms43 - Note you must have atleast Romraider 0.7.2!!
+RomRaider logger and ECU definitions for ms43 - Note you must have atleast Romraider 0.9.4!!
 
 The ECU definitions have been created based on the excellent work by the ms4x dev team (ms4x.net) who created definitions for TunerPro. I have started porting these across to RomRaider.
+
+Also now includes support for those running the ms4x extended load binary.
 
 I will only be updating definitions for v430069 which is the latest version, and only for partial reads.
 Should anyone else like to contribute
