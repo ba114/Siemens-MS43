@@ -75,7 +75,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <address>0x0000E348</address>
                     </ecu>
                     <conversions>
-                        <conversion units="°TPS" storagetype="uint16" expr="0.0018310547*x" format="0.0" gauge_min="0" gauge_max="120" gauge_step="10" />
+                        <conversion units="°PVS" storagetype="uint16" expr="0.001831055*x" format="0.0" gauge_min="0" gauge_max="120" gauge_step="10" />
                     </conversions>
                 </ecuparam>
                 <ecuparam id="P13" name="Throttle Position" desc="P13" group="0x0B" subgroup="0x01" target="1">
@@ -201,7 +201,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="ms" storagetype="uint16" expr="0.0053333333*x" format="0.000" gauge_min="0" gauge_max="40" gauge_step="1" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E11" name="VANOS Intake" desc="E11-(STATUS_NW_POSITION) Variable Valve angle" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E12" name="VANOS Intake" desc="E12-(STATUS_NW_POSITION) Variable Valve angle" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x00040212</address>
                     </ecu>
@@ -212,7 +212,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="° CRK" expr="x*0.3745+60" format="0.00" gauge_min="60" gauge_max="130" gauge_step="10" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E13" name="VANOS Exhaust" desc="E11-(STATUS_NW_POSITION) Variable Valve angle" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E13" name="VANOS Exhaust" desc="E13-(STATUS_NW_POSITION) Variable Valve angle" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x00040AE0</address>
                     </ecu>
@@ -231,7 +231,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="VDC" storagetype="uint16" expr="x*0.025" format="0.0" gauge_min="0" gauge_max="25" gauge_step="2" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E13" name="Lambda Integrator - Bank 1" desc="E13-(TI_LAM_1)" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E13" name="STFT - Bank 1" desc="E13-(TI_LAM_1)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x00040C72</address>
                     </ecu>
@@ -242,7 +242,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="%" storagetype="uint16" expr="(0.0015258789*x)-50" format="0.00" gauge_min="-50" gauge_max="50" gauge_step="12" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E14" name="Lambda Integrator - Bank 2" desc="E14-(TI_LAM_2)" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E14" name="STFT - Bank 2" desc="E14-(TI_LAM_2)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x00040DE0</address>
                     </ecu>
@@ -261,7 +261,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <address>0x0000E32E</address>
                     </ecu>
                     <conversions>
-                        <conversion units="mg/stroke" storagetype="uint16" expr="x*0.0212*2" format="0.000" gauge_min="0" gauge_max="1389" gauge_step="100" />
+                        <conversion units="mg/stroke" storagetype="uint16" expr="x*0.04239" format="0.000" gauge_min="0" gauge_max="1389" gauge_step="100" />
                     </conversions>
                 </ecuparam>
                 <ecuparam id="E233" name="Filtered Load" desc="E233-OV_MAF_TI" group="0x0B" subgroup="0x01" target="1">
@@ -272,7 +272,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <address>0x0000E338</address>
                     </ecu>
                     <conversions>
-                        <conversion units="mg/stroke" storagetype="uint16" expr="x*0.0212*2" format="0.000" gauge_min="0" gauge_max="1389" gauge_step="100" />
+                        <conversion units="mg/stroke" storagetype="uint16" expr="x*0.04239" format="0.000" gauge_min="0" gauge_max="1389" gauge_step="100" />
                     </conversions>
                 </ecuparam>
                 <ecuparam id="E234" name="Calculated MAP" desc="E234-OV_MAP" group="0x0B" subgroup="0x01" target="1">
@@ -322,7 +322,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E21" name="Lambda Multiplicative Adaptation - Bank 1" desc="E21-(TI_AD_FAC_1 or LTFT 1)" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E21" name="LTFT - Bank 1" desc="E21-(TI_AD_FAC_1 or LTFT 1)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x00040C82</address>
                     </ecu>
@@ -333,7 +333,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="%" storagetype="uint16" expr="(x-32768)*100/65536" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E22" name="Lambda Multiplicative Adaptation - Bank 2" desc="E22-(TI_AD_FAC_2 or LTFT 2)" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E22" name="LTFT - Bank 2" desc="E22-(TI_AD_FAC_2 or LTFT 2)" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x00040DF0</address>
                     </ecu>
@@ -344,26 +344,25 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                         <conversion units="%" storagetype="uint16" expr="(x-32768)*100/65536" format="0.00" gauge_min="-32" gauge_max="32" gauge_step="12" />
                     </conversions>
                 </ecuparam>
-                <ecuparam id="E129" name="Rear O2 - Bank 1 Volts" desc="E129-STATUS_VLS_DOWN_1_BAS" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E129" name="Oil Pressure" desc="E129-STATUS_VLS_DOWN_1_BAS" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address>0x00000019</address>
                     </ecu>
                     <conversions>
                         <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
-						<conversion units="AFR" storagetype="uint16" expr="((x*0.00472)*3.008)+7.35" format="0.00" gauge_min="0" gauge_max="22.5" gauge_step="0.1" />
+						<conversion units="Psi" storagetype="uint16" expr="((x*0.00488)*37.500)-18.75" format="0.00" gauge_min="0" gauge_max="22.5" gauge_step="0.1" />
 					</conversions>
                 </ecuparam>
-                <ecuparam id="E130" name="Rear O2 - Bank 2 Volts" desc="E130-STATUS_VLS_DOWN_2_BAS" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E130" name="LPFP" desc="E130-STATUS_VLS_DOWN_2_BAS" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7511570,7519308,7545150,7551615">
                         <address>0x0000001A</address>
                     </ecu>
                     <conversions>
                         <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
-						<conversion units="AEM AFR" storagetype="uint16" expr="((x*0.00488)*2)+10" format="0.00" gauge_min="10" gauge_max="20" gauge_step="0.1" />
-						<conversion units="AEM Failsafe AFR" storagetype="uint16" expr="(x*0.01159668)+7.35" format="0.00" gauge_min="0" gauge_max="22.5" gauge_step="0.1" />
+						<conversion units="Psi" storagetype="uint16" expr="((x*0.00488)*37.500)-18.75" format="0.00" gauge_min="0" gauge_max="22.5" gauge_step="0.1" />
 					</conversions>
                 </ecuparam>
-                <ecuparam id="E131" name="DTML Volts" desc="E131-ov_v_dtml_input" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E131" name="AFR" desc="E131-ov_v_dtml_input" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0000E556</address>
                     </ecu>
@@ -373,17 +372,15 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
                     <conversions>
                         <conversion units="VDC" storagetype="uint16" expr="x*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
 						<conversion units="AEM Failsafe AFR" storagetype="uint16" expr="(x*0.01159668)+7.35" format="0.00" gauge_min="0" gauge_max="22.5" gauge_step="0.1" />
-						<conversion units="Boost" storagetype="uint16" expr="(x*0.0583217)-12.03" format="0.00" gauge_min="0" gauge_max="22.5" gauge_step="0.1" />
 					</conversions>
                 </ecuparam>	
-                <ecuparam id="E133" name="SAF Volts" desc="E133-ov_v_SAF" group="0x0B" subgroup="0x01" target="1">
+                <ecuparam id="E133" name="Boost" desc="E133-ov_v_SAF" group="0x0B" subgroup="0x01" target="1">
                     <ecu id="7551615">
                         <address>0x0000E530</address>
                     </ecu>
                     <conversions>
                         <conversion units="VDC" storagetype="uint16" expr="BitWise(1023, x, 1)*0.00488" format="0.00" gauge_min="0" gauge_max="5" gauge_step="0.5" />
-						<conversion units="AEM Failsafe AFR" storagetype="uint16" expr="(BitWise(1023, x, 1)*0.01159668)+7.35" format="0.00" gauge_min="0" gauge_max="22.5" gauge_step="0.1" />
-						<conversion units="Boost" storagetype="uint16" expr="(BitWise(1023, x, 1)*0.0583217)-12.03" format="0.00" gauge_min="0" gauge_max="22.5" gauge_step="0.1" />
+						<conversion units="Psi" storagetype="uint16" expr="(BitWise(1023, x, 1)*0.0583217)-12.03" format="0.00" gauge_min="0" gauge_max="22.5" gauge_step="0.1" />
 					</conversions>
                 </ecuparam>	
                 <ecuparam id="E132" name="Fuel Cap Volts" desc="E132-ov_v_fuc_input" group="0x0B" subgroup="0x01" target="1">

@@ -2817,7 +2817,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
     <table type="2D" name="Rear Diff Ratio" category="Gearing" storagetype="uint16" sizex="1" endian="little" userlevel="1">
-		<scaling name="Ratio" units="" expression="x*0.003906" to_byte="x/0.003906" format="0.00" fineincrement=".01" coarseincrement="1"/>
+		<scaling units="Ratio" expression="x*0.003906" to_byte="x/0.003906" format="0.00" fineincrement=".01" coarseincrement="1"/>
 			<table type="Static Y Axis" name="Columns" sizex="1">
 				<data> 1</data>
 			</table>
@@ -2825,7 +2825,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
 	<table type="3D" name="Gear Identification" category="Gearing" storagetype="uint8" sizex="1" sizey="6" endian="little" userlevel="1">
-		<scaling name="" units="" expression="x*1" to_byte="x/1" format="#" fineincrement="1" coarseincrement="1"/>
+		<scaling units="" expression="x*1" to_byte="x/1" format="#" fineincrement="1" coarseincrement="1"/>
 			<table type="Y Axis" name="Y" storagetype="uint16" endian="little">
 				<scaling units="rpm/(km/h)" expression="x*1" to_byte="x/1" format="#" fineincrement="1" coarseincrement="1"/>
 			</table>
@@ -2847,7 +2847,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
    
 	#BA114
     <table type="3D" name="Valve Overlap based MAF signal filtering - 1" category="Airflow Modelling" storagetype="uint16" endian="little" sizex="12" sizey="8" userlevel="1">
-		<scaling name="mg/stk" units="mg/stk" expression="x*0.04239" to_byte="x/0.04239" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="mg/stk" expression="x*0.04239" to_byte="x/0.04239" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="Y Axis" name="MAP" storagetype="uint16" endian="little">
 				<scaling units="mBar" expression="x*0.082921489" to_byte="x/0.082921489" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -2859,7 +2859,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 
 	#BA114
     <table type="3D" name="Valve Overlap based MAF signal filtering - 2" category="Airflow Modelling" storagetype="uint16" endian="little" sizex="12" sizey="8" userlevel="1">
-		<scaling name="mg/stk" units="mg/stk" expression="x*0.04239" to_byte="x/0.04239" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="mg/stk" expression="x*0.04239" to_byte="x/0.04239" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="Y Axis" name="MAP" storagetype="uint16" endian="little">
 				<scaling units="mBar" expression="x*0.082921489" to_byte="x/0.082921489" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -2871,7 +2871,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 
 	#BA114
      <table type="3D" name="Valve Overlap based MAF signal filtering - 3" category="Airflow Modelling" storagetype="uint16" endian="little" sizex="12" sizey="8" userlevel="1">
-		<scaling name="mg/stk" units="mg/stk" expression="x*0.04239" to_byte="x/0.04239" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="mg/stk" expression="x*0.04239" to_byte="x/0.04239" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="Y Axis" name="MAP" storagetype="uint16" endian="little">
 				<scaling units="mBar" expression="x*0.082921489" to_byte="x/0.082921489" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -2883,7 +2883,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 
 	#BA114
     <table type="3D" name="Valve Overlap based MAF signal filtering - 4" category="Airflow Modelling" storagetype="uint16" endian="little" sizex="12" sizey="8" userlevel="1">
-		<scaling name="mg/stk" units="mg/stk" expression="x*0.04239" to_byte="x/0.04239" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="mg/stk" expression="x*0.04239" to_byte="x/0.04239" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="Y Axis" name="MAP" storagetype="uint16" endian="little">
 				<scaling units="mBar" expression="x*0.082921489" to_byte="x/0.082921489" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -2895,7 +2895,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 
 	#BA114
     <table type="3D" name="Valve Overlap based MAF signal filtering - 5" category="Airflow Modelling" storagetype="uint16" endian="little" sizex="12" sizey="8" userlevel="1">
-		<scaling name="mg/stk" units="mg/stk" expression="x*0.04239" to_byte="x/0.04239" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="mg/stk" expression="x*0.04239" to_byte="x/0.04239" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="Y Axis" name="MAP" storagetype="uint16" endian="little">
 				<scaling units="mBar" expression="x*0.082921489" to_byte="x/0.082921489" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -2907,7 +2907,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 
 	#BA114
     <table type="3D" name="Valve Overlap based MAF signal filtering - 6" category="Airflow Modelling" storagetype="uint16" endian="little" sizex="12" sizey="8" userlevel="1">
-		<scaling name="mg/stk" units="mg/stk" expression="x*0.04239" to_byte="x/0.04239" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="mg/stk" expression="x*0.04239" to_byte="x/0.04239" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="Y Axis" name="MAP" storagetype="uint16" endian="little">
 				<scaling units="mBar" expression="x*0.082921489" to_byte="x/0.082921489" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -2919,7 +2919,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 
 	#BA114	
     <table type="3D" name="Valve Overlap based MAF signal filtering - 7" category="Airflow Modelling" storagetype="uint16" endian="little" sizex="12" sizey="8" userlevel="1">
-		<scaling name="mg/stk" units="mg/stk" expression="x*0.04239" to_byte="x/0.04239" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="mg/stk" expression="x*0.04239" to_byte="x/0.04239" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="Y Axis" name="MAP" storagetype="uint16" endian="little">
 				<scaling units="mBar" expression="x*0.082921489" to_byte="x/0.082921489" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -2931,7 +2931,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 
 	#BA114	
     <table type="3D" name="Valve Overlap based MAF signal filtering - 8" category="Airflow Modelling" storagetype="uint16" endian="little" sizex="12" sizey="8" userlevel="1">
-		<scaling name="mg/stk" units="mg/stk" expression="x*0.04239" to_byte="x/0.04239" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="mg/stk" expression="x*0.04239" to_byte="x/0.04239" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="Y Axis" name="MAP" storagetype="uint16" endian="little">
 				<scaling units="mBar" expression="x*0.082921489" to_byte="x/0.082921489" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -2943,7 +2943,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
    
 	#BA114
     <table type="3D" name="Intake Manfold Volume at Increasing Load - Above Idle" category="Airflow Modelling" storagetype="uint16" endian="little" sizex="6" sizey="8" userlevel="1">
-		<scaling name="Volume" units="dm^3" expression="x*0.0093476789+0.9906523" to_byte="(x-0.9906523)/0.0093476789" format="0.000" fineincrement="2" coarseincrement="10"/>
+		<scaling units="dm^3" expression="x*0.0093476789+0.9906523" to_byte="(x-0.9906523)/0.0093476789" format="0.000" fineincrement="2" coarseincrement="10"/>
 			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
 				<scaling units="mg/stroke" expression="x*10.8941176" to_byte="x/10.8941176" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -2955,7 +2955,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	
 	#BA114
     <table type="3D" name="Intake Manfold Volume at Decreasing Load - Above Idle" category="Airflow Modelling" storagetype="uint16" endian="little" sizex="6" sizey="8" userlevel="1">
-		<scaling name="Volume" units="dm^3" expression="x*0.0093476789+0.9906523" to_byte="(x-0.9906523)/0.0093476789" format="0.000" fineincrement="2" coarseincrement="10"/>
+		<scaling units="dm^3" expression="x*0.0093476789+0.9906523" to_byte="(x-0.9906523)/0.0093476789" format="0.000" fineincrement="2" coarseincrement="10"/>
 			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
 				<scaling units="mg/stroke" expression="x*10.8941176" to_byte="x/10.8941176" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -2996,7 +2996,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 <!--AlphaN-->   
   	#BA114
     <table type="3D" name="Calculated Load" category="AlphaN" storagetype="uint16" endian="little" sizex="16" sizey="16" userlevel="1">
-		<scaling name="mg/stk" units="mg/stk" expression="x*0.04239" to_byte="x/0.04239" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="mg/stk" expression="x*0.04239" to_byte="x/0.04239" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="X Axis" name="TPS" storagetype="uint16" endian="little">
 				<scaling units="%" expression="x*0.0018310547" to_byte="x/0.0018310547" format="0.0" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -3066,7 +3066,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
    
 	#BA114
 	<table type="3D" name="Pedal input to open Muffler Flap - M/T" category="Muffler Flap" storagetype="uint8" endian="little" sizex="5" sizey="5" userlevel="1">
-		<scaling name="PVS" units="%" expression="x*0.46875" to_byte="x/0.46875" format="0.0" fineincrement="1" coarseincrement="10"/>
+		<scaling units="%" expression="x*0.46875" to_byte="x/0.46875" format="0.0" fineincrement="1" coarseincrement="10"/>
 			<table type="Static Y Axis" name="Gear" sizex="5">
 				<data>1</data>
 				<data>2</data>
@@ -3084,7 +3084,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 <!--Misfire-->
 
     <table type="2D" name="Misfire Detection - Minimum RPM" category="Misfire" storagetype="uint16" sizex="1" endian="little" userlevel="1">
-		<scaling name="RPM" units="" expression="x*1" to_byte="x/1" format="#" fineincrement="1" coarseincrement="10"/>
+		<scaling units="RPM" expression="x*1" to_byte="x/1" format="#" fineincrement="1" coarseincrement="10"/>
 			<table type="Static Y Axis" name="Engine Speed" sizex="1">
 				<data>RPM</data>
 			</table>
@@ -3092,7 +3092,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
     <table type="2D" name="Misfire Detection - Maximum RPM" category="Misfire" storagetype="uint16" sizex="1" endian="little" userlevel="1">
-		<scaling name="RPM" units="" expression="x*1" to_byte="x/1" format="#" fineincrement="1" coarseincrement="10"/>
+		<scaling units="RPM" expression="x*1" to_byte="x/1" format="#" fineincrement="1" coarseincrement="10"/>
 			<table type="Static Y Axis" name="Engine Speed" sizex="1">
 				<data>RPM</data>
 			</table>
@@ -3176,7 +3176,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 		
 	<!--ISA Delete-->
 		<table type="2D" name="c_t_min_ris" category="ISA Delete" storagetype="uint16" sizex="1" endian="little" userlevel="1">
-			<scaling name="Ratio" units="" expression="x*0.0099999996+0.00000000037247841" to_byte="(x-0.00000000037247841)/0.0099999996" format="0.00" fineincrement=".01" coarseincrement="1"/>
+			<scaling units="Ratio" expression="x*0.0099999996+0.00000000037247841" to_byte="(x-0.00000000037247841)/0.0099999996" format="0.00" fineincrement=".01" coarseincrement="1"/>
 				<table type="Static Y Axis" name="Time" sizex="1">
 					<data>Seconds</data>
 				</table>
@@ -3201,7 +3201,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 		</table>	
 
 		<table type="2D" name="ip_fac_pq_isa__isapwm" category="ISA Delete" storagetype="uint8" sizey="4" endian="little" userlevel="1">
-			<scaling name="-" units="-" expression="x*0.0078125" to_byte="x/0.0078125" format="0.00" fineincrement=".01" coarseincrement="1"/>
+			<scaling units="-" expression="x*0.0078125" to_byte="x/0.0078125" format="0.00" fineincrement=".01" coarseincrement="1"/>
 				<table type="Y Axis" name="ISA PWM" storagetype="uint16" endian="little">
 					<scaling units="%" expression="x*0.0015258789" to_byte="x/0.0015258789" format="0.00" fineincrement="0.1" coarseincrement="1" />
 				</table>
@@ -6915,7 +6915,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
     <table type="2D" name="Rear Diff Ratio" category="Gearing" storagetype="uint16" sizex="1" endian="little" userlevel="1">
-		<scaling name="Ratio" units="" expression="x*0.003906" to_byte="x/0.003906" format="0.00" fineincrement=".01" coarseincrement="1"/>
+		<scaling units="Ratio" expression="x*0.003906" to_byte="x/0.003906" format="0.00" fineincrement=".01" coarseincrement="1"/>
 			<table type="Static Y Axis" name="Columns" sizex="1">
 				<data> 1</data>
 			</table>
@@ -6923,7 +6923,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
 	<table type="3D" name="Gear Identification" category="Gearing" storagetype="uint8" sizex="1" sizey="6" endian="little" userlevel="1">
-		<scaling name="" units="" expression="x*1" to_byte="x/1" format="#" fineincrement="1" coarseincrement="1"/>
+		<scaling units="" expression="x*1" to_byte="x/1" format="#" fineincrement="1" coarseincrement="1"/>
 			<table type="Y Axis" name="Y" storagetype="uint16" endian="little">
 				<scaling units="rpm/(km/h)" expression="x*1" to_byte="x/1" format="#" fineincrement="1" coarseincrement="1"/>
 			</table>
@@ -6945,7 +6945,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
    
 	#BA114
     <table type="3D" name="Valve Overlap based MAF signal filtering - 1" category="Airflow Modelling" storagetype="uint16" endian="little" sizex="12" sizey="8" userlevel="1">
-		<scaling name="mg/stk" units="mg/stk" expression="x*0.021194781" to_byte="x/0.021194781" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="mg/stk" expression="x*0.021194781" to_byte="x/0.021194781" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="Y Axis" name="MAP" storagetype="uint16" endian="little">
 				<scaling units="mBar" expression="x*0.082921489" to_byte="x/0.082921489" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -6957,7 +6957,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 
 	#BA114
     <table type="3D" name="Valve Overlap based MAF signal filtering - 2" category="Airflow Modelling" storagetype="uint16" endian="little" sizex="12" sizey="8" userlevel="1">
-		<scaling name="mg/stk" units="mg/stk" expression="x*0.021194781" to_byte="x/0.021194781" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="mg/stk" expression="x*0.021194781" to_byte="x/0.021194781" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="Y Axis" name="MAP" storagetype="uint16" endian="little">
 				<scaling units="mBar" expression="x*0.082921489" to_byte="x/0.082921489" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -6969,7 +6969,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 
 	#BA114
      <table type="3D" name="Valve Overlap based MAF signal filtering - 3" category="Airflow Modelling" storagetype="uint16" endian="little" sizex="12" sizey="8" userlevel="1">
-		<scaling name="mg/stk" units="mg/stk" expression="x*0.021194781" to_byte="x/0.021194781" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="mg/stk" expression="x*0.021194781" to_byte="x/0.021194781" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="Y Axis" name="MAP" storagetype="uint16" endian="little">
 				<scaling units="mBar" expression="x*0.082921489" to_byte="x/0.082921489" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -6981,7 +6981,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 
 	#BA114
     <table type="3D" name="Valve Overlap based MAF signal filtering - 4" category="Airflow Modelling" storagetype="uint16" endian="little" sizex="12" sizey="8" userlevel="1">
-		<scaling name="mg/stk" units="mg/stk" expression="x*0.021194781" to_byte="x/0.021194781" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="mg/stk" expression="x*0.021194781" to_byte="x/0.021194781" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="Y Axis" name="MAP" storagetype="uint16" endian="little">
 				<scaling units="mBar" expression="x*0.082921489" to_byte="x/0.082921489" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -6993,7 +6993,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 
 	#BA114
     <table type="3D" name="Valve Overlap based MAF signal filtering - 5" category="Airflow Modelling" storagetype="uint16" endian="little" sizex="12" sizey="8" userlevel="1">
-		<scaling name="mg/stk" units="mg/stk" expression="x*0.021194781" to_byte="x/0.021194781" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="mg/stk" expression="x*0.021194781" to_byte="x/0.021194781" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="Y Axis" name="MAP" storagetype="uint16" endian="little">
 				<scaling units="mBar" expression="x*0.082921489" to_byte="x/0.082921489" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -7005,7 +7005,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 
 	#BA114
     <table type="3D" name="Valve Overlap based MAF signal filtering - 6" category="Airflow Modelling" storagetype="uint16" endian="little" sizex="12" sizey="8" userlevel="1">
-		<scaling name="mg/stk" units="mg/stk" expression="x*0.021194781" to_byte="x/0.021194781" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="mg/stk" expression="x*0.021194781" to_byte="x/0.021194781" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="Y Axis" name="MAP" storagetype="uint16" endian="little">
 				<scaling units="mBar" expression="x*0.082921489" to_byte="x/0.082921489" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -7017,7 +7017,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 
 	#BA114	
     <table type="3D" name="Valve Overlap based MAF signal filtering - 7" category="Airflow Modelling" storagetype="uint16" endian="little" sizex="12" sizey="8" userlevel="1">
-		<scaling name="mg/stk" units="mg/stk" expression="x*0.021194781" to_byte="x/0.021194781" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="mg/stk" expression="x*0.021194781" to_byte="x/0.021194781" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="Y Axis" name="MAP" storagetype="uint16" endian="little">
 				<scaling units="mBar" expression="x*0.082921489" to_byte="x/0.082921489" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -7029,7 +7029,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 
 	#BA114	
     <table type="3D" name="Valve Overlap based MAF signal filtering - 8" category="Airflow Modelling" storagetype="uint16" endian="little" sizex="12" sizey="8" userlevel="1">
-		<scaling name="mg/stk" units="mg/stk" expression="x*0.021194781" to_byte="x/0.021194781" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="mg/stk" expression="x*0.021194781" to_byte="x/0.021194781" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="Y Axis" name="MAP" storagetype="uint16" endian="little">
 				<scaling units="mBar" expression="x*0.082921489" to_byte="x/0.082921489" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -7041,7 +7041,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
    
 	#BA114
     <table type="3D" name="Intake Manfold Volume at Increasing Load - Above Idle" category="Airflow Modelling" storagetype="uint16" endian="little" sizex="6" sizey="8" userlevel="1">
-		<scaling name="Volume" units="dm^3" expression="x*0.0093476789+0.9906523" to_byte="(x-0.9906523)/0.0093476789" format="0.000" fineincrement="2" coarseincrement="10"/>
+		<scaling units="dm^3" expression="x*0.0093476789+0.9906523" to_byte="(x-0.9906523)/0.0093476789" format="0.000" fineincrement="2" coarseincrement="10"/>
 			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
 				<scaling units="mg/stroke" expression="x*5.4470588" to_byte="x/5.4470588" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -7053,7 +7053,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	
 	#BA114
     <table type="3D" name="Intake Manfold Volume at Decreasing Load - Above Idle" category="Airflow Modelling" storagetype="uint16" endian="little" sizex="6" sizey="8" userlevel="1">
-		<scaling name="Volume" units="dm^3" expression="x*0.0093476789+0.9906523" to_byte="(x-0.9906523)/0.0093476789" format="0.000" fineincrement="2" coarseincrement="10"/>
+		<scaling units="dm^3" expression="x*0.0093476789+0.9906523" to_byte="(x-0.9906523)/0.0093476789" format="0.000" fineincrement="2" coarseincrement="10"/>
 			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
 				<scaling units="mg/stroke" expression="x*5.4470588" to_byte="x/5.4470588" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -7094,7 +7094,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 <!--AlphaN-->   
   	#BA114
     <table type="3D" name="Calculated Load" category="AlphaN" storagetype="uint16" endian="little" sizex="16" sizey="16" userlevel="1">
-		<scaling name="mg/stk" units="mg/stk" expression="x*0.021194781" to_byte="x/0.021194781" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="mg/stk" expression="x*0.021194781" to_byte="x/0.021194781" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="X Axis" name="TPS" storagetype="uint16" endian="little">
 				<scaling units="%" expression="x*0.0018310547" to_byte="x/0.0018310547" format="0.0" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -7164,7 +7164,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
    
 	#BA114
 	<table type="3D" name="Pedal input to open Muffler Flap - M/T" category="Muffler Flap" storagetype="uint8" endian="little" sizex="5" sizey="5" userlevel="1">
-		<scaling name="PVS" units="%" expression="x*0.46875" to_byte="x/0.46875" format="0.0" fineincrement="1" coarseincrement="10"/>
+		<scaling units="%" expression="x*0.46875" to_byte="x/0.46875" format="0.0" fineincrement="1" coarseincrement="10"/>
 			<table type="Static Y Axis" name="Gear" sizex="5">
 				<data>1</data>
 				<data>2</data>
@@ -7182,7 +7182,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 <!--Misfire-->
 
     <table type="2D" name="Misfire Detection - Minimum RPM" category="Misfire" storagetype="uint16" sizex="1" endian="little" userlevel="1">
-		<scaling name="RPM" units="" expression="x*1" to_byte="x/1" format="#" fineincrement="1" coarseincrement="10"/>
+		<scaling units="RPM" expression="x*1" to_byte="x/1" format="#" fineincrement="1" coarseincrement="10"/>
 			<table type="Static Y Axis" name="Engine Speed" sizex="1">
 				<data>RPM</data>
 			</table>
@@ -7190,7 +7190,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
     <table type="2D" name="Misfire Detection - Maximum RPM" category="Misfire" storagetype="uint16" sizex="1" endian="little" userlevel="1">
-		<scaling name="RPM" units="" expression="x*1" to_byte="x/1" format="#" fineincrement="1" coarseincrement="10"/>
+		<scaling units="RPM" expression="x*1" to_byte="x/1" format="#" fineincrement="1" coarseincrement="10"/>
 			<table type="Static Y Axis" name="Engine Speed" sizex="1">
 				<data>RPM</data>
 			</table>
@@ -7274,7 +7274,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 		
 	<!--ISA Delete-->
 		<table type="2D" name="c_t_min_ris" category="ISA Delete" storagetype="uint16" sizex="1" endian="little" userlevel="1">
-			<scaling name="Ratio" units="" expression="x*0.0099999996+0.00000000037247841" to_byte="(x-0.00000000037247841)/0.0099999996" format="0.00" fineincrement=".01" coarseincrement="1"/>
+			<scaling units="Ratio" expression="x*0.0099999996+0.00000000037247841" to_byte="(x-0.00000000037247841)/0.0099999996" format="0.00" fineincrement=".01" coarseincrement="1"/>
 				<table type="Static Y Axis" name="Time" sizex="1">
 					<data>Seconds</data>
 				</table>
@@ -7299,7 +7299,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 		</table>	
 
 		<table type="2D" name="ip_fac_pq_isa__isapwm" category="ISA Delete" storagetype="uint8" sizey="4" endian="little" userlevel="1">
-			<scaling name="-" units="-" expression="x*0.0078125" to_byte="x/0.0078125" format="0.00" fineincrement=".01" coarseincrement="1"/>
+			<scaling units="-" expression="x*0.0078125" to_byte="x/0.0078125" format="0.00" fineincrement=".01" coarseincrement="1"/>
 				<table type="Y Axis" name="ISA PWM" storagetype="uint16" endian="little">
 					<scaling units="%" expression="x*0.0015258789" to_byte="x/0.0015258789" format="0.00" fineincrement="0.1" coarseincrement="1" />
 				</table>
