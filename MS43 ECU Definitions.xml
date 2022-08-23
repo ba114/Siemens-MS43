@@ -57,6 +57,8 @@ v0
 -->
       <romid>
          <xmlid>BMWMS43BASE-extload</xmlid>
+		 <author>BA114</author>
+		 <version>430069 Extended Load</version>
          <ecuid>1234567</ecuid>
          <year>2001-2006</year>
          <market>USDM</market>
@@ -290,7 +292,7 @@ v0
 	<table type="3D" name="Fuel Scalar - Idle - Cold" category="Calculated Fuel" storagetype="uint16" endian="little" sizex="6" sizey="6" userlevel="5">
 		<scaling units="Fuel Scaling %" expression="(x*0.0030517578125)-100" to_byte="(x+100)/0.0030517578125" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -301,7 +303,7 @@ v0
     <table type="3D" name="Fuel Scalar - Idle - Warm" category="Calculated Fuel" storagetype="uint16" endian="little" sizex="6" sizey="6" userlevel="5">
 		<scaling units="Fuel Scaling %" expression="(x*0.0030517578125)-100" to_byte="(x+100)/0.0030517578125" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -312,7 +314,7 @@ v0
      <table type="3D" name="Fuel Scalar - Bank 1 Cold" category="Calculated Fuel" storagetype="uint16" endian="little" sizex="12" sizey="16" userlevel="5">
 		<scaling units="Fuel Scaling %" expression="(x*0.0030517578125)-100" to_byte="(x+100)/0.0030517578125" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -323,7 +325,7 @@ v0
 	<table type="3D" name="Fuel Scalar - Bank 2 Cold" category="Calculated Fuel" storagetype="uint16" endian="little" sizex="12" sizey="16" userlevel="5">
 		<scaling units="Fuel Scaling %" expression="(x*0.0030517578125)-100" to_byte="(x+100)/0.0030517578125" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -334,7 +336,7 @@ v0
     <table type="3D" name="Fuel Scalar - Bank 1 Warm" category="Calculated Fuel" storagetype="uint16" endian="little" sizex="12" sizey="16" userlevel="5">
 		<scaling units="Fuel Scaling %" expression="(x*0.0030517578125)-100" to_byte="(x+100)/0.0030517578125" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -345,7 +347,7 @@ v0
     <table type="3D" name="Fuel Scalar - Bank 2 Warm" category="Calculated Fuel" storagetype="uint16" endian="little" sizex="12" sizey="16" userlevel="5">
 		<scaling units="Fuel Scaling %" expression="(x*0.0030517578125)-100" to_byte="(x+100)/0.0030517578125" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -368,7 +370,7 @@ v0
     <table type="3D" name="Fuel Injection - Base (VANOS Fault)" category="Fuel" storagetype="uint16" endian="little" sizex="12" sizey="16" userlevel="1">
 		<scaling units="Injector Pulsewidth (milliseconds)" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -387,7 +389,7 @@ v0
     <table type="3D" name="Fuel Injection part load bank 1 cold engine" category="Fuel" storagetype="uint16" endian="little" sizex="12" sizey="16" userlevel="1">
 		<scaling units="Injector Pulsewidth (milliseconds)" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -398,7 +400,7 @@ v0
 	<table type="3D" name="Fuel Injection part load bank 2 cold engine" category="Fuel" storagetype="uint16" endian="little" sizex="12" sizey="16" userlevel="1">
 		<scaling units="Injector Pulsewidth (milliseconds)" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -409,7 +411,7 @@ v0
     <table type="3D" name="Fuel Injection part load bank 1 warm engine" category="Fuel" storagetype="uint16" endian="little" sizex="12" sizey="16" userlevel="1">
 		<scaling units="Injector Pulsewidth (milliseconds)" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -420,7 +422,7 @@ v0
     <table type="3D" name="Fuel Injection part load bank 2 warm engine" category="Fuel" storagetype="uint16" endian="little" sizex="12" sizey="16" userlevel="1">
 		<scaling units="Injector Pulsewidth (milliseconds)" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -431,7 +433,7 @@ v0
 	<table type="3D" name="Fuel Injection idlespeed cold engine" category="Fuel" storagetype="uint16" endian="little" sizex="6" sizey="6" userlevel="1">
 		<scaling units="Injector Pulsewidth (milliseconds)" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -442,7 +444,7 @@ v0
     <table type="3D" name="Fuel Injection idlespeed warm engine" category="Fuel" storagetype="uint16" endian="little" sizex="6" sizey="6" userlevel="1">
 		<scaling units="Injector Pulsewidth (milliseconds)" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -462,8 +464,8 @@ v0
     <table type="2D" name="Prestart Injection Time" category="Fuel" storagetype="uint16" endian="little" sizex="8" userlevel="1">
 		<scaling units="Injector Pulsewidth (milliseconds)" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.000" fineincrement=".1" coarseincrement="1"/>
 			<table type="Y Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 		<description>empty</description>
     </table>
@@ -484,8 +486,8 @@ v0
 	<table type="2D" name="Minimum Injection Time cylinder wall rewetting slow" category="Fuel" storagetype="uint16" sizey="4" endian="little" userlevel="1">
 		<scaling units="Injector Pulsewidth (milliseconds)" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.000" fineincrement=".01" coarseincrement=".1"/>
 			<table type="Y Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 		<description>empty</description>
     </table>
@@ -493,8 +495,8 @@ v0
 	<table type="2D" name="Minimum Injection Time cylinder wall rewetting fast" category="Fuel" storagetype="uint16" sizey="4" endian="little" userlevel="1">
 		<scaling units="Injector Pulsewidth (milliseconds)" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.000" fineincrement=".01" coarseincrement=".1"/>
 			<table type="Y Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 		<description>empty</description>
     </table>
@@ -510,8 +512,8 @@ v0
 	<table type="3D" name="Afterstart Enrichment" category="Fuel" storagetype="uint8" endian="little" sizex="8" sizey="2" userlevel="1">
 		<scaling units="Factor (multiplier)" expression="x*0.015625" to_byte="x/0.015625" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Intake Temp" storagetype="uint8" endian="little" logparam="P11">
 				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
@@ -522,8 +524,8 @@ v0
 	<table type="3D" name="Cranking Fuel at Cold Engine Start" category="Fuel" storagetype="uint16" endian="little" sizex="8" sizey="3" userlevel="1">
 		<scaling units="Injector Pulsewidth (milliseconds)" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -534,8 +536,8 @@ v0
 	<table type="3D" name="Gradual Reduction after Engine Start" category="Fuel" storagetype="uint8" endian="little" sizex="8" sizey="6" userlevel="1">
 		<scaling units="Factor (multiplier)" expression="x*0.00390625" to_byte="x/0.00390625" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Cycles" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="&deg;seg" expression="x" to_byte="x" format="#" fineincrement="1" coarseincrement="100"/>
@@ -546,8 +548,8 @@ v0
 	<table type="3D" name="Gradual Reduction at Engine Start" category="Fuel" storagetype="uint8" endian="little" sizex="8" sizey="4" userlevel="1">
 		<scaling units="Factor (Multiplier)" expression="x*0.00390625" to_byte="x/0.00390625" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Cycles" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="&deg;seg" expression="x" to_byte="x" format="#" fineincrement="1" coarseincrement="100"/>
@@ -1060,7 +1062,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
 			</table>
 			<table type="Y Axis" name="Coolant Temp" storagetype="uint8" endian="little">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 		<description>This map adjusts the throttle opening at engine start</description>
 	</table>
@@ -1080,8 +1082,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     <table type="2D" name="Idle Speed without Extra Load" category="Idle Speed Target" storagetype="uint16" endian="little" sizey="6" userlevel="1">
 		<scaling units="RPM" expression="x*.25" to_byte="x/.25" format="0" fineincrement="1" coarseincrement="10"/>
 			<table type="Y Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 		<description>Engine idle speed with no additional load.</description>
     </table>
@@ -1089,8 +1091,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     <table type="2D" name="Idle Speed with A/C" category="Idle Speed Target" storagetype="uint16" endian="little" sizey="6" userlevel="1">
 		<scaling units="RPM" expression="x*.25" to_byte="x/.25" format="0" fineincrement="1" coarseincrement="10"/>
 			<table type="Y Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 		<description>Engine idle speed with A/C on.</description>
     </table>
@@ -1098,8 +1100,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     <table type="2D" name="Idle Speed Drive Engaged" category="Idle Speed Target" storagetype="uint16" endian="little" sizey="6" userlevel="1">
 		<scaling units="RPM" expression="x*.25" to_byte="x/.25" format="0" fineincrement="1" coarseincrement="10"/>
 			<table type="Y Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 		<description>Engine idle speed while in drive.</description>
     </table>
@@ -1107,8 +1109,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     <table type="2D" name="Idle Speed with Drive and A/C Engaged" category="Idle Speed Target" storagetype="uint16" endian="little" sizey="6" userlevel="1">
 		<scaling units="RPM" expression="x*.25" to_byte="x/.25" format="0" fineincrement="1" coarseincrement="10"/>
 			<table type="Y Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 		<description>Engine idle speed with A/C while in drive.</description>
     </table>
@@ -1191,7 +1193,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	<table type="3D" name="DISA- On/Off (Part Throttle)" category="DISA" storagetype="uint8" endian="little" sizex="6" sizey="8" userlevel="1">
 		<scaling units="on/off" expression="x" to_byte="x" format="0" fineincrement="1" coarseincrement="1"/>
 			<table type="X Axis" name="mg/stroke" storagetype="uint16" endian="little" logparam="">
-				<scaling name="Metric" units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="#" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*0.04239" to_byte="x/0.04239" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -1210,8 +1212,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 
 <!--Sensor Scaling-->      
 	<table type="2D" name="ECT Sensor Scaling" category="Sensors Scaling" storagetype="uint8" endian="little" sizex="16" userlevel="1">
-		<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-		<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="Y Axis" name="Coolant Sensor" storagetype="uint16" endian="little">
 				<scaling units="Volts" expression="x*.00488" to_byte="x/.00488" format="0.00" fineincrement=".01" coarseincrement=".1"/>
 			</table>
@@ -1227,7 +1229,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
     <table type="2D" name="MAF Sensor Scaling 1x256" category="Sensors Scaling" storagetype="uint16" endian="little" sizey="256" userlevel="1">
-		<scaling name="Metric" units="Kg/h" expression="x*.015625" to_byte="x/.015625" format="0.00" fineincrement=".01" coarseincrement=".1"/>
+		<scaling units="Kg/h" expression="x*.015625" to_byte="x/.015625" format="0.00" fineincrement=".01" coarseincrement=".1"/>
 			<table type="Static Y Axis" name="Volts" sizey="256">
 				<data>0.00</data>
 				<data>0.02</data>
@@ -1620,7 +1622,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     <table type="3D" name="Boost Control Solenoid Duty Cycle (with CAT)" category="Forced Induction" storagetype="uint16" endian="little" sizex="12" sizey="10" userlevel="1">
 		<scaling units="Duty Cycle" expression="x*0.024414063" to_byte="x/0.024414063" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*10.8941176" to_byte="x/10.89411761" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*10.8941176" to_byte="x/10.89411761" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x*32" to_byte="x/32" format="#" fineincrement="50" coarseincrement="100"/>
@@ -1631,7 +1633,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	<table type="3D" name="Boost Control Solenoid Duty Cycle (without CAT)" category="Forced Induction" storagetype="uint16" endian="little" sizex="12" sizey="10" userlevel="1">
 		<scaling units="Duty Cycle" expression="x*0.024414063" to_byte="x/0.024414063" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*10.8941176" to_byte="x/10.89411761" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*10.8941176" to_byte="x/10.89411761" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x*32" to_byte="x/32" format="#" fineincrement="50" coarseincrement="100"/>
@@ -1640,8 +1642,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
     <table type="2D" name="Minimum Temp for Boost Control" category="Forced Induction" storagetype="uint8" endian="little" sizey="1" userlevel="1">
-		<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-		<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="Static Y Axis" name="Columns" sizey="1">
 				<data>	TEMP	</data>
 			</table>
@@ -2772,8 +2774,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 
 <!--Coolant Temp Targets-->   
 	<table type="2D" name="Coolant Temp Setpoint Until Oil Reaches Min Temp" category="Coolant Temp Targets" storagetype="uint8" sizex="1" endian="little" userlevel="1">
-		<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-		<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="Static Y Axis" name="Columns" sizex="1">
 				<data> 1</data>
 			</table>
@@ -2781,8 +2783,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	</table>
     
 	<table type="3D" name="Target Coolant Temp with A/C" category="Coolant Temp Targets" storagetype="uint8" endian="little" sizex="6" sizey="12" userlevel="1">
-		<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-		<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="X Axis" name="MAF Load" storagetype="uint8" endian="little">
 				<scaling units="mg/stroke" expression="x*10.8941176" to_byte="x/10.8941176" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -2793,8 +2795,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
     
 	<table type="3D" name="Target Coolant Temp without A/C" category="Coolant Temp Targets" storagetype="uint8" endian="little" sizex="6" sizey="12" userlevel="1">
-		<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-		<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="X Axis" name="MAF Load" storagetype="uint8" endian="little">
 				<scaling units="mg/stroke" expression="x*10.8941176" to_byte="x/10.8941176" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -3316,6 +3318,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
          <internalidaddress>60</internalidaddress>
          <internalidstring>MS4X_EXT_LOAD_V1</internalidstring>
          <xmlid>430069 - Extended Load</xmlid>
+		 <author>BA114</author>
+		 <version>430069 Extended Load</version>
          <ecuid>7551615</ecuid>
          <year>2001</year>
          <market>USDM</market>
@@ -3711,6 +3715,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
 	<table name="MAF Sensor Scaling 16x16" storageaddress="0xEC6"/>
+	
+	<table name="MAF Sensor Scaling 16x16 (4096)" storageaddress="0xEC6"/>
 	
     <table name="MAF Sensor Scaling 1024kg/hr" storageaddress="0xEC6"/>
 	
@@ -4507,7 +4513,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     <table type="3D" name="Fuel Injection - Base (VANOS Fault)" category="Fuel" storagetype="uint16" endian="little" sizex="12" sizey="16" userlevel="1">
 		<scaling units="Injector Pulsewidth (milliseconds)" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*0.021194781" to_byte="x/0.021194781" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*0.021194781" to_byte="x/0.021194781" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -4526,7 +4532,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     <table type="3D" name="Fuel Injection part load bank 1 cold engine" category="Fuel" storagetype="uint16" endian="little" sizex="12" sizey="16" userlevel="1">
 		<scaling units="Injector Pulsewidth (milliseconds)" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*0.021194781" to_byte="x/0.021194781" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*0.021194781" to_byte="x/0.021194781" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -4537,7 +4543,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	<table type="3D" name="Fuel Injection part load bank 2 cold engine" category="Fuel" storagetype="uint16" endian="little" sizex="12" sizey="16" userlevel="1">
 		<scaling units="Injector Pulsewidth (milliseconds)" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*0.021194781" to_byte="x/0.021194781" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*0.021194781" to_byte="x/0.021194781" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -4548,7 +4554,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     <table type="3D" name="Fuel Injection part load bank 1 warm engine" category="Fuel" storagetype="uint16" endian="little" sizex="12" sizey="16" userlevel="1">
 		<scaling units="Injector Pulsewidth (milliseconds)" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*0.021194781" to_byte="x/0.021194781" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*0.021194781" to_byte="x/0.021194781" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -4559,7 +4565,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     <table type="3D" name="Fuel Injection part load bank 2 warm engine" category="Fuel" storagetype="uint16" endian="little" sizex="12" sizey="16" userlevel="1">
 		<scaling units="Injector Pulsewidth (milliseconds)" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*0.021194781" to_byte="x/0.021194781" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*0.021194781" to_byte="x/0.021194781" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -4570,7 +4576,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	<table type="3D" name="Fuel Injection idlespeed cold engine" category="Fuel" storagetype="uint16" endian="little" sizex="6" sizey="6" userlevel="1">
 		<scaling units="Injector Pulsewidth (milliseconds)" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*0.021194781" to_byte="x/0.021194781" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*0.021194781" to_byte="x/0.021194781" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -4581,7 +4587,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     <table type="3D" name="Fuel Injection idlespeed warm engine" category="Fuel" storagetype="uint16" endian="little" sizex="6" sizey="6" userlevel="1">
 		<scaling units="Injector Pulsewidth (milliseconds)" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint16" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*0.021194781" to_byte="x/0.021194781" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*0.021194781" to_byte="x/0.021194781" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -4601,8 +4607,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     <table type="2D" name="Prestart Injection Time" category="Fuel" storagetype="uint16" endian="little" sizex="8" userlevel="1">
 		<scaling units="Injector Pulsewidth (milliseconds)" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.000" fineincrement=".1" coarseincrement="1"/>
 			<table type="Y Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 		<description>empty</description>
     </table>
@@ -4623,8 +4629,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	<table type="2D" name="Minimum Injection Time cylinder wall rewetting slow" category="Fuel" storagetype="uint16" sizey="4" endian="little" userlevel="1">
 		<scaling units="Injector Pulsewidth (milliseconds)" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.000" fineincrement=".01" coarseincrement=".1"/>
 			<table type="Y Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 		<description>empty</description>
     </table>
@@ -4632,8 +4638,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	<table type="2D" name="Minimum Injection Time cylinder wall rewetting fast" category="Fuel" storagetype="uint16" sizey="4" endian="little" userlevel="1">
 		<scaling units="Injector Pulsewidth (milliseconds)" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.000" fineincrement=".01" coarseincrement=".1"/>
 			<table type="Y Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 		<description>empty</description>
     </table>
@@ -4649,8 +4655,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	<table type="3D" name="Afterstart Enrichment" category="Fuel" storagetype="uint8" endian="little" sizex="8" sizey="2" userlevel="1">
 		<scaling units="Factor (Mutliplier)" expression="x*0.015625" to_byte="x/0.015625" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Intake Temp" storagetype="uint8" endian="little" logparam="P11">
 				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
@@ -4661,8 +4667,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	<table type="3D" name="Cranking Fuel at Cold Engine Start" category="Fuel" storagetype="uint16" endian="little" sizex="8" sizey="3" userlevel="1">
 		<scaling units="Injector Pulsewidth (milliseconds)" expression="x*0.0053333333" to_byte="x/0.0053333333" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -4673,8 +4679,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	<table type="3D" name="Gradual Reduction after Engine Start" category="Fuel" storagetype="uint8" endian="little" sizex="8" sizey="6" userlevel="1">
 		<scaling units="Factor (Mutliplier)" expression="x*0.00390625" to_byte="x/0.00390625" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Cycles" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="&deg;seg" expression="x" to_byte="x" format="#" fineincrement="1" coarseincrement="100"/>
@@ -4685,8 +4691,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	<table type="3D" name="Gradual Reduction at Engine Start" category="Fuel" storagetype="uint8" endian="little" sizex="8" sizey="4" userlevel="1">
 		<scaling units="Factor (Mutliplier)" expression="x*0.00390625" to_byte="x/0.00390625" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Cycles" storagetype="uint16" endian="little" logparam="P8">
 				<scaling units="&deg;seg" expression="x" to_byte="x" format="#" fineincrement="1" coarseincrement="100"/>
@@ -5199,7 +5205,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
 			</table>
 			<table type="Y Axis" name="Coolant Temp" storagetype="uint8" endian="little">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 		<description>This map adjusts the throttle opening at engine start</description>
 	</table>
@@ -5219,8 +5225,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     <table type="2D" name="Idle Speed without Extra Load" category="Idle Speed Target" storagetype="uint16" endian="little" sizey="6" userlevel="1">
 		<scaling units="RPM" expression="x*.25" to_byte="x/.25" format="0" fineincrement="1" coarseincrement="10"/>
 			<table type="Y Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 		<description>Engine idle speed with no additional load.</description>
     </table>
@@ -5228,8 +5234,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     <table type="2D" name="Idle Speed with A/C" category="Idle Speed Target" storagetype="uint16" endian="little" sizey="6" userlevel="1">
 		<scaling units="RPM" expression="x*.25" to_byte="x/.25" format="0" fineincrement="1" coarseincrement="10"/>
 			<table type="Y Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 		<description>Engine idle speed with A/C on.</description>
     </table>
@@ -5237,8 +5243,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     <table type="2D" name="Idle Speed Drive Engaged" category="Idle Speed Target" storagetype="uint16" endian="little" sizey="6" userlevel="1">
 		<scaling units="RPM" expression="x*.25" to_byte="x/.25" format="0" fineincrement="1" coarseincrement="10"/>
 			<table type="Y Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 		<description>Engine idle speed while in drive.</description>
     </table>
@@ -5246,8 +5252,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     <table type="2D" name="Idle Speed with Drive and A/C Engaged" category="Idle Speed Target" storagetype="uint16" endian="little" sizey="6" userlevel="1">
 		<scaling units="RPM" expression="x*.25" to_byte="x/.25" format="0" fineincrement="1" coarseincrement="10"/>
 			<table type="Y Axis" name="Coolant Temp" storagetype="uint8" endian="little" logparam="P2">
-				<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-				<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+				<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			</table>
 		<description>Engine idle speed with A/C while in drive.</description>
     </table>
@@ -5330,7 +5336,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	<table type="3D" name="DISA- On/Off (Part Throttle)" category="DISA" storagetype="uint8" endian="little" sizex="6" sizey="8" userlevel="1">
 		<scaling units="on/off" expression="x" to_byte="x" format="0" fineincrement="1" coarseincrement="1"/>
 			<table type="X Axis" name="mg/stroke" storagetype="uint16" endian="little" logparam="">
-				<scaling name="Metric" units="mg/stroke" expression="x*0.021194781" to_byte="x/0.021194781" format="#" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*0.021194781" to_byte="x/0.021194781" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint16" endian="little" logparam="">
 				<scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100"/>
@@ -5349,8 +5355,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 
 <!--Sensor Scaling-->      
 	<table type="2D" name="ECT Sensor Scaling" category="Sensors Scaling" storagetype="uint8" endian="little" sizex="16" userlevel="1">
-		<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-		<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="Y Axis" name="Coolant Sensor" storagetype="uint16" endian="little">
 				<scaling units="Volts" expression="x*.00488" to_byte="x/.00488" format="0.00" fineincrement=".01" coarseincrement=".1"/>
 			</table>
@@ -5366,7 +5372,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
     <table type="2D" name="MAF Sensor Scaling 1024kg/hr" category="Sensors Scaling" storagetype="uint16" endian="little" sizey="256" userlevel="1">
-		<scaling name="Metric" units="Kg/h" expression="x*.015625" to_byte="x/.015625" format="0.00" fineincrement=".01" coarseincrement=".1"/>
+		<scaling units="Kg/h" expression="x*.015625" to_byte="x/.015625" format="0.00" fineincrement=".01" coarseincrement=".1"/>
 			<table type="Static Y Axis" name="Volts" sizey="256">
 				<data>0.00</data>
 				<data>0.02</data>
@@ -5714,7 +5720,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     <table type="3D" name="Boost Control Solenoid Duty Cycle (with CAT)" category="Forced Induction" storagetype="uint16" endian="little" sizex="12" sizey="10" userlevel="1">
 		<scaling units="Duty Cycle" expression="x*0.024414063" to_byte="x/0.024414063" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*5.4470588" to_byte="x/5.44705881" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*5.4470588" to_byte="x/5.44705881" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x*32" to_byte="x/32" format="#" fineincrement="50" coarseincrement="100"/>
@@ -5725,7 +5731,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	<table type="3D" name="Boost Control Solenoid Duty Cycle (without CAT)" category="Forced Induction" storagetype="uint16" endian="little" sizex="12" sizey="10" userlevel="1">
 		<scaling units="Duty Cycle" expression="x*0.024414063" to_byte="x/0.024414063" format="0.00" fineincrement=".1" coarseincrement="1"/>
 			<table type="X Axis" name="Load" storagetype="uint8" endian="little" logparam="E2">
-				<scaling name="Metric" units="mg/stroke" expression="x*5.4470588" to_byte="x/5.44705881" format="0" fineincrement="1" coarseincrement="10"/>
+				<scaling units="mg/stroke" expression="x*5.4470588" to_byte="x/5.44705881" format="0" fineincrement="1" coarseincrement="10"/>
 			</table>
 			<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="little" logparam="P8">
 				<scaling units="RPM" expression="x*32" to_byte="x/32" format="#" fineincrement="50" coarseincrement="100"/>
@@ -5734,8 +5740,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
 	
     <table type="2D" name="Minimum Temp for Boost Control" category="Forced Induction" storagetype="uint8" endian="little" sizey="1" userlevel="1">
-		<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-		<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="Static Y Axis" name="Columns" sizey="1">
 				<data>	TEMP	</data>
 			</table>
@@ -6866,8 +6872,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 
 <!--Coolant Temp Targets-->   
 	<table type="2D" name="Coolant Temp Setpoint Until Oil Reaches Min Temp" category="Coolant Temp Targets" storagetype="uint8" sizex="1" endian="little" userlevel="1">
-		<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-		<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="Static Y Axis" name="Columns" sizex="1">
 				<data> 1</data>
 			</table>
@@ -6875,8 +6881,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 	</table>
     
 	<table type="3D" name="Target Coolant Temp with A/C" category="Coolant Temp Targets" storagetype="uint8" endian="little" sizex="6" sizey="12" userlevel="1">
-		<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-		<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="X Axis" name="MAF Load" storagetype="uint8" endian="little">
 				<scaling units="mg/stroke" expression="x*5.4470588" to_byte="x/5.4470588" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
@@ -6887,8 +6893,8 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
     </table>
     
 	<table type="3D" name="Target Coolant Temp without A/C" category="Coolant Temp Targets" storagetype="uint8" endian="little" sizex="6" sizey="12" userlevel="1">
-		<scaling name="Metric" units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
-		<scaling name="Imperial" units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="°C" expression="x*.75-48" to_byte="(x+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
+		<scaling units="°F" expression="(x*.75-48)*1.8+32" to_byte="((x-32)/1.8+48)/.75" format="0.0" fineincrement="2" coarseincrement="10"/>
 			<table type="X Axis" name="MAF Load" storagetype="uint8" endian="little">
 				<scaling units="mg/stroke" expression="x*5.4470588" to_byte="x/5.4470588" format="#" fineincrement="1" coarseincrement="10"/>
 			</table>
