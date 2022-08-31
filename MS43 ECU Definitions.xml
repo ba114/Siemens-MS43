@@ -4302,6 +4302,7 @@ Eg. 10.54 - 5.53 = 5.01ms enrichment added to calculated IPW in fueling tables.<
 -->
       <romid>
          <xmlid>BMWMS43BASE</xmlid>
+		 <author>BA114</author>
          <ecuid>1234567</ecuid>
          <year>2001-2006</year>
          <market>USDM</market>
